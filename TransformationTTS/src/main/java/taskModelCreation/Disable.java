@@ -6,15 +6,14 @@ import hamsters.HamstersTask;
 import hamsters.OperatorType;
 import hamsters.TaskType;
 
-public class Choice {
-	
+public class Disable {
+
 	private HamstersAPI hamAPI;
 	
-	public Choice()
-	{
-		hamAPI = new HamstersAPI("Choice 1");
+	public Disable(){
+		hamAPI = new HamstersAPI("Disable 1");
 		HamstersOperator operator = new HamstersOperator();
-		operator.setType(OperatorType.CHOICE);
+		operator.setType(OperatorType.DISABLE);
 		hamAPI.addHamstersNode(new HamstersOperator());
 		
 		HamstersTask task1 = new HamstersTask();
@@ -23,18 +22,8 @@ public class Choice {
 		HamstersTask task2 = new HamstersTask();
 		task2.setType(TaskType.USER);
 		task2.setHelpText("Tache Feuille numero 2");
-		HamstersTask task3 = new HamstersTask();
-		task3.setType(TaskType.USER);
-		task3.setHelpText("Tache Feuille numero 3");
-		HamstersTask task4 = new HamstersTask();
-		task4.setType(TaskType.USER);
-		task4.setHelpText("Tache Feuille numero 4");
 		
 		operator.addChild(task1);
 		operator.addChild(task2);
-		operator.addChild(task3);
-		operator.addChild(task4);
-		
 	}
-
 }

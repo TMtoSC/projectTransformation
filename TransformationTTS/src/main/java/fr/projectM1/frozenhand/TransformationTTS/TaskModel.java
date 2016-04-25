@@ -2,24 +2,24 @@ package fr.projectM1.frozenhand.TransformationTTS;
 
 import java.io.File;
 
-import taskModelCreation.Sequence;
+import taskModelCreation.Enable;
 
 
 public class TaskModel 
 {
 	private File xmlFile;
-	private Sequence seq;
+	private Enable seq;
 
 	
 	public TaskModel(File file)
 	{
 		xmlFile = file;
-		setSeq(new Sequence());
+		setSeq(new Enable());
 	}
 	
 	public TaskModel()
 	{
-		setSeq(new Sequence());
+		setSeq(new Enable());
 	}
 	
 	public String getName()
@@ -27,11 +27,11 @@ public class TaskModel
 		return xmlFile.getName();
 	}
 
-	public Sequence getSeq() {
+	public Enable getSeq() {
 		return seq;
 	}
 
-	public void setSeq(Sequence seq) {
+	public void setSeq(Enable seq) {
 		this.seq = seq;
 	}
 
