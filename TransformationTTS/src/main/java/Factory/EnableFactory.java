@@ -70,21 +70,64 @@ public class EnableFactory {
 	public static State disableToSc(HamstersOperator hOP){
 		State e = sgraph.createState();
 		e.isComposite();
-		State e1 = sgraph.createState();
-		State e2 = sgraph.createState();
-		e1.isComposite();
-		e2.isComposite();
 		Region r = sgraph.createRegion();
-		Region r1 = sgraph.createRegion();
-		Region r2 = sgraph.createRegion();
 		e.getRegions().add(r);
-		e1.getRegions().add(r1);
-		e2.getRegions().add(r2);
-		r.getVertices().add(e1);
-		r.getVertices().add(e2);
-		Transition disable = sgraph.createTransition();
-		disable.setSource(e1);
-		disable.setTarget(e2);
+		Region rTemp = null;
+		State temp = null;
+		Transition t = null;
+		if ( hOP.getChildren().size() == 2){
+			for(int i = 0 ; i < hOP.getChildren().size();i++){
+				temp = sgraph.createState();
+				temp.setName(hOP.getChildren().get(i).toString());
+				temp.isComposite();
+				rTemp = sgraph.createRegion();
+				temp.getRegions().add(rTemp);
+				r.getVertices().add(temp);
+				if(i!=0){
+					t = sgraph.createTransition();
+					t.setSource(r.getVertices().get(0));
+					t.setTarget(r.getVertices().get(1));
+				}
+			}
+		}
+		FinalState fs = sgraph.createFinalState();
+		r.getVertices().add(fs);
+		Transition lastTransition = sgraph.createTransition();
+		lastTransition.setSource(r.getVertices().get(1));
+		lastTransition.setTarget(fs);
+		
 		return e;
+	}
+	
+	public static State concurrencyToSc(HamstersOperator hOP){
+		State e = sgraph.createState();
+		e.isOrthogonal();
+		Region r = sgraph.createRegion();
+		e.getRegions().add(r);
+		Region r2 = sgraph.createRegion();
+		e.getRegions().add(r2);
+		Region rTemp = null;
+		State temp = null;
+		Transition t = null;
+		if ( hOP.getChildren().size() > 2 ){
+			temp = sgraph.createState();
+			temp.setName(hOP.getChildren().get(0).toString());
+			temp.isComposite();
+			rTemp = sgraph.createRegion();
+			temp.getRegions().add(rTemp);
+			r.getVertices().add(temp);
+			for (int i = 1 ; i < hOP.getChildren().size();i++){
+				temp = sgraph.createState();
+				temp.setName(hOP.getChildren().get(i).toString());
+				temp.isComposite();
+				rTemp = sgraph.createRegion();
+				temp.getRegions().add(rTemp);
+				r2.getVertices().add(temp);
+				
+			}
+		}
+		return e;
+		
+		
 	}
 }
