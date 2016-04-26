@@ -8,13 +8,16 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
 
+import TranslationSCT.WriteFile;
 import hamsters.HamstersAPI;
+import hamsters.HamstersOperator;
+import taskModelCreation.Enable;
 
 public class Main {
 
 	
 	
-    public static void main(String args[]) {
+    public static void main(String args[]) throws Exception {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -54,6 +57,10 @@ public class Main {
 		 
 		 HamstersAPI api = new HamstersAPI(taskModel.getName());
 		 Translate trans = new Translate(taskModel, stateChart);*/
+        Enable e = new Enable();
+        HamstersOperator hOP = new HamstersOperator();
+        hOP = (HamstersOperator) e.getAPI().getHamstersNode().get(0);
+        WriteFile.main(hOP);
         
     }
 	

@@ -15,7 +15,7 @@ public class Enable {
 		hamAPI = new HamstersAPI("Sequence 1");
 		HamstersOperator operator = new HamstersOperator();
 		operator.setType(OperatorType.ENABLE);
-		hamAPI.addHamstersNode(new HamstersOperator());
+		hamAPI.addHamstersNode(operator);
 		
 		
 		HamstersTask task1 = new HamstersTask();
@@ -27,5 +27,7 @@ public class Enable {
 		operator.addChild(task1);
 		operator.addChild(task2);
 	}
-
+	public HamstersAPI getAPI() {
+		return hamAPI;
+	}
 }
