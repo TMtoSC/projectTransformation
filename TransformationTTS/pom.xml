@@ -54,16 +54,6 @@
       <scope>test</scope>
     </dependency>
       <dependency>
-      	<groupId>org.yakindu.sct.plugins</groupId>
-      	<artifactId>org.yakindu.sct.model.sgraph</artifactId>
-      	<version> 2.6.0-SNAPSHOT</version>
-      </dependency>
-       <dependency>
-      	<groupId>org.yakindu.sct.plugins</groupId>
-      	<artifactId>org.yakindu.sct.model.resource</artifactId>
-      	<version> 2.6.0-SNAPSHOT</version>
-      </dependency>
-      <dependency>
 	<groupId>org.eclipse.emf.ecore</groupId>
 	<artifactId>xmi</artifactId>
 	<version>2.3.0-v200706262000</version>
@@ -77,16 +67,6 @@
 	<groupId>org.eclipse.emf</groupId>
 	<artifactId>org.eclipse.emf.common</artifactId>
 	<version>2.11.0-v20150805-0538</version>
-</dependency>
-	<dependency>
-	<artifactId>org.yakindu.base.types</artifactId>
-	<groupId>org.yakindu.base.plugins</groupId>
-	<version>2.6.0-SNAPSHOT</version>
-</dependency>
-<dependency>
-<artifactId>org.yakindu.sct.domain</artifactId>
-<groupId>org.yakindu.sct.plugins</groupId>
-<version>2.6.0-SNAPSHOT</version>
 </dependency>
   </dependencies>
 </project>

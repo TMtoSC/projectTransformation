@@ -15,7 +15,7 @@ import org.yakindu.sct.model.sgraph.Statechart;
 import org.yakindu.sct.model.sgraph.Transition;
 import org.yakindu.sct.model.sgraph.Vertex;
 
-import Factory.EnableFactory;
+import Factory.FactoryTransformation;
 import hamsters.HamstersOperator;
 
 import org.eclipse.emf.common.util.*;
@@ -55,7 +55,7 @@ public class WriteFile {
 		Region re = factory.createRegion();
 		re.setName("RegTest");
 		sc.getRegions().add(re);
-		State s = EnableFactory.enabletoSc(hOP);
+		State s = FactoryTransformation.enabletoSc(hOP);
 		re.getVertices().add(s);
 		
 		
