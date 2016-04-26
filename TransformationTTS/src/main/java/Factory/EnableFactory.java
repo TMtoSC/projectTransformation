@@ -3,12 +3,14 @@ package Factory;
 import org.yakindu.sct.model.sgraph.CompositeElement;
 import org.yakindu.sct.model.sgraph.FinalState;
 import org.yakindu.sct.model.sgraph.Region;
+import org.yakindu.sct.model.sgraph.RegularState;
 import org.yakindu.sct.model.sgraph.SGraphFactory;
 import org.yakindu.sct.model.sgraph.State;
 import org.yakindu.sct.model.sgraph.Transition;
 //import org.yakindu.sct.model.sgraph.*;
 import org.yakindu.sct.model.sgraph.impl.SGraphFactoryImpl;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EObject;
 import hamsters.HamstersAPI;
 import hamsters.HamstersOperator;
@@ -38,6 +40,26 @@ public class EnableFactory {
 		Transition lastTransition = sgraph.createTransition();
 		lastTransition.setSource(r.getVertices().get(r.getVertices().size()-1));
 		lastTransition.setTarget(fs);
+		return e;
+		
+	}
+	
+	public static State choiceToSc(HamstersOperator hOP) {
+		State e = (State) sgraph.createChoice();
+		e.isComposite();
+		Region r = sgraph.createRegion();
+		State temp = null;
+		Transition t = null;
+		for (int i = 0 ; i < hOP.getChildren().size(); i++){
+			temp = sgraph.createState();
+			temp.setName(hOP.getChildren().get(i).toString());
+			t.setSource(e);
+			r.getVertices().add(sgraph.createState());
+			if(i!=0){
+				t = sgraph.createTransition();
+				t.setTarget(r.getVertices().get(i));
+			}
+		}
 		return e;
 		
 	}
