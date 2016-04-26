@@ -23,6 +23,7 @@ public class EnableFactory {
 		State e = sgraph.createState();
 		e.isComposite();
 		Region r = sgraph.createRegion();
+		e.getRegions().add(r);
 		State temp = null;
 		Transition t = null;
 		for( int i = 0 ; i < hOP.getChildren().size() ; i++) {
@@ -45,22 +46,45 @@ public class EnableFactory {
 	}
 	
 	public static State choiceToSc(HamstersOperator hOP) {
-		State e = (State) sgraph.createChoice();
+		State e = sgraph.createState();
 		e.isComposite();
 		Region r = sgraph.createRegion();
+		e.getRegions().add(r);
+		State initialChoiceState = (State) sgraph.createChoice();
+		r.getVertices().add(initialChoiceState);
 		State temp = null;
 		Transition t = null;
 		for (int i = 0 ; i < hOP.getChildren().size(); i++){
 			temp = sgraph.createState();
 			temp.setName(hOP.getChildren().get(i).toString());
-			t.setSource(e);
 			r.getVertices().add(sgraph.createState());
 			if(i!=0){
 				t = sgraph.createTransition();
+				t.setSource(initialChoiceState);
 				t.setTarget(r.getVertices().get(i));
 			}
 		}
 		return e;
-		
+	}
+	
+	public static State disableToSc(HamstersOperator hOP){
+		State e = sgraph.createState();
+		e.isComposite();
+		State e1 = sgraph.createState();
+		State e2 = sgraph.createState();
+		e1.isComposite();
+		e2.isComposite();
+		Region r = sgraph.createRegion();
+		Region r1 = sgraph.createRegion();
+		Region r2 = sgraph.createRegion();
+		e.getRegions().add(r);
+		e1.getRegions().add(r1);
+		e2.getRegions().add(r2);
+		r.getVertices().add(e1);
+		r.getVertices().add(e2);
+		Transition disable = sgraph.createTransition();
+		disable.setSource(e1);
+		disable.setTarget(e2);
+		return e;
 	}
 }
