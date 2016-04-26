@@ -123,7 +123,6 @@ public class EnableFactory {
 				rTemp = sgraph.createRegion();
 				temp.getRegions().add(rTemp);
 				r2.getVertices().add(temp);
-				
 			}
 		}
 		return e;
