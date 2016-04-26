@@ -10,17 +10,22 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
 import org.yakindu.sct.model.resource.SCTResourceFactory;
 import org.yakindu.sct.model.sgraph.Region;
 import org.yakindu.sct.model.sgraph.SGraphFactory;
+import org.yakindu.sct.model.sgraph.State;
 import org.yakindu.sct.model.sgraph.Statechart;
 import org.yakindu.sct.model.sgraph.Transition;
 import org.yakindu.sct.model.sgraph.Vertex;
+
+import Factory.EnableFactory;
+import hamsters.HamstersOperator;
+
 import org.eclipse.emf.common.util.*;
 
 public class WriteFile {
 
-	public void main() throws Exception
+	public static void main(HamstersOperator hOP) throws Exception
 	{
 		
-		SGraphFactory factory;
+		/*SGraphFactory factory;
 		Statechart statechart;
 		Region region;
 		Vertex state;
@@ -42,7 +47,16 @@ public class WriteFile {
 		trans = factory.createTransition();
 		trans.setSource(state);
 		trans.setTarget(state2);
-	
+	*/
+		Statechart sc;
+		SGraphFactory factory = SGraphFactory.eINSTANCE;
+		sc = factory.createStatechart();
+		sc.setName("Test");
+		Region re = factory.createRegion();
+		re.setName("RegTest");
+		sc.getRegions().add(re);
+		State s = EnableFactory.enabletoSc(hOP);
+		re.getVertices().add(s);
 		
 		
 		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
@@ -51,8 +65,8 @@ public class WriteFile {
 		
 		ResourceSet reset = new ResourceSetImpl();
 		reset.getResourceFactoryRegistry().getExtensionToFactoryMap().put("sct", new SCTResourceFactory());
-		XMIResourceImpl ress = new XMIResourceImpl(URI.createFileURI("C:\\Utilisateurs\\Jeff\\Bureau\\MONFICHIER.sct"));
-		ress.getContents().add(statechart);
+		XMIResourceImpl ress = new XMIResourceImpl(URI.createFileURI(".\\MONFICHIER.sct"));
+		ress.getContents().add(sc);
 		
 		ress.save(Collections.EMPTY_MAP);
 
