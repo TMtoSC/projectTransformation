@@ -1,6 +1,7 @@
 package Factory;
 
 import org.yakindu.sct.model.sgraph.CompositeElement;
+import org.yakindu.sct.model.sgraph.FinalState;
 import org.yakindu.sct.model.sgraph.Region;
 import org.yakindu.sct.model.sgraph.SGraphFactory;
 import org.yakindu.sct.model.sgraph.State;
@@ -32,6 +33,12 @@ public class EnableFactory {
 				t.setTarget(r.getVertices().get(i));
 			}
 		}
+		FinalState fs = sgraph.createFinalState();
+		r.getVertices().add(fs);
+		Transition lastTransition = sgraph.createTransition();
+		lastTransition.setSource(r.getVertices().get(r.getVertices().size()-1));
+		lastTransition.setTarget(fs);
+		return e;
 		
 	}
 }
