@@ -60,7 +60,7 @@ public class Main {
         //Enable e = new Enable();
         //HamstersOperator hOP = new HamstersOperator();
         //hOP = (HamstersOperator) e.getAPI().getHamstersNode().get(0);
-        Enable e = new Enable();
+        taskModelCreation.Enable e = new Enable();
         Translate t = new Translate();
         t.run(e.getAPI());
         

@@ -28,7 +28,7 @@ public class Translate
 		stateChart = sc;
 	}
 	
-	public void run(HamstersAPI hAPI)
+	public void run(HamstersAPI hAPI) throws Exception
 	{
 		SGraphFactory factory = SGraphFactory.eINSTANCE;
 		Statechart sc;
@@ -37,6 +37,8 @@ public class Translate
 		Region re = factory.createRegion();
 		re.setName("RegTest");
 		sc.getRegions().add(re);
+		State s = factory.createState();
+
 		
 		for (int i = 0 ; i < hAPI.getHamstersNode().size();i++){
 			HamstersNode ha = hAPI.getHamstersNode().get(i);
@@ -44,18 +46,14 @@ public class Translate
 				ha = (HamstersNode) ha.getChildren().get(i);
 			if ( ha instanceof HamstersOperator){
 				switch( ha.getDescription() ){
-					case ">>" : State s = Factory.FactoryTransformation.enabletoSc((HamstersOperator) ha);
+					case ">>" : s = Factory.FactoryTransformation.enabletoSc((HamstersOperator) ha);
 								re.getVertices().add(s);
+			
 								break;
 				}
 			}
 		}
-		try {
 			TranslationSCT.WriteFile.main(hAPI, sc);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}	
 	}
 	
 	private void transformENtoSC (){}/*(Object... on){

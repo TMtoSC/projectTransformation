@@ -24,6 +24,7 @@ public class FactoryTransformation {
 	public static State enabletoSc(HamstersOperator hOP) {
 		State e = sgraph.createState();
 		e.isComposite();
+		e.setName("lol");
 		Region r = sgraph.createRegion();
 		e.getRegions().add(r);
 		State temp = null;
@@ -32,8 +33,8 @@ public class FactoryTransformation {
 			
 			if(!(hOP.getChildren().get(i).getClass().equals(HamstersOperator.class))) {
 				temp = sgraph.createState();
-				temp.setName(hOP.getChildren().get(i).toString());
-				r.getVertices().add(sgraph.createState());
+				temp.setName(hOP.getChildren().get(i).getDescription());
+				r.getVertices().add(temp);
 				if(i!=0){
 					t = sgraph.createTransition();
 					t.setSource(r.getVertices().get(i-1));
@@ -51,7 +52,7 @@ public class FactoryTransformation {
 		FinalState fs = sgraph.createFinalState();
 		r.getVertices().add(fs);
 		Transition lastTransition = sgraph.createTransition();
-		lastTransition.setSource(r.getVertices().get(r.getVertices().size()-1));
+		lastTransition.setSource(r.getVertices().get(r.getVertices().size()-2));
 		lastTransition.setTarget(fs);
 		return e;
 		
