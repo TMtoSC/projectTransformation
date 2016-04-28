@@ -40,12 +40,6 @@ public class EnableFactory {
 		for(int i = 0 ; i < hOP.getChildren().size(); i++) {
 			
 		}
-		
-		FinalState fs = sgraph.createFinalState();
-		r.getVertices().add(fs);
-		Transition lastTransition = sgraph.createTransition();
-		lastTransition.setSource(r.getVertices().get(r.getVertices().size()-2));
-		lastTransition.setTarget(fs);
 		return e;
 		
 	}

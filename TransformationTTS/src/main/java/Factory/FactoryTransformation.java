@@ -10,6 +10,8 @@ import org.yakindu.sct.model.sgraph.Statechart;
 import org.yakindu.sct.model.sgraph.Transition;
 //import org.yakindu.sct.model.sgraph.*;
 import org.yakindu.sct.model.sgraph.impl.SGraphFactoryImpl;
+
+
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EObject;
@@ -24,7 +26,7 @@ import hamsters.OperatorType;
 public class FactoryTransformation {
 	SGraphFactory factory = SGraphFactory.eINSTANCE;
 
-public void Transform(HamstersAPI hAPI) throws Exception {
+public Statechart Transform(HamstersAPI hAPI) throws Exception {
 	Statechart sc;
 	sc = factory.createStatechart();
 	sc.setName("Test");
@@ -55,7 +57,16 @@ public void Transform(HamstersAPI hAPI) throws Exception {
 			}
 		}
 	}
+	
+		FinalState fs = factory.createFinalState();
+		s.getRegions().get(s.getRegions().size()-1).getVertices().add(fs);
+		
+		Transition lastTransition = factory.createTransition();
+		int last = s.getRegions().get(s.getRegions().size()-1).getVertices().size()-1;
+		lastTransition.setSource(s.getRegions().get(s.getRegions().size()-1).getVertices().get(last));
+		lastTransition.setTarget(fs);
 		TranslationSCT.WriteFile.main(hAPI, sc);
+		return sc;
 }
 
 
