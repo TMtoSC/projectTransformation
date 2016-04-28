@@ -57,9 +57,8 @@
 			<groupId>org.eclipse.emf.ecore</groupId>
 			<artifactId>xmi</artifactId>
 			<version>2.3.0-v200706262000</version>
-		</dependency>
-
-		<dependency>
+			</dependency>
+			<dependency>
 			<groupId>org.eclipse.emf.ecore</groupId>
 			<artifactId>xmi</artifactId>
 			<version>2.3.0-v200706262000</version>

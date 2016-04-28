@@ -12,7 +12,11 @@ import hamsters.HamstersOperator;
 public class EnableFactory {
 	
 	private static SGraphFactory sgraph = SGraphFactory.eINSTANCE;
-
+/**
+ * transformtion de l'opérateur séquence
+ * @param hOP
+ * @return
+ */
 	public static State enabletoSc(HamstersOperator hOP) {
 		State e = sgraph.createState();
 		e.isComposite();
