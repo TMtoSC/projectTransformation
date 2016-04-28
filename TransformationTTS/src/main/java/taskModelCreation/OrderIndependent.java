@@ -36,4 +36,7 @@ public class OrderIndependent {
 			task1.addChild(task3);
 			task2.addChild(task4);
 		}
+		public HamstersAPI getAPI() {
+			return hamAPI;
+		}
 }

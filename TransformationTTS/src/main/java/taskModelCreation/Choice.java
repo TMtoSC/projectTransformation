@@ -36,5 +36,7 @@ public class Choice {
 		operator.addChild(task4);
 		
 	}
-
+	public HamstersAPI getAPI() {
+		return hamAPI;
+	}
 }

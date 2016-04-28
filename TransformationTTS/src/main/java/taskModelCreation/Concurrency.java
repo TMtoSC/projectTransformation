@@ -27,5 +27,7 @@ public class Concurrency {
 		operator.addChild(task1);
 		operator.addChild(task2);
 	}
-
+	public HamstersAPI getAPI() {
+		return hamAPI;
+	}
 }

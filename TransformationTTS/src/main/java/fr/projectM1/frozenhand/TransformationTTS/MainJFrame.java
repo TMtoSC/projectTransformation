@@ -15,7 +15,7 @@ import javax.swing.JFileChooser;
 import Factory.FactoryTransformation;
 import TranslationSCT.WriteFile;
 import hamsters.HamstersAPI;
-import taskModelCreation.Enable;
+import taskModelCreation.*;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -56,16 +56,25 @@ public class MainJFrame extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
-        jButton1 = new JButton("Créer Sequence");
-        jButton1.setVisible(true);
+        seqButton = new JButton("Créer Sequence");
+        seqButton.setVisible(true);
+        choiceButton= new JButton("Créer Choix");
+        choiceButton.setVisible(true);
         
         
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        seqButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
+                seqButtonMouseClicked(evt);
             }
         });
-        jButton1.setBackground(Color.red);
+        setAllRed();
+        
+        choiceButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                choiceButtonMouseClicked(evt);
+            }
+        });
+
         
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -96,7 +105,8 @@ public class MainJFrame extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-        		.addComponent(jButton1)
+        		.addComponent(seqButton)
+        		.addComponent(choiceButton)
                 .addComponent(jFileChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 20, Short.MAX_VALUE))
             	
@@ -104,7 +114,8 @@ public class MainJFrame extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-        		.addComponent(jButton1)
+        		.addComponent(seqButton)
+        		.addComponent(choiceButton)
                 .addComponent(jFileChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 93, Short.MAX_VALUE))
         );
@@ -118,11 +129,20 @@ public class MainJFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) 
+    private void seqButtonMouseClicked(java.awt.event.MouseEvent evt) 
     {
     	taskModelCreation.Enable e = new Enable();
     	hampi = e.getAPI();
-    	jButton1.setBackground(Color.green);
+    	setAllRed();
+    	seqButton.setBackground(Color.green);
+    }
+    
+    private void choiceButtonMouseClicked(java.awt.event.MouseEvent evt) 
+    {
+    	taskModelCreation.Choice e = new Choice();
+    	hampi = e.getAPI();
+    	setAllRed();
+    	choiceButton.setBackground(Color.green);
     }
     
     private void jMenu1MouseClicked(java.awt.event.MouseEvent evt) 
@@ -156,6 +176,16 @@ public class MainJFrame extends javax.swing.JFrame {
 			}
         }
     	
+    }
+    
+    private void setAllRed()
+    {
+        seqButton.setBackground(Color.red);
+        choiceButton.setBackground(Color.red);
+//        concButton.setBackground(Color.red);
+//        disButton.setBackground(Color.red);
+//        suspButton.setBackground(Color.red);
+//        orderButton.setBackground(Color.red);
     }
     
     /**
@@ -200,7 +230,13 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton seqButton;
+    private javax.swing.JButton choiceButton;
+    private javax.swing.JButton concButton;
+    private javax.swing.JButton disButton;
+    private javax.swing.JButton suspButton;
+    private javax.swing.JButton orderButton;
+    
     
     // End of variables declaration//GEN-END:variables
     private File selectedFile;
