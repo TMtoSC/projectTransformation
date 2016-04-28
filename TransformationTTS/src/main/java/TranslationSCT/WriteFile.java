@@ -53,7 +53,7 @@ public class WriteFile {
 		trans.setSource(state);
 		trans.setTarget(state2);
 	*/
-		URI uri = URI.createFileURI("/Users/daviddang/Desktop/MONFICHIER.sct");
+		URI uri = URI.createFileURI(".\\fichier.sct");
 	/*	Statechart sc;
 		SGraphFactory factory = SGraphFactory.eINSTANCE;
 		sc = factory.createStatechart();

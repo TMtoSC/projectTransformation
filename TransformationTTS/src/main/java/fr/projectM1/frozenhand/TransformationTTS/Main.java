@@ -8,6 +8,7 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
 
+import Factory.FactoryTransformation;
 import TranslationSCT.WriteFile;
 import hamsters.HamstersAPI;
 import hamsters.HamstersOperator;
@@ -61,8 +62,9 @@ public class Main {
         //HamstersOperator hOP = new HamstersOperator();
         //hOP = (HamstersOperator) e.getAPI().getHamstersNode().get(0);
         taskModelCreation.Enable e = new Enable();
-        Translate t = new Translate();
-        t.run(e.getAPI());
+        WriteFile.main(FactoryTransformation.Transform(e.getAPI()));
+        
+        
         
     }
 	

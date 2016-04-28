@@ -24,9 +24,9 @@ import hamsters.HamstersTask;
 import hamsters.OperatorType;
 
 public class FactoryTransformation {
-	SGraphFactory factory = SGraphFactory.eINSTANCE;
+	static SGraphFactory factory = SGraphFactory.eINSTANCE;
 
-public Statechart Transform(HamstersAPI hAPI) throws Exception {
+public static Statechart Transform(HamstersAPI hAPI) throws Exception {
 	Statechart sc;
 	sc = factory.createStatechart();
 	sc.setName("Test");
