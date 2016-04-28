@@ -51,18 +51,8 @@ public class Main {
             	frame.setVisible(true);
             }
         });
+
         
-    	/*TaskModel taskModel = new TaskModel(frame.getFile());
-		 StateChart stateChart = new StateChart();
-		 
-		 
-		 HamstersAPI api = new HamstersAPI(taskModel.getName());
-		 Translate trans = new Translate(taskModel, stateChart);*/
-        //Enable e = new Enable();
-        //HamstersOperator hOP = new HamstersOperator();
-        //hOP = (HamstersOperator) e.getAPI().getHamstersNode().get(0);
-        taskModelCreation.Enable e = new Enable();
-        WriteFile.main(FactoryTransformation.Transform(e.getAPI()));
         
         
         

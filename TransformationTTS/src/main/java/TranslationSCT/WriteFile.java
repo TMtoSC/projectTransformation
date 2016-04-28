@@ -27,7 +27,7 @@ import org.eclipse.emf.common.util.*;
 
 public class WriteFile {
 
-	public static void main(Statechart sc) throws Exception
+	public static void main(Statechart sc, String filePath) throws Exception
 	{
 		
 		/*SGraphFactory factory;
@@ -53,7 +53,7 @@ public class WriteFile {
 		trans.setSource(state);
 		trans.setTarget(state2);
 	*/
-		URI uri = URI.createFileURI(".\\fichier.sct");
+		URI uri = URI.createFileURI(filePath+".sct");
 	/*	Statechart sc;
 		SGraphFactory factory = SGraphFactory.eINSTANCE;
 		sc = factory.createStatechart();

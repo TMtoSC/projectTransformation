@@ -8,6 +8,11 @@ package fr.projectM1.frozenhand.TransformationTTS;
 
 import java.io.BufferedWriter;
 import javax.swing.JFileChooser;
+
+import Factory.FactoryTransformation;
+import TranslationSCT.WriteFile;
+import taskModelCreation.Enable;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -107,23 +112,17 @@ public class MainJFrame extends javax.swing.JFrame {
     private void jMenu2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseClicked
         
     	jFileChooser1.setVisible(true);
-    	//jFileChooser1.setFileSelectionMode(JFileChooser.CUSTOM_DIALOG);
 
         int returnVal = jFileChooser1.showDialog(this,"Enregistrer");
         if (returnVal == JFileChooser.APPROVE_OPTION) {
-            File file = jFileChooser1.getSelectedFile();
-            //System.out.println(file.getPath());
-           // try boolean res = file.createNewFile();
-        
-    	
-    	
-	    	List<String> lines = Arrays.asList("The first line", "The second line", selectedFile.getName());
-			 Path path = Paths.get(file.getPath());
-			 try {
-				Files.write(path, lines, Charset.forName("UTF-8"));
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+        	selectedFile = jFileChooser1.getSelectedFile();
+        	
+        	taskModelCreation.Enable e = new Enable();
+            try {
+				WriteFile.main(FactoryTransformation.Transform(e.getAPI()),selectedFile.getAbsolutePath());
+			} catch (Exception e1) {
+
+				e1.printStackTrace();
 			}
         }
     	
