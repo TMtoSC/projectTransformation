@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceImpl;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
 import org.yakindu.sct.model.resource.SCTResourceFactory;
@@ -14,15 +15,19 @@ import org.yakindu.sct.model.sgraph.State;
 import org.yakindu.sct.model.sgraph.Statechart;
 import org.yakindu.sct.model.sgraph.Transition;
 import org.yakindu.sct.model.sgraph.Vertex;
+import org.yakindu.sct.ui.editor.DiagramActivator;
+import org.yakindu.sct.ui.editor.editor.StatechartDiagramEditor;
+import org.yakindu.sct.ui.editor.factories.FactoryUtils;
 
 import Factory.FactoryTransformation;
+import hamsters.HamstersAPI;
 import hamsters.HamstersOperator;
 
 import org.eclipse.emf.common.util.*;
 
 public class WriteFile {
 
-	public static void main(HamstersOperator hOP) throws Exception
+	public static void main(HamstersAPI hAP,Statechart sc) throws Exception
 	{
 		
 		/*SGraphFactory factory;
@@ -48,7 +53,8 @@ public class WriteFile {
 		trans.setSource(state);
 		trans.setTarget(state2);
 	*/
-		Statechart sc;
+		URI uri = URI.createFileURI("./Users/daviddang/Desktop/MONFICHIER.sct");
+	/*	Statechart sc;
 		SGraphFactory factory = SGraphFactory.eINSTANCE;
 		sc = factory.createStatechart();
 		sc.setName("Test");
@@ -57,6 +63,8 @@ public class WriteFile {
 		sc.getRegions().add(re);
 		State s = FactoryTransformation.enabletoSc(hOP);
 		re.getVertices().add(s);
+		*/
+		
 		
 		
 		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
@@ -65,9 +73,8 @@ public class WriteFile {
 		
 		ResourceSet reset = new ResourceSetImpl();
 		reset.getResourceFactoryRegistry().getExtensionToFactoryMap().put("sct", new SCTResourceFactory());
-		XMIResourceImpl ress = new XMIResourceImpl(URI.createFileURI(".\\MONFICHIER.sct"));
+		XMIResourceImpl ress = new XMIResourceImpl(uri);
 		ress.getContents().add(sc);
-		
 		ress.save(Collections.EMPTY_MAP);
 
 	}

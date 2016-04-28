@@ -57,10 +57,12 @@ public class Main {
 		 
 		 HamstersAPI api = new HamstersAPI(taskModel.getName());
 		 Translate trans = new Translate(taskModel, stateChart);*/
+        //Enable e = new Enable();
+        //HamstersOperator hOP = new HamstersOperator();
+        //hOP = (HamstersOperator) e.getAPI().getHamstersNode().get(0);
         Enable e = new Enable();
-        HamstersOperator hOP = new HamstersOperator();
-        hOP = (HamstersOperator) e.getAPI().getHamstersNode().get(0);
-        WriteFile.main(hOP);
+        Translate t = new Translate();
+        t.run(e.getAPI());
         
     }
 	

@@ -42,7 +42,6 @@ public class FactoryTransformation {
 				}
 			else {
 				HamstersNode ot = hOP.getChildren().get(i);
-				
 			}
 		}
 		for(int i = 0 ; i < hOP.getChildren().size(); i++) {
