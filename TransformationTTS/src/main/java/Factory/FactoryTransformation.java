@@ -36,10 +36,9 @@ public Statechart Transform(HamstersAPI hAPI) throws Exception {
 	State s = factory.createState();
 
 	
-	for (int i = 0 ; i < hAPI.getHamstersNode().size();i++){
-		HamstersNode ha = hAPI.getHamstersNode().get(i);
+		HamstersNode ha = hAPI.getHamstersNode().get(0);
 		if (ha instanceof HamstersTask)
-			ha = (HamstersNode) ha.getChildren().get(i);
+			ha = (HamstersNode) ha.getChildren().get(0);
 		if ( ha instanceof HamstersOperator){
 			switch( ha.getDescription() ){
 				case ">>" : s = EnableFactory.enabletoSc((HamstersOperator) ha);
@@ -56,16 +55,15 @@ public Statechart Transform(HamstersAPI hAPI) throws Exception {
 				break;
 			}
 		}
-	}
+	
 	
 		FinalState fs = factory.createFinalState();
 		s.getRegions().get(s.getRegions().size()-1).getVertices().add(fs);
 		
 		Transition lastTransition = factory.createTransition();
-		int last = s.getRegions().get(s.getRegions().size()-1).getVertices().size()-1;
+		int last = s.getRegions().get(s.getRegions().size()-1).getVertices().size()-2;
 		lastTransition.setSource(s.getRegions().get(s.getRegions().size()-1).getVertices().get(last));
 		lastTransition.setTarget(fs);
-		TranslationSCT.WriteFile.main(hAPI, sc);
 		return sc;
 }
 

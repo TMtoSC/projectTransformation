@@ -27,7 +27,7 @@ import org.eclipse.emf.common.util.*;
 
 public class WriteFile {
 
-	public static void main(HamstersAPI hAP,Statechart sc) throws Exception
+	public static void main(Statechart sc) throws Exception
 	{
 		
 		/*SGraphFactory factory;
