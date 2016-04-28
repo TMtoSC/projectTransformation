@@ -30,30 +30,7 @@ public class Translate
 	
 	public void run(HamstersAPI hAPI) throws Exception
 	{
-		SGraphFactory factory = SGraphFactory.eINSTANCE;
-		Statechart sc;
-		sc = factory.createStatechart();
-		sc.setName("Test");
-		Region re = factory.createRegion();
-		re.setName("RegTest");
-		sc.getRegions().add(re);
-		State s = factory.createState();
-
 		
-		for (int i = 0 ; i < hAPI.getHamstersNode().size();i++){
-			HamstersNode ha = hAPI.getHamstersNode().get(i);
-			if (ha instanceof HamstersTask)
-				ha = (HamstersNode) ha.getChildren().get(i);
-			if ( ha instanceof HamstersOperator){
-				switch( ha.getDescription() ){
-					case ">>" : s = Factory.FactoryTransformation.enabletoSc((HamstersOperator) ha);
-								re.getVertices().add(s);
-			
-								break;
-				}
-			}
-		}
-			TranslationSCT.WriteFile.main(hAPI, sc);
 	}
 	
 	private void transformENtoSC (){}/*(Object... on){

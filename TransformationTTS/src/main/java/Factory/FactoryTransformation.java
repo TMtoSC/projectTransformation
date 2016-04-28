@@ -43,6 +43,15 @@ public void Transform(HamstersAPI hAPI) throws Exception {
 				case ">>" : s = EnableFactory.enabletoSc((HamstersOperator) ha);
 							re.getVertices().add(s);
 							break;
+				case "[]" : s = ChoiceFactory.choiceToSc((HamstersOperator) ha);
+							re.getVertices().add(s);
+								break;
+				case "[>" : s = DisableFactory.disableToSc((HamstersOperator) ha);
+				re.getVertices().add(s);
+				break;
+				case "|||" : s = ConcurrencyFactory.concurrencyToSc((HamstersOperator) ha);
+				re.getVertices().add(s);
+				break;
 			}
 		}
 	}
