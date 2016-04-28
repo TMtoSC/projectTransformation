@@ -29,43 +29,8 @@ public class WriteFile {
 
 	public static void main(Statechart sc, String filePath) throws Exception
 	{
-		
-		/*SGraphFactory factory;
-		Statechart statechart;
-		Region region;
-		Vertex state;
-		Vertex state2;
-		Transition trans;
-		
-		factory = SGraphFactory.eINSTANCE;
-		statechart = SGraphFactory.eINSTANCE.createStatechart();
-		statechart.setName("TA MERE");
-		region = factory.createRegion();
-		region.setName("REGION");
-		statechart.getRegions().add(region);
-		state = factory.createEntry();
-		state.setName("ETAT");
-		state2 = factory.createState();
-		state2.setName("ETAT2");
-		region.getVertices().add(state);
-		region.getVertices().add(state2);
-		trans = factory.createTransition();
-		trans.setSource(state);
-		trans.setTarget(state2);
-	*/
+
 		URI uri = URI.createFileURI(filePath+".sct");
-	/*	Statechart sc;
-		SGraphFactory factory = SGraphFactory.eINSTANCE;
-		sc = factory.createStatechart();
-		sc.setName("Test");
-		Region re = factory.createRegion();
-		re.setName("RegTest");
-		sc.getRegions().add(re);
-		State s = FactoryTransformation.enabletoSc(hOP);
-		re.getVertices().add(s);
-		*/
-		
-		
 		
 		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
 		Map<String, Object> m = reg.getExtensionToFactoryMap();

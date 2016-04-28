@@ -6,11 +6,15 @@
 
 package fr.projectM1.frozenhand.TransformationTTS;
 
+import java.awt.Color;
 import java.io.BufferedWriter;
+
+import javax.swing.JButton;
 import javax.swing.JFileChooser;
 
 import Factory.FactoryTransformation;
 import TranslationSCT.WriteFile;
+import hamsters.HamstersAPI;
 import taskModelCreation.Enable;
 
 import java.io.File;
@@ -52,6 +56,17 @@ public class MainJFrame extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
+        jButton1 = new JButton("Créer Sequence");
+        jButton1.setVisible(true);
+        
+        
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+        jButton1.setBackground(Color.red);
+        
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -81,19 +96,34 @@ public class MainJFrame extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+        		.addComponent(jButton1)
                 .addComponent(jFileChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 20, Short.MAX_VALUE))
+            	
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+        		.addComponent(jButton1)
                 .addComponent(jFileChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 93, Short.MAX_VALUE))
         );
+        
+        
+        /*
+         * 
+         * 
+         */
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) 
+    {
+    	taskModelCreation.Enable e = new Enable();
+    	hampi = e.getAPI();
+    	jButton1.setBackground(Color.green);
+    }
     
     private void jMenu1MouseClicked(java.awt.event.MouseEvent evt) 
     {//GEN-FIRST:event_jMenu1MouseClicked
@@ -117,9 +147,9 @@ public class MainJFrame extends javax.swing.JFrame {
         if (returnVal == JFileChooser.APPROVE_OPTION) {
         	selectedFile = jFileChooser1.getSelectedFile();
         	
-        	taskModelCreation.Enable e = new Enable();
+        	
             try {
-				WriteFile.main(FactoryTransformation.Transform(e.getAPI()),selectedFile.getAbsolutePath());
+				WriteFile.main(FactoryTransformation.Transform(hampi),selectedFile.getAbsolutePath());
 			} catch (Exception e1) {
 
 				e1.printStackTrace();
@@ -169,8 +199,13 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
+    
+    private javax.swing.JButton jButton1;
+    
     // End of variables declaration//GEN-END:variables
     private File selectedFile;
+    
+    private HamstersAPI hampi;
     
     
     public File getFile()
