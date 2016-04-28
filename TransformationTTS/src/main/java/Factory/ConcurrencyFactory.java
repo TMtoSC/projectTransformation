@@ -59,7 +59,7 @@ public class ConcurrencyFactory extends FactoryTransformation{
 			r.getVertices().add(appel(hp));
 		}
 		/**
-		 * fin de création.
+		 * fin de création..
 		 */
 		Region rTemp1 = null;
 		Region rTemp2 = null;
