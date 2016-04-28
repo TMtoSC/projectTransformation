@@ -70,8 +70,8 @@ public Statechart Transform(HamstersAPI hAPI) throws Exception {
 }
 
 
-public State appel(String str, HamstersOperator ha){
-	switch( str ){
+public static State appel(HamstersOperator ha){
+	switch( ha.getDescription()){
 		case ">>" : return EnableFactory.enabletoSc(ha);
 		case "[]" : return ChoiceFactory.choiceToSc(ha);
 		case "[>" : return DisableFactory.disableToSc(ha);
