@@ -27,34 +27,35 @@ public class EnableFactory extends FactoryTransformation {
 		l.setSource(ent);
 		r.getVertices().add(ent);
 		for( int i = 0 ; i < hOP.getChildren().size() ; i++) {
-			
+
 			if(!(hOP.getChildren().get(i).getClass().equals(HamstersOperator.class))) {
 				temp = sgraph.createState();
 				temp.setName(hOP.getChildren().get(i).getDescription());
 				r.getVertices().add(temp);
-				if(i ==0){
+				if(i == 0){
 					l.setTarget(temp);
 				}
 				if(i!=0){
-					t = sgraph.createTransition();
-					t.setSource(r.getVertices().get(i-1));
-					t.setTarget(r.getVertices().get(i));
-					}
+					//t = sgraph.createTransition();
+					l.setSource(r.getVertices().get(i-1));
+					l.setTarget(r.getVertices().get(i));
 				}
+			}
 			else {
 				/**
 				 * Faire attention
-				 * possibilité de bug ! 
+				 * possibilité de bug !
 				 */
+				l.setSource(r.getVertices().get(i-1));
 				HamstersOperator ot = (HamstersOperator) hOP.getChildren().get(i);
 				r.getVertices().add(appel(ot));
 			}
 		}
 		for(int i = 0 ; i < hOP.getChildren().size(); i++) {
-			
+
 		}
 		return e;
-		
+
 	}
 
 }
