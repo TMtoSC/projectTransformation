@@ -70,10 +70,10 @@ public static Statechart Transform(HamstersAPI hAPI) throws Exception {
 public static State appel(HamstersNode hN){
 	HamstersOperator ha =null;
 	if (hN instanceof HamstersTask) {
-		ha = (HamstersOperator) hN.getChildren().get(1);
+		ha = (HamstersOperator) hN.getChildren().get(0);
 	}
-	else {
-		 ha = (HamstersOperator) hN.getChildren().get(0);
+	else if (hN instanceof HamstersOperator){
+		 ha = (HamstersOperator) hN;
 	}
 	switch( ha.getDescription()){
 		case ">>" : return EnableFactory.enabletoSc(ha);

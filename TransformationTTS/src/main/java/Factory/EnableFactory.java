@@ -7,6 +7,7 @@ import org.yakindu.sct.model.sgraph.State;
 import org.yakindu.sct.model.sgraph.Transition;
 
 import TranslationSCT.WriteFile;
+import hamsters.HamstersNode;
 import hamsters.HamstersOperator;
 import taskModelCreation.Enable2;
 
@@ -29,7 +30,7 @@ public class EnableFactory extends FactoryTransformation {
 		Transition t = null;
 		// création de l'enable
 		for( int i = 0 ; i < hOP.getChildren().size() ; i++) {
-			if(!(hOP.getChildren().get(i).getClass().equals(HamstersOperator.class))) {
+			if(hOP.getChildren().get(i).isLeaf()) {
 				temp = sgraph.createState();
 				temp.setName(hOP.getChildren().get(i).getDescription());
 				r.getVertices().add(temp);
@@ -39,7 +40,7 @@ public class EnableFactory extends FactoryTransformation {
 				 * Faire attention
 				 * possibilité de bug !
 				 */
-				HamstersOperator ot = (HamstersOperator) hOP.getChildren().get(i);
+				HamstersNode ot = hOP.getChildren().get(i);
 				temp = appel(ot);
 				r.getVertices().add(temp);
 
