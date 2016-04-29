@@ -33,8 +33,8 @@ public class DisableFactory extends FactoryTransformation{
 					 * possibilité de bug !
 					 */
 					HamstersNode ot = hOP.getChildren().get(i);
-					State sOt = appel(ot);
-					r.getVertices().add(sOt);
+					temp = appel(ot);
+					r.getVertices().add(temp);
 				}
 					t = sgraph.createTransition();
 					t.setSource(r.getVertices().get(0));
