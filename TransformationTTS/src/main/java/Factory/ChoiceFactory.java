@@ -41,12 +41,29 @@ public class ChoiceFactory extends FactoryTransformation {
 		
 		// création des fils et de ses transitions avec le parent 
 		for (int i = 0; i < hOP.getChildren().size(); i++) {
-			temp = sgraph.createState();
-			temp.setName(hOP.getChildren().get(i).getDescription());
-			r.getVertices().add(temp);
+			if(!(hOP.getChildren().get(i).getClass().equals(HamstersOperator.class)))
+			{
+				temp = sgraph.createState();
+				temp.setName(hOP.getChildren().get(i).getDescription());
+				r.getVertices().add(temp);
+			}
+			else {
+				/**
+				 * Faire attention
+				 * possibilité de bug !
+				 */
+				HamstersOperator ot = (HamstersOperator) hOP.getChildren().get(i);
+				temp = appel(ot);
+				r.getVertices().add(temp);
+
+
+			}
+
+			// création de toutes les transitions
 			t = sgraph.createTransition();
 			t.setSource(initialChoiceState);
-			t.setTarget(temp);	
+			t.setTarget(temp);
+			t = null;
 		}
 		return e;
 	}
