@@ -28,9 +28,9 @@ public class FactoryTransformation {
 	public static Statechart Transform(HamstersAPI hAPI) throws Exception {
 		Statechart sc;
 		sc = factory.createStatechart();
-		sc.setName("Test");
+		sc.setName("initial stateChart");
 		Region re = factory.createRegion();
-		re.setName("RegTest");
+		re.setName("initial region");
 		sc.getRegions().add(re);
 		State s = factory.createState();
 
