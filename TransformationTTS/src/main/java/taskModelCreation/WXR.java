@@ -25,19 +25,23 @@ public class WXR {
 		//profondeur 1
 		HamstersTask decideWXRIsReady = new HamstersTask();
 		decideWXRIsReady.setType(TaskType.COGNITIVE);
+		decideWXRIsReady.setDescription("decide WXR is ready");
 		HamstersTask setupWXR = new HamstersTask();
 		setupWXR.setType(TaskType.ABSTRACT);
+		setupWXR.setDescription("setup WXR");
 		op.addChild(setupWXR);
 		op.addChild(decideWXRIsReady);
 		
 		//profondeur 2
 		HamstersOperator op1 = new HamstersOperator();
 		op1.setType(OperatorType.CONCURRENT);
-		setupWXR.addChild(op);
+		setupWXR.addChild(op1);
 		HamstersTask manageMode = new HamstersTask();
 		manageMode.setType(TaskType.ABSTRACT);
+		manageMode.setDescription("manage mode");
 		HamstersTask manageTiltAngle = new HamstersTask();
 		manageTiltAngle.setType(TaskType.ABSTRACT);
+		manageTiltAngle.setDescription("manage tilt angle");
 		op1.addChild(manageMode);
 		op1.addChild(manageTiltAngle);
 		
@@ -52,6 +56,7 @@ public class WXR {
 		
 		HamstersTask decideModeIsCorrect = new HamstersTask();
 		decideModeIsCorrect.setType(TaskType.COGNITIVE);
+		decideModeIsCorrect.setDescription("decide mode is correct");
 		op2.addChild(decideModeIsCorrect);
 		
 		//profondeur 3 manageTiltAngle
@@ -61,19 +66,23 @@ public class WXR {
 		
 		HamstersTask decideChangeTiltAngle = new HamstersTask();
 		decideChangeTiltAngle.setType(TaskType.COGNITIVE);
+		decideChangeTiltAngle.setDescription("decide change tilt angle");
 		op4.addChild(decideChangeTiltAngle);
 		
 		HamstersTask changeTiltAngle = new HamstersTask();
 		changeTiltAngle.setType(TaskType.ABSTRACT);
+		changeTiltAngle.setDescription("change tilt angle");
 		op4.addChild(changeTiltAngle);
 		
 		//profondeur 4 manageMode
 		HamstersTask decideChangeMode = new HamstersTask();
 		decideChangeMode.setType(TaskType.COGNITIVE);
+		decideChangeMode.setDescription("decide change mode");
 		op3.addChild(decideChangeMode);
 		
 		HamstersTask changeMode = new HamstersTask();
 		changeMode.setType(TaskType.ABSTRACT);
+		changeMode.setDescription("change mode");
 		op3.addChild(changeMode);
 		
 
@@ -88,6 +97,7 @@ public class WXR {
 		
 		HamstersTask decideAngleIsCorrect = new HamstersTask();
 		decideAngleIsCorrect.setType(TaskType.COGNITIVE);
+		decideAngleIsCorrect.setDescription("decide angle is correct");
 		op6.addChild(decideAngleIsCorrect);
 		
 		//profondeur 5 manageMode
@@ -98,14 +108,19 @@ public class WXR {
 		
 		HamstersTask switchToWXON = new HamstersTask();
 		switchToWXON.setType(TaskType.INPUT);
+		switchToWXON.setDescription("switch to WXON");
 		HamstersTask switchToTST = new HamstersTask();
 		switchToTST.setType(TaskType.INPUT);
+		switchToTST.setDescription("switch to TST");
 		HamstersTask switchToWXA = new HamstersTask();
-		switchToTST.setType(TaskType.INPUT);
+		switchToWXA.setType(TaskType.INPUT);
+		switchToWXA.setDescription("switch to WXA");
 		HamstersTask switchToSTDBY = new HamstersTask();
 		switchToSTDBY.setType(TaskType.INPUT);
+		switchToSTDBY.setDescription("switch to STDBY");
 		HamstersTask switchOff = new HamstersTask();
 		switchOff.setType(TaskType.INPUT);
+		switchOff.setDescription("switch OFF");
 		
 		op5.addChild(switchToWXON);
 		op5.addChild(switchToTST);
@@ -117,12 +132,16 @@ public class WXR {
 		
 		HamstersTask selectManual = new HamstersTask();
 		selectManual.setType(TaskType.INPUT);
+		selectManual.setDescription("select manual");
 		HamstersTask stabilizationOff = new HamstersTask();
 		stabilizationOff.setType(TaskType.INPUT);
+		stabilizationOff.setDescription("stabilization OFF");
 		HamstersTask angleEditing = new HamstersTask();
 		angleEditing.setType(TaskType.ABSTRACT);
+		angleEditing.setDescription("angle editing");
 		HamstersTask selectAuto = new HamstersTask();
 		selectAuto.setType(TaskType.INPUT);
+		selectAuto.setDescription("select auto");
 		
 		op7.addChild(selectManual);
 		op7.addChild(stabilizationOff);
@@ -137,8 +156,10 @@ public class WXR {
 		
 		HamstersTask modifyAngle = new HamstersTask();
 		modifyAngle.setType(TaskType.ABSTRACT);
+		modifyAngle.setDescription("modify angle");
 		HamstersTask stabilizationOn = new HamstersTask();
 		stabilizationOff.setType(TaskType.INPUT);
+		stabilizationOff.setDescription("stabilization OFF");
 		
 		op8.addChild(modifyAngle);
 		op8.addChild(stabilizationOn);
@@ -150,10 +171,13 @@ public class WXR {
 		
 		HamstersTask decideAngle = new HamstersTask();
 		decideAngle.setType(TaskType.COGNITIVE);
+		decideAngle.setDescription("decide angle");
 		HamstersTask editAngle = new HamstersTask();
 		editAngle.setType(TaskType.INPUT);
+		editAngle.setDescription("edit angle");
 		HamstersTask checkUpdateValue = new HamstersTask();
 		checkUpdateValue.setType(TaskType.OUTPUT);
+		checkUpdateValue.setDescription("check update value");
 		
 		op9.addChild(decideAngle);
 		op9.addChild(editAngle);
