@@ -21,10 +21,10 @@ public class SuspendResume {
 			
 			HamstersTask task1 = new HamstersTask();
 			task1.setType(TaskType.USER);
-			task1.setHelpText("Tache Feuille numero 1");
+			task1.setDescription("Tache désactivée et resume");
 			HamstersTask task2 = new HamstersTask();
 			task2.setType(TaskType.USER);
-			task2.setHelpText("Tache Feuille numero 2");
+			task2.setDescription("Tache désactivante");
 			operator.addChild(task1);
 			operator.addChild(task2);
 		}
