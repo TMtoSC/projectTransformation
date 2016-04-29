@@ -16,16 +16,27 @@ public class Concurrency {
 		operator.setType(OperatorType.CONCURRENT);
 		hamAPI.addHamstersNode(operator);
 		
-		
+		/**
+		 * tache 1
+		 */
 		HamstersTask task1 = new HamstersTask();
 		task1.setType(TaskType.USER);
 		task1.setDescription("Tache Feuille numero 1");
+		/**
+		 * tache 2
+		 */
 		HamstersTask task2 = new HamstersTask();
 		task2.setType(TaskType.USER);
 		task2.setDescription("Tache Feuille numero 2");
+		/**
+		 * tache 3
+		 */
 		HamstersTask task3 = new HamstersTask();
 		task3.setType(TaskType.USER);
 		task3.setDescription("Tache Feuille numero 3");
+		/**
+		 * ajout operator
+		 */
 		operator.addChild(task1);
 		operator.addChild(task2);
 		operator.addChild(task3);

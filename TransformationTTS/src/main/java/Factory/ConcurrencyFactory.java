@@ -8,6 +8,7 @@ import org.yakindu.sct.model.sgraph.Transition;
 
 import TranslationSCT.WriteFile;
 import hamsters.HamstersAPI;
+import hamsters.HamstersNode;
 import hamsters.HamstersOperator;
 import taskModelCreation.Concurrency;
 import taskModelCreation.Enable2;
@@ -34,17 +35,9 @@ public class ConcurrencyFactory extends FactoryTransformation{
 		 * ajout du premier état.
 		 */
 		if(!(hOP.getChildren().get(0).isLeaf())) {
-			if(hOP.getChildren().get(0).getClass() == HamstersOperator.class) {
-				HamstersOperator ho = (HamstersOperator) hOP.getChildren().get(0);
-				s = appel(ho);
+			HamstersNode ha = hOP.getChildren().get(0);	
+			s = appel(ha);
 				r.getVertices().add(s);
-			}
-			else {
-				HamstersOperator ho = (HamstersOperator) hOP.getChildren().get(0).getChildren().get(0);
-				s = appel(ho);
-				r.getVertices().add(s);
-			}
-			
 		}
 		else {
 			s.setName(hOP.getChildren().get(0).getDescription());
@@ -54,37 +47,84 @@ public class ConcurrencyFactory extends FactoryTransformation{
 		}
 		s = null;
 		if(hOP.getChildren().size() >2) {
-			for(int i = 1 ; i < hOP.getChildren().size() ; i++ ) {
+			for(int i = 1 ; i < hOP.getChildren().size()-1; i++ ) {
 				/**
 				 * création de la deuxieme concurrence
+				 * avec un état orthogonal 
 				 */
-				t = null;
 				t = sgraph.createTransition();
 				State rec = sgraph.createState();
+				/**
+				 * State Leaf
+				 * 
+				 */
+				State sl = sgraph.createState();
+				rec.isOrthogonal();
 				Entry ent = sgraph.createEntry();
-				e.isOrthogonal();
+				/**
+				 * création de la première région
+				 */
 				Region regtemp = sgraph.createRegion();
-				e.getRegions().add(regtemp);
+				rec.getRegions().add(regtemp);
+				/**
+				 * ajout de l'entrée
+				 */
+				regtemp.getVertices().add(ent);
+				/**
+				 * si ce n'est pas une feuille
+				 * ajout récursif
+				 */
 				if(!(hOP.getChildren().get(i).isLeaf())) {
-					if(hOP.getChildren().get(i).getClass() == HamstersOperator.class) {
-						HamstersOperator ho = (HamstersOperator) hOP.getChildren().get(i);	
-						s = appel(ho);
-						regtemp.getVertices().add(s);
-					}
-					else {
-						HamstersOperator ho = (HamstersOperator) hOP.getChildren().get(i).getChildren().get(0);
-						s = appel(ho);
-						regtemp.getVertices().add(s);
-					}
-					
+						HamstersNode ha = hOP.getChildren().get(i);	
+						State so = sgraph.createState();
+						so = appel(ha);
+						regtemp.getVertices().add(so);					
 				}
 				else {
-					regtemp.getVertices().add(s);
-					s.setName(hOP.getChildren().get(i).getDescription());
-					t = sgraph.createTransition();
-					t.setSource(entry);
-					t.setTarget(s);
+					/**
+					 * si l'état est une feuille.
+					 * Ajout de l'état à la région précédement créee
+					 * 
+					 */
+					
+					regtemp.getVertices().add(sl);
+					sl.setName(hOP.getChildren().get(i).getDescription());
 				}
+					Transition t2 = sgraph.createTransition();
+					t2.setSource(entry);
+					t2.setTarget(sl);
+				
+				if( i == hOP.getChildren().size() -2){
+					/**
+					 * Creation du dernier etat de la concurrence
+					 * Quand on arrive au niveau de la dernière concurrence
+					 * 
+					 */
+					Region lastreg = sgraph.createRegion();
+					rec.getRegions().add(lastreg);
+					lastreg.getVertices().add(ent);
+					/**
+					 * Si l'état n'est pas une feuille
+					 */
+					if(!(hOP.getChildren().get(i+1).isLeaf())) {
+						HamstersNode ha = hOP.getChildren().get(i+1);	
+						s = appel(ha);
+						regtemp.getVertices().add(s);					
+				}
+				else {
+					/**
+					 * si l'état est une feuille
+					 */
+					State lastState = sgraph.createState();
+					regtemp.getVertices().add(lastState);
+					lastState.setName(hOP.getChildren().get(i+1).getDescription());
+					
+				}
+					t2 = sgraph.createTransition();
+					t2.setSource(entry);
+					t2.setTarget(s);
+				}
+			rec = null;
 			}
 		}
 		/*
