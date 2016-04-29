@@ -160,4 +160,7 @@ public class WXR {
 		op9.addChild(checkUpdateValue);
 		
 	}
+	public HamstersAPI getAPI() {
+		return hamAPI;
+	}
 }
