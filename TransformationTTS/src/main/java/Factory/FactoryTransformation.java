@@ -59,6 +59,10 @@ public class FactoryTransformation {
 					s = SuspendResumeFactory.suspendResumeToSc((HamstersOperator) ha);
 					re.getVertices().add(s);
 					break;
+				case "|=|" :
+					s = OrderIndependantFactory.orderindependantToSC((HamstersOperator) ha);
+					re.getVertices().add(s);
+					break;
 
 			}
 		}
@@ -90,6 +94,8 @@ public class FactoryTransformation {
 				return ConcurrencyFactory.concurrencyToSc(ha);
 			case "|>" :
 				return SuspendResumeFactory.suspendResumeToSc(ha);
+			case "|=|" : 
+				return OrderIndependantFactory.orderindependantToSC(ha);
 		}
 		return null;
 	}
