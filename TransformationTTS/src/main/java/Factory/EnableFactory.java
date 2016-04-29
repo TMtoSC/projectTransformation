@@ -1,15 +1,14 @@
 package Factory;
 
 import org.yakindu.sct.model.sgraph.Entry;
-import org.yakindu.sct.model.sgraph.FinalState;
 import org.yakindu.sct.model.sgraph.Region;
 import org.yakindu.sct.model.sgraph.SGraphFactory;
 import org.yakindu.sct.model.sgraph.State;
 import org.yakindu.sct.model.sgraph.Transition;
-import org.yakindu.sct.model.sgraph.Vertex;
 
-import hamsters.HamstersNode;
+import TranslationSCT.WriteFile;
 import hamsters.HamstersOperator;
+import taskModelCreation.Enable2;
 
 public class EnableFactory extends FactoryTransformation {
 
@@ -54,7 +53,16 @@ public class EnableFactory extends FactoryTransformation {
 			t = null;
 		}
 		return e;
-
+	}
+	
+	public static void main(String[] args){
+		taskModelCreation.Enable2 e = new Enable2();
+		try {
+			WriteFile.main(FactoryTransformation.Transform(e.getAPI()), "/Users/daviddang/Desktop/testFile");
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 	}
 
 }
