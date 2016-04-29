@@ -6,53 +6,52 @@ import org.yakindu.sct.model.sgraph.Region;
 import org.yakindu.sct.model.sgraph.SGraphFactory;
 import org.yakindu.sct.model.sgraph.State;
 import org.yakindu.sct.model.sgraph.Transition;
+import org.yakindu.sct.model.sgraph.Vertex;
 
 import hamsters.HamstersNode;
 import hamsters.HamstersOperator;
 
 public class EnableFactory extends FactoryTransformation {
-	
+
 	private static SGraphFactory sgraph = SGraphFactory.eINSTANCE;
 
 	public static State enabletoSc(HamstersOperator hOP) {
+		// création de l'état composite
 		State e = sgraph.createState();
 		e.isComposite();
-		e.setName("lol");
+		e.setName("enableComposite");
+		// création de la région du composite
 		Region r = sgraph.createRegion();
 		e.getRegions().add(r);
-		State temp = null;
-		Transition t = null;
-		Entry ent = sgraph.createEntry();
-		Transition l = sgraph.createTransition();
-		l.setSource(ent);
-		r.getVertices().add(ent);
-		for( int i = 0 ; i < hOP.getChildren().size() ; i++) {
 
+		State temp = null;
+		Entry ent = sgraph.createEntry();
+		r.getVertices().add(ent);
+		Transition t = null;
+		// création de l'enable
+		for( int i = 0 ; i < hOP.getChildren().size() ; i++) {
 			if(!(hOP.getChildren().get(i).getClass().equals(HamstersOperator.class))) {
 				temp = sgraph.createState();
 				temp.setName(hOP.getChildren().get(i).getDescription());
 				r.getVertices().add(temp);
-				if(i == 0){
-					l.setTarget(temp);
-				}
-				if(i!=0){
-					//t = sgraph.createTransition();
-					l.setSource(r.getVertices().get(i-1));
-					l.setTarget(r.getVertices().get(i));
-				}
 			}
 			else {
 				/**
 				 * Faire attention
 				 * possibilité de bug !
 				 */
-				l.setSource(r.getVertices().get(i-1));
 				HamstersOperator ot = (HamstersOperator) hOP.getChildren().get(i);
-				r.getVertices().add(appel(ot));
-			}
-		}
-		for(int i = 0 ; i < hOP.getChildren().size(); i++) {
+				State sOt = appel(ot);
+				r.getVertices().add(sOt);
 
+
+			}
+
+			// création de toutes les transitions
+			t = sgraph.createTransition();
+			t.setSource(r.getVertices().get(i));
+			t.setTarget(r.getVertices().get(i+1));
+			t = null;
 		}
 		return e;
 
