@@ -15,7 +15,7 @@ public class Choice {
 		hamAPI = new HamstersAPI("Choice 1");
 		HamstersOperator operator = new HamstersOperator();
 		operator.setType(OperatorType.CHOICE);
-		hamAPI.addHamstersNode(new HamstersOperator());
+		hamAPI.addHamstersNode(operator);
 		
 		HamstersTask task1 = new HamstersTask();
 		task1.setType(TaskType.USER);

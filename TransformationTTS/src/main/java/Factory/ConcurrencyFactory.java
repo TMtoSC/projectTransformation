@@ -6,25 +6,36 @@ import org.yakindu.sct.model.sgraph.SGraphFactory;
 import org.yakindu.sct.model.sgraph.State;
 import org.yakindu.sct.model.sgraph.Transition;
 
+import TranslationSCT.WriteFile;
+import hamsters.HamstersAPI;
 import hamsters.HamstersOperator;
+import taskModelCreation.Concurrency;
+import taskModelCreation.Enable2;
 
 public class ConcurrencyFactory extends FactoryTransformation{
 	private static SGraphFactory sgraph = SGraphFactory.eINSTANCE;
 	public static State concurrencyToSc(HamstersOperator hOP) {
 		State e = sgraph.createState();
 		e.isOrthogonal();
+		Region r = sgraph.createRegion();
+		Region r2 = sgraph.createRegion();
+		e.getRegions().add(r);
+		e.getRegions().add(r2);
+		e.setName("Concurrency");
 		HamstersOperator hp;
 		Entry ent = sgraph.createEntry();
+		ent.setName("MyEntry");
 		/**
 		 * création de la première région.
 		 */
-		Region r = sgraph.createRegion();
+		//Region r = sgraph.createRegion();
 		e.getRegions().add(r);
 		State synchro1 = sgraph.createState();
 		synchro1.setName("Synchronisation n°1");
 		State compoLeft = sgraph.createState();
 		compoLeft.setName(hOP.getChildren().get(0).getDescription());
 		r.getVertices().add(ent);
+		r.getVertices().add(compoLeft);
 		r.getVertices().add(synchro1);
 		Transition t1 = sgraph.createTransition();
 		t1.setSource(ent);
@@ -42,7 +53,7 @@ public class ConcurrencyFactory extends FactoryTransformation{
 		 */
 		State synchro2 = sgraph.createState();
 		synchro2.setName("Synchronisation n°2");
-		Region r2 = sgraph.createRegion();
+//		Region r2 = sgraph.createRegion();
 		State compoRight = sgraph.createState();
 		compoRight.setName(hOP.getChildren().get(0).getDescription());
 		Transition t2 = sgraph.createTransition();
@@ -115,5 +126,12 @@ public class ConcurrencyFactory extends FactoryTransformation{
 		}*/
 		return e;
 
+	}
+	
+	
+	public static void main(String[] args) throws Exception{
+		Concurrency e = new Concurrency();
+    	HamstersAPI hampi = e.getAPI();
+    	WriteFile.main(FactoryTransformation.Transform(hampi),".\\lol");
 	}
 }

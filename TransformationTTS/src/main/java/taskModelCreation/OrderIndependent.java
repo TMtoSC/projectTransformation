@@ -16,7 +16,7 @@ public class OrderIndependent {
 			hamAPI = new HamstersAPI("OrderIndependent 1");
 			HamstersOperator operator = new HamstersOperator();
 			operator.setType(OperatorType.ORDER_INDEPENDENT);
-			hamAPI.addHamstersNode(new HamstersOperator());
+			hamAPI.addHamstersNode(operator);
 			
 			
 			HamstersTask task1 = new HamstersTask();

@@ -14,7 +14,7 @@ public class Disable {
 		hamAPI = new HamstersAPI("Disable 1");
 		HamstersOperator operator = new HamstersOperator();
 		operator.setType(OperatorType.DISABLE);
-		hamAPI.addHamstersNode(new HamstersOperator());
+		hamAPI.addHamstersNode(operator);
 		
 		HamstersTask task1 = new HamstersTask();
 		task1.setType(TaskType.USER);

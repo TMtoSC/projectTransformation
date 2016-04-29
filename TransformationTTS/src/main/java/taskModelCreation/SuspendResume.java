@@ -16,7 +16,7 @@ public class SuspendResume {
 			hamAPI = new HamstersAPI("SuspendResume 1");
 			HamstersOperator operator = new HamstersOperator();
 			operator.setType(OperatorType.SUSPEND_RESUME);
-			hamAPI.addHamstersNode(new HamstersOperator());
+			hamAPI.addHamstersNode(operator);
 			
 			
 			HamstersTask task1 = new HamstersTask();
