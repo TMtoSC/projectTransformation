@@ -14,7 +14,11 @@ import Factory.FactoryTransformation;
 import TranslationSCT.WriteFile;
 import hamsters.HamstersAPI;
 import taskModelCreation.Choice;
+import taskModelCreation.Concurrency;
+import taskModelCreation.Disable;
 import taskModelCreation.Enable;
+import taskModelCreation.OrderIndependent;
+import taskModelCreation.SuspendResume;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -245,19 +249,31 @@ public class JFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
-        // TODO add your handling code here:
+    	taskModelCreation.OrderIndependent Operateur = new OrderIndependent();
+    	hampi = Operateur.getAPI();
+    	setAllRed();
+    	jButton3.setBackground(Color.green);
     }//GEN-LAST:event_jButton3MouseClicked
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
-        // TODO add your handling code here:
+    	taskModelCreation.Concurrency Operateur = new Concurrency();
+    	hampi = Operateur.getAPI();
+    	setAllRed();
+    	jButton4.setBackground(Color.green);
     }//GEN-LAST:event_jButton4MouseClicked
 
     private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
-        // TODO add your handling code here:
+    	taskModelCreation.Disable Operateur = new Disable();
+    	hampi = Operateur.getAPI();
+    	setAllRed();
+    	jButton5.setBackground(Color.green);
     }//GEN-LAST:event_jButton5MouseClicked
 
     private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
-        // TODO add your handling code here:
+    	taskModelCreation.SuspendResume Operateur = new SuspendResume();
+    	hampi = Operateur.getAPI();
+    	setAllRed();
+    	jButton6.setBackground(Color.green);
     }//GEN-LAST:event_jButton6MouseClicked
 
     private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
