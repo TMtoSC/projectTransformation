@@ -7,6 +7,7 @@ import org.yakindu.sct.model.sgraph.SGraphFactory;
 import org.yakindu.sct.model.sgraph.State;
 import org.yakindu.sct.model.sgraph.Transition;
 
+import TranslationSCT.WriteFile;
 import hamsters.HamstersOperator;
 
 public class ChoiceFactory extends FactoryTransformation {
@@ -66,5 +67,17 @@ public class ChoiceFactory extends FactoryTransformation {
 			t = null;
 		}
 		return e;
+	}
+	
+	public static void main (String[] args){
+		taskModelCreation.Choice c = new taskModelCreation.Choice();
+		try {
+			WriteFile.main(FactoryTransformation.Transform(c.getAPI()),"/Users/daviddang/Desktop/choiceTest");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
 	}
 }
