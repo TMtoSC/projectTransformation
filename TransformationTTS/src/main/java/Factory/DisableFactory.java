@@ -9,6 +9,7 @@ import org.yakindu.sct.model.sgraph.Transition;
 import TranslationSCT.WriteFile;
 import hamsters.HamstersNode;
 import hamsters.HamstersOperator;
+import taskModelCreation.Disable;
 
 public class DisableFactory extends FactoryTransformation{
 	private static SGraphFactory sgraph = SGraphFactory.eINSTANCE;
@@ -24,7 +25,7 @@ public class DisableFactory extends FactoryTransformation{
 			for (int i = 0; i < hOP.getChildren().size(); i++) {
 				if(hOP.getChildren().get(i).isLeaf()) {
 					temp = sgraph.createState();
-					temp.setName(hOP.getChildren().get(i).toString());
+					temp.setName(hOP.getChildren().get(i).getDescription());
 					r.getVertices().add(temp);
 				}
 				else{
@@ -36,12 +37,22 @@ public class DisableFactory extends FactoryTransformation{
 					temp = appel(ot);
 					r.getVertices().add(temp);
 				}
-					t = sgraph.createTransition();
-					t.setSource(r.getVertices().get(0));
-					t.setTarget(r.getVertices().get(1));
-					t = null;
+
 			}
+			t = sgraph.createTransition();
+			t.setSource(r.getVertices().get(0));
+			t.setTarget(r.getVertices().get(1));
+			t = null;
 		}
 		return e;
+	}
+	public static void main (String[] args){
+		taskModelCreation.Disable d = new Disable();
+		try {
+			WriteFile.main(FactoryTransformation.Transform(d.getAPI()),"/Users/daviddang/Desktop/disableTest");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }
