@@ -17,18 +17,19 @@ public class Choice {
 		operator.setType(OperatorType.CHOICE);
 		hamAPI.addHamstersNode(operator);
 		
+		
 		HamstersTask task1 = new HamstersTask();
 		task1.setType(TaskType.USER);
-		task1.setHelpText("Tache Feuille numero 1");
+		task1.setDescription("Tache Feuille numero 1");
 		HamstersTask task2 = new HamstersTask();
 		task2.setType(TaskType.USER);
-		task2.setHelpText("Tache Feuille numero 2");
+		task2.setDescription("Tache Feuille numero 2");
 		HamstersTask task3 = new HamstersTask();
 		task3.setType(TaskType.USER);
-		task3.setHelpText("Tache Feuille numero 3");
+		task3.setDescription("Tache Feuille numero 3");
 		HamstersTask task4 = new HamstersTask();
 		task4.setType(TaskType.USER);
-		task4.setHelpText("Tache Feuille numero 4");
+		task4.setDescription("Tache Feuille numero 4");
 		
 		operator.addChild(task1);
 		operator.addChild(task2);

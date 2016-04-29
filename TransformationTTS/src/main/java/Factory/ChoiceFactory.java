@@ -1,5 +1,6 @@
 package Factory;
 
+import org.yakindu.sct.model.sgraph.Choice;
 import org.yakindu.sct.model.sgraph.Entry;
 import org.yakindu.sct.model.sgraph.Region;
 import org.yakindu.sct.model.sgraph.SGraphFactory;
@@ -16,7 +17,7 @@ public class ChoiceFactory extends FactoryTransformation {
 		// création de l'état composite initial
 		State e = sgraph.createState();
 		e.isComposite();
-		e.setName(hOP.getParent().getDescription());
+		e.setName(hOP.getDescription());
 		
 		// création de la région de cet état composite
 		Region r = sgraph.createRegion();
@@ -27,7 +28,7 @@ public class ChoiceFactory extends FactoryTransformation {
 		r.getVertices().add(ent);
 		
 		// création de l'état ammorcant le choix
-		State initialChoiceState = (State) sgraph.createChoice();
+		Choice initialChoiceState = sgraph.createChoice();
 		r.getVertices().add(initialChoiceState);
 		
 		// création de la transition entre l'entry et l'état ammorcant le choix
@@ -43,11 +44,9 @@ public class ChoiceFactory extends FactoryTransformation {
 			temp = sgraph.createState();
 			temp.setName(hOP.getChildren().get(i).getDescription());
 			r.getVertices().add(temp);
-			if (i != 0) {
-				t = sgraph.createTransition();
-				t.setSource(initialChoiceState);
-				t.setTarget(r.getVertices().get(i));
-			}
+			t = sgraph.createTransition();
+			t.setSource(initialChoiceState);
+			t.setTarget(temp);	
 		}
 		return e;
 	}
