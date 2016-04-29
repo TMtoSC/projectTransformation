@@ -23,8 +23,12 @@ public class Concurrency {
 		HamstersTask task2 = new HamstersTask();
 		task2.setType(TaskType.USER);
 		task2.setDescription("Tache Feuille numero 2");
+		HamstersTask task3 = new HamstersTask();
+		task3.setType(TaskType.USER);
+		task3.setDescription("Tache Feuille numero 3");
 		operator.addChild(task1);
 		operator.addChild(task2);
+		operator.addChild(task3);
 	}
 	public HamstersAPI getAPI() {
 		return hamAPI;

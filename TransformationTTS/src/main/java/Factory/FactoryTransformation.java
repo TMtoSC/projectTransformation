@@ -59,16 +59,22 @@ public static Statechart Transform(HamstersAPI hAPI) throws Exception {
 	
 		FinalState fs = factory.createFinalState();
 		s.getRegions().get(s.getRegions().size()-1).getVertices().add(fs);
-		
 		Transition lastTransition = factory.createTransition();
 		int last = s.getRegions().get(s.getRegions().size()-1).getVertices().size()-2;
-		lastTransition.setSource(s.getRegions().get(s.getRegions().size()-1).getVertices().get(last));
-		lastTransition.setTarget(fs);
+	//	lastTransition.setSource(s.getRegions().get(s.getRegions().size()-1).getVertices().get(last));
+	//	lastTransition.setTarget(fs);
 		return sc;
 }
 
 
-public static State appel(HamstersOperator ha){
+public static State appel(HamstersNode hN){
+	HamstersOperator ha =null;
+	if (hN instanceof HamstersTask) {
+		ha = (HamstersOperator) hN.getChildren().get(1);
+	}
+	else {
+		 ha = (HamstersOperator) hN.getChildren().get(0);
+	}
 	switch( ha.getDescription()){
 		case ">>" : return EnableFactory.enabletoSc(ha);
 		case "[]" : return ChoiceFactory.choiceToSc(ha);
