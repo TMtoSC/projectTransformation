@@ -31,7 +31,7 @@ public class Concurrency {
 		/**
 		 * tache 3
 		 */
-		HamstersTask task3 = new HamstersTask();
+		/*HamstersTask task3 = new HamstersTask();
 		task3.setType(TaskType.USER);
 		task3.setDescription("Tache Feuille numero 3");
 		/**
@@ -39,7 +39,7 @@ public class Concurrency {
 		 */
 		operator.addChild(task1);
 		operator.addChild(task2);
-		operator.addChild(task3);
+		//operator.addChild(task3);
 	}
 	public HamstersAPI getAPI() {
 		return hamAPI;
