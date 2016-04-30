@@ -23,7 +23,8 @@ public class ConcurrencyFactory extends FactoryTransformation{
 		State compositeFirst = sgraph.createState();
 		
 		compositeFirst.isOrthogonal();
-		compositeFirst.setName("|||");
+		compositeFirst.setName(hOP.getDescription());
+
 		/**
 		 * Ajout de la première région.
 		 */

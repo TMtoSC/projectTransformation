@@ -17,7 +17,7 @@ public class DisableFactory extends FactoryTransformation {
 	public static State disableToSc(HamstersOperator hOP) {
 		State e = sgraph.createState();
 		e.isComposite();
-		e.setName("[>");
+		e.setName(hOP.getDescription());
 		Region r = sgraph.createRegion();
 		e.getRegions().add(r);
 		Entry ent = sgraph.createEntry();

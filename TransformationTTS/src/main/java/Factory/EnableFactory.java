@@ -19,7 +19,7 @@ public class EnableFactory extends FactoryTransformation {
 		// création de l'état composite
 		State e = sgraph.createState();
 		e.isComposite();
-		e.setName("enableComposite");
+		e.setName(hOP.getDescription());
 		// création de la région du composite
 		Region r = sgraph.createRegion();
 		e.getRegions().add(r);
