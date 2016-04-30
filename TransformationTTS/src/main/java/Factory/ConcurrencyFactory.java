@@ -103,38 +103,39 @@ public class ConcurrencyFactory extends FactoryTransformation{
 					compositeFirst.getRegions().add(newreg);
 				}
 				else {
-					/*scomptemp = sgraph.createState();
-					scomptemp.isComposite();
-					scomptemp.setName("Lolilol");*/
+				
 					scomptemp.getRegions().add(newreg);
 				}
 				
 				/**
 				 * ajout de l'étt dans la nouvelle région
 				 */
-			
+				
 				newreg.getVertices().add(entrytemp);
 				newreg.getVertices().add(scomp);
 				/**
 				 * création de la région de gauche du nouvel état composite
 				 */
+				Entry enttemp = sgraph.createEntry();
 				Region newr = sgraph.createRegion();
 				newr.setName("Région n° " + i+i);
 				scomp.getRegions().add(newr);
+				newr.getVertices().add(enttemp);
 				/**
 				 * ajout du nouvel état !
 				 */
+				State news = sgraph.createState();
 				if(hOP.getChildren().get(i).isLeaf()){
-					State news = sgraph.createState();
 					news.setName(hOP.getChildren().get(i).getDescription());
-					newr.getVertices().add(news);
 				}
 				else {
-					State news = sgraph.createState();
 					news = appel(hOP.getChildren().get(i));
 					news.setName(hOP.getChildren().get(i).getDescription());
-					newr.getVertices().add(news);
 				}
+				newr.getVertices().add(news);
+				Transition t2 = sgraph.createTransition();
+				t2.setSource(enttemp);
+				t2.setTarget(news);
 				/**
 				 * creation de la dernière région concurrente
 				 */
@@ -143,20 +144,25 @@ public class ConcurrencyFactory extends FactoryTransformation{
 					Region rtemp2 = sgraph.createRegion();
 					rtemp2.setName("Concurrency ||| n°" + (i+1) + " ");
 					Entry entrytemp2 = sgraph.createEntry();
-					State scomp2 = sgraph.createState();
+					State lastState = sgraph.createState();
 					scomp.getRegions().add(rtemp2);
+					rtemp2.getVertices().add(entrytemp2);
 					if(hOP.getChildren().get(i+1).isLeaf()){
-						scomp2.setName(hOP.getChildren().get(i+1).getDescription());
+						lastState.setName(hOP.getChildren().get(i+1).getDescription());
 					}
 					else {
 				
-						scomp2 = appel(hOP.getChildren().get(i+1));
-						scomp2.setName(hOP.getChildren().get(i+1).getDescription());
+						lastState = appel(hOP.getChildren().get(i+1));
+						lastState.setName(hOP.getChildren().get(i+1).getDescription());
 					}
-					rtemp2.getVertices().add(scomp2);	
+					rtemp2.getVertices().add(lastState);	
+					Transition t3 = sgraph.createTransition();
+					t3.setSource(entrytemp2);
+					t3.setTarget(lastState);
 				}
 				scomptemp = scomp;
 				newreg = null;
+				t2 = null;
 			}
 		
 		}
