@@ -22,7 +22,7 @@ public class ConcurrencyFactory extends FactoryTransformation{
 		State e = sgraph.createState();
 		Entry entry = sgraph.createEntry();
 		e.isOrthogonal();
-		e.setName("|||");
+		e.setName(hOP.getDescription());
 		/**
 		 * Ajout de la première région.
 		 */
