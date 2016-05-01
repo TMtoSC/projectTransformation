@@ -6,8 +6,6 @@ import org.yakindu.sct.model.sgraph.SGraphFactory;
 import org.yakindu.sct.model.sgraph.State;
 import org.yakindu.sct.model.sgraph.Transition;
 
-import TranslationSCT.WriteFile;
-import fr.projectM1.frozenhand.TransformationTTS.Enable2;
 import hamsters.HamstersNode;
 import hamsters.HamstersOperator;
 
@@ -70,19 +68,6 @@ public class EnableFactory extends FactoryTransformation {
 		}
 		return e;
 	}
-	
-	/**
-	 * Permet de simuler la création d'une tâche avec l'opérateur disable
-	 * @param args
-	 */
-	public static void main(String[] args){
-		fr.projectM1.frozenhand.TransformationTTS.Enable2 e = new Enable2();
-		try {
-			WriteFile.main(FactoryTransformation.Transform(e.getAPI()), "/Users/daviddang/Desktop/testFile");
-		} catch (Exception e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-	}
+
 
 }
