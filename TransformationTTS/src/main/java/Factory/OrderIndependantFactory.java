@@ -40,13 +40,16 @@ public class OrderIndependantFactory extends FactoryTransformation{
 		 */
 		Choice initialChoiceState = sgraph.createChoice();
 		r.getVertices().add(initialChoiceState);
-		State temp = null;
+		
 		Transition t = null;
+		/**
+		 * Début de l'algo permettant n order independant
+		 */
 		List<HamstersNode> hnList = new ArrayList<>();
 		List<HamstersNode> tempe = new ArrayList<>(hOP.getChildren());
 		List<List<HamstersNode>> listglob = new ArrayList<>();
 		creationList(tempe,hnList,listglob);
-		
+		System.out.println(listglob.toString());
 		
 		for(int i = 0 ;  i < listglob.size() ; i++){
 			State compo = sgraph.createState();
@@ -60,12 +63,26 @@ public class OrderIndependantFactory extends FactoryTransformation{
 			newt.setSource(initialChoiceState);
 			newt.setTarget(compo);
 			for(int j = 0 ; j < listglob.get(i).size(); j++) {				
+				State temp = sgraph.createState();
+				Transition sequency = sgraph.createTransition();
 				if(listglob.get(i).get(j).isLeaf()) {
 					temp = appel(listglob.get(i).get(j));
 				}
 				temp.setName(listglob.get(i).get(j).getDescription());
 				newr.getVertices().add(temp);
+				if(j==0) {
+					sequency.setSource(entry);
+					sequency.setTarget(temp);
+				}
+				else {
+					
+					sequency.setSource(newr.getVertices().get(j));
+					sequency.setTarget(newr.getVertices().get(j+1));
+				}
+				temp = null;
+				sequency =null;
 			}
+			
 		}
 		/*
 		for(int i = 0 ; i< hOP.getChildren().size() ; i++) {
@@ -120,23 +137,23 @@ public class OrderIndependantFactory extends FactoryTransformation{
 		}
 		return null;
 	}
-
-	private static ArrayList<HamstersTask> combinationGenerator(HamstersOperator hOP , int i ){
-		ArrayList<HamstersTask> temp = new ArrayList<HamstersTask>();
-		if ( temp.size() >= hOP.getChildren().size()){
-			return temp;
-		}
-		for ( i = 0 ; i < hOP.getChildren().size(); i++){
-			temp.add((HamstersTask) hOP.getChildren().get(i));
-			combinationGenerator(hOP, temp.size()+1);
-		}
-		return temp;
-		
-	}
+//
+//	private static ArrayList<HamstersTask> combinationGenerator(HamstersOperator hOP , int i ){
+//		ArrayList<HamstersTask> temp = new ArrayList<HamstersTask>();
+//		if ( temp.size() >= hOP.getChildren().size()){
+//			return temp;
+//		}
+//		for ( i = 0 ; i < hOP.getChildren().size(); i++){
+//			temp.add((HamstersTask) hOP.getChildren().get(i));
+//			combinationGenerator(hOP, temp.size()+1);
+//		}
+//		return temp;
+//		
+//	}
 	public static void main(String[] args){
 		taskModelCreation.OrderIndependent o = new OrderIndependent();
 		try {
-			WriteFile.main(FactoryTransformation.Transform(o.getAPI()), "/Users/daviddang/Desktop/OrderIndependentFile");
+			WriteFile.main(FactoryTransformation.Transform(o.getAPI()), ".\\OrderIndependant");
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
