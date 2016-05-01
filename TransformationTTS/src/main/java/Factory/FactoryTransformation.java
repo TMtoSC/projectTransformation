@@ -1,5 +1,5 @@
 /**
- * 
+ * Cette classe permet de faire une transformation en un stateChart selon l'opérateur lotos
  * @author frozenhand
  */
 package Factory;
