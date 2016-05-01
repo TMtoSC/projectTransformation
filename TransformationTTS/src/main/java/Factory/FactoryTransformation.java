@@ -1,3 +1,7 @@
+/**
+ * Cette classe permet de faire une transformation en un stateChart selon l'opérateur lotos
+ * @author frozenhand
+ */
 package Factory;
 
 import org.yakindu.sct.model.sgraph.CompositeElement;
@@ -23,8 +27,17 @@ import hamsters.HamstersTask;
 import hamsters.OperatorType;
 
 public class FactoryTransformation {
+	/**
+	 * factory est une instance de SGaphFactory de la bibliotheque Yakindu
+	 */
 	static SGraphFactory factory = SGraphFactory.eINSTANCE;
 
+	/**
+	 * Transform permet de retourner un stateChart  à partir d'une HamsterAPI
+	 * @param hAPI une HamstersAPI
+	 * @return un stateChart
+	 * @throws Exception exception levée en cas de creation du stateChart ou de ses régions
+	 */
 	public static Statechart Transform(HamstersAPI hAPI) throws Exception {
 		Statechart sc;
 		sc = factory.createStatechart();
@@ -76,6 +89,12 @@ public class FactoryTransformation {
 		return sc;
 	}
 
+	/**
+	 * appel retourne un état selon l'opérateur lotos du noeud hamstersNode
+	 * et le transformé en StateChart
+	 * @param hN un noeud hamsters
+	 * @return un  état
+	 */
 	public static State appel(HamstersNode hN) {
 		HamstersOperator ha = null;
 		if (hN instanceof HamstersTask) {
