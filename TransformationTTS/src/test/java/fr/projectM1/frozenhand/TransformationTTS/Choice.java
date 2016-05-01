@@ -1,5 +1,10 @@
 package fr.projectM1.frozenhand.TransformationTTS;
 
+import org.junit.Before;
+import org.junit.Test;
+
+import Factory.FactoryTransformation;
+import TranslationSCT.WriteFile;
 import hamsters.HamstersAPI;
 import hamsters.HamstersOperator;
 import hamsters.HamstersTask;
@@ -10,8 +15,9 @@ public class Choice {
 	
 	private HamstersAPI hamAPI;
 	
-	public Choice()
-	{
+		
+		@Before 
+		public void setUP() {
 		hamAPI = new HamstersAPI("Choice 1");
 		HamstersOperator operator = new HamstersOperator();
 		operator.setType(OperatorType.CHOICE);
@@ -37,6 +43,19 @@ public class Choice {
 		operator.addChild(task4);
 		
 	}
+		
+
+		@Test
+		public  void testCH (){
+			try {
+				WriteFile.main(FactoryTransformation.Transform(hamAPI),".\\tests\\Choice");
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			
+		}
 	public HamstersAPI getAPI() {
 		return hamAPI;
 	}
