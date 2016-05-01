@@ -108,13 +108,4 @@ public class OrderIndependantFactory extends FactoryTransformation{
 		return null;
 	}
 
-	public static void main(String[] args){
-		fr.projectM1.frozenhand.TransformationTTS.OrderIndependent o = new OrderIndependent();
-		try {
-			WriteFile.main(FactoryTransformation.Transform(o.getAPI()), ".\\OrderIndependant");
-		} catch (Exception e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-	}
 }

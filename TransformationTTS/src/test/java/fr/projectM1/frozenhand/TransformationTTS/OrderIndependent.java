@@ -1,18 +1,23 @@
 package fr.projectM1.frozenhand.TransformationTTS;
 
+import org.junit.Before;
+
+import Factory.FactoryTransformation;
+import TranslationSCT.WriteFile;
 import hamsters.HamstersAPI;
 import hamsters.HamstersOperator;
 import hamsters.HamstersTask;
 import hamsters.OperatorType;
 import hamsters.TaskType;
-
+import org.junit.Test;
+import junit.framework.TestCase;
+import junit.framework.TestSuite;
 public class OrderIndependent {
-
+		HamstersAPI hamAPI;
 		
-		private HamstersAPI hamAPI;
+			@Before 
+			public void initTest() {
 		
-		public OrderIndependent()
-		{
 			hamAPI = new HamstersAPI("OrderIndependent 1");
 			HamstersOperator operator = new HamstersOperator();
 			operator.setType(OperatorType.ORDER_INDEPENDENT);
@@ -36,9 +41,21 @@ public class OrderIndependent {
 			operator.addChild(task3);
 			operator.addChild(task4);
 
+			}
+		
+		
 
+	@Test
+	public void TestOI() {
+		fr.projectM1.frozenhand.TransformationTTS.OrderIndependent o = new OrderIndependent();
+		try {
+			WriteFile.main(FactoryTransformation.Transform(hamAPI), ".\\tests\\OrderIndependant");
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
 		}
-		public HamstersAPI getAPI() {
-			return hamAPI;
-		}
+	}
+	public HamstersAPI getAPI() {
+		return hamAPI;
+	}
 }
