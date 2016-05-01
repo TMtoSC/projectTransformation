@@ -1,8 +1,3 @@
-/**
- * FactoryTransformation
- * Classe servant à faire une transformation en un stateChart selon un opérateur lotos
- * @author frozenhand
- */
 package Factory;
 
 import org.yakindu.sct.model.sgraph.CompositeElement;
@@ -27,6 +22,11 @@ import hamsters.HamstersOperator;
 import hamsters.HamstersTask;
 import hamsters.OperatorType;
 
+/**
+ * FactoryTransformation
+ * Classe servant à faire une transformation en un stateChart selon un opérateur lotos
+ * @author frozenhand
+ */
 public class FactoryTransformation {
 	/**
 	 * factory est une instance de SGaphFactory de la bibliotheque Yakindu

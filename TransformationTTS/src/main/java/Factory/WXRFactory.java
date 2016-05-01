@@ -1,14 +1,15 @@
+
+package Factory;
+
+import TranslationSCT.WriteFile;
+import taskModelCreation.WXR;
+
 /**
  * WXRFactory 
  * classe servant à enregistrer sur son pc un fichier xml 
  * après transformation en stateChart
  * @author frozenhandgroup
  */
-package Factory;
-
-import TranslationSCT.WriteFile;
-import taskModelCreation.WXR;
-
 public class WXRFactory {
 
 	/**

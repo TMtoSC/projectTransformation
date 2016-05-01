@@ -15,7 +15,7 @@ import taskModelCreation.ConcurrencyWithEnable;
 import taskModelCreation.Enable2;
 
 /**
- * 
+ * * ConcurrencyFactory 
  * @author Florent Cabric
  * Classe créant l'opérateur concurrence en SC
  */
