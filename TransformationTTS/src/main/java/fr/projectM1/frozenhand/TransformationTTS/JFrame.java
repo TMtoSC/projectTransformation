@@ -13,12 +13,6 @@ import org.yakindu.sct.model.sgraph.Statechart;
 import Factory.FactoryTransformation;
 import TranslationSCT.WriteFile;
 import hamsters.HamstersAPI;
-import taskModelCreation.Choice;
-import taskModelCreation.Concurrency;
-import taskModelCreation.Disable;
-import taskModelCreation.Enable;
-import taskModelCreation.OrderIndependent;
-import taskModelCreation.SuspendResume;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -259,7 +253,7 @@ public class JFrame extends javax.swing.JFrame {
      * @param evt
      */
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-    	taskModelCreation.Enable Operateur = new Enable();
+    	fr.projectM1.frozenhand.TransformationTTS.Enable Operateur = new Enable();
     	hampi = Operateur.getAPI();
     	setAllRed();
     	jButton1.setBackground(Color.green);
@@ -276,7 +270,7 @@ public class JFrame extends javax.swing.JFrame {
      * @param evt
      */
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
-    	taskModelCreation.Choice Operateur = new Choice();
+    	fr.projectM1.frozenhand.TransformationTTS.Choice Operateur = new Choice();
     	hampi = Operateur.getAPI();
     	setAllRed();
     	jButton2.setBackground(Color.green);
@@ -293,7 +287,7 @@ public class JFrame extends javax.swing.JFrame {
      * @param evt
      */
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
-    	taskModelCreation.OrderIndependent Operateur = new OrderIndependent();
+    	fr.projectM1.frozenhand.TransformationTTS.OrderIndependent Operateur = new OrderIndependent();
     	hampi = Operateur.getAPI();
     	setAllRed();
     	jButton3.setBackground(Color.green);
@@ -310,7 +304,7 @@ public class JFrame extends javax.swing.JFrame {
      * @param evt
      */
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
-    	taskModelCreation.Concurrency Operateur = new Concurrency();
+    	fr.projectM1.frozenhand.TransformationTTS.Concurrency Operateur = new Concurrency();
     	hampi = Operateur.getAPI();
     	setAllRed();
     	jButton4.setBackground(Color.green);
@@ -327,7 +321,7 @@ public class JFrame extends javax.swing.JFrame {
      * @param evt
      */
     private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
-    	taskModelCreation.Disable Operateur = new Disable();
+    	fr.projectM1.frozenhand.TransformationTTS.Disable Operateur = new Disable();
     	hampi = Operateur.getAPI();
     	setAllRed();
     	jButton5.setBackground(Color.green);
@@ -344,7 +338,7 @@ public class JFrame extends javax.swing.JFrame {
      * @param evt
      */
     private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
-    	taskModelCreation.SuspendResume Operateur = new SuspendResume();
+    	fr.projectM1.frozenhand.TransformationTTS.SuspendResume Operateur = new SuspendResume();
     	hampi = Operateur.getAPI();
     	setAllRed();
     	jButton6.setBackground(Color.green);

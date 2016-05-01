@@ -8,10 +8,10 @@ import org.yakindu.sct.model.sgraph.State;
 import org.yakindu.sct.model.sgraph.Transition;
 
 import TranslationSCT.WriteFile;
+import fr.projectM1.frozenhand.TransformationTTS.Disable;
+import fr.projectM1.frozenhand.TransformationTTS.SuspendResume;
 import hamsters.HamstersNode;
 import hamsters.HamstersOperator;
-import taskModelCreation.Disable;
-import taskModelCreation.SuspendResume;
 
 public class SuspendResumeFactory extends FactoryTransformation {
 	private static SGraphFactory sgraph = SGraphFactory.eINSTANCE;
@@ -59,7 +59,7 @@ public class SuspendResumeFactory extends FactoryTransformation {
 		return e;
 	}
 	public static void main(String[] args) {
-		taskModelCreation.SuspendResume sr = new SuspendResume();
+		fr.projectM1.frozenhand.TransformationTTS.SuspendResume sr = new SuspendResume();
 		try {
 			WriteFile.main(FactoryTransformation.Transform(sr.getAPI()), "/Users/daviddang/Desktop/suspendResumeTest");
 		} catch (Exception e) {

@@ -86,7 +86,7 @@ public class ChoiceFactory extends FactoryTransformation {
 	 * @param args
 	 */
 	public static void main (String[] args){
-		taskModelCreation.Choice c = new taskModelCreation.Choice();
+		fr.projectM1.frozenhand.TransformationTTS.Choice c = new fr.projectM1.frozenhand.TransformationTTS.Choice();
 		try {
 			WriteFile.main(FactoryTransformation.Transform(c.getAPI()),"/Users/daviddang/Desktop/choiceTest");
 		} catch (Exception e) {

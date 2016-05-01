@@ -11,11 +11,11 @@ import org.yakindu.sct.model.sgraph.State;
 import org.yakindu.sct.model.sgraph.Transition;
 
 import TranslationSCT.WriteFile;
+import fr.projectM1.frozenhand.TransformationTTS.Enable2;
+import fr.projectM1.frozenhand.TransformationTTS.OrderIndependent;
 import hamsters.HamstersNode;
 import hamsters.HamstersOperator;
 import hamsters.HamstersTask;
-import taskModelCreation.Enable2;
-import taskModelCreation.OrderIndependent;
 
 public class OrderIndependantFactory extends FactoryTransformation{
 	private static SGraphFactory sgraph = SGraphFactory.eINSTANCE;
@@ -109,7 +109,7 @@ public class OrderIndependantFactory extends FactoryTransformation{
 	}
 
 	public static void main(String[] args){
-		taskModelCreation.OrderIndependent o = new OrderIndependent();
+		fr.projectM1.frozenhand.TransformationTTS.OrderIndependent o = new OrderIndependent();
 		try {
 			WriteFile.main(FactoryTransformation.Transform(o.getAPI()), ".\\OrderIndependant");
 		} catch (Exception e1) {

@@ -1,4 +1,4 @@
-package taskModelCreation;
+package fr.projectM1.frozenhand.TransformationTTS;
 
 import hamsters.HamstersAPI;
 import hamsters.HamstersOperator;
@@ -6,16 +6,19 @@ import hamsters.HamstersTask;
 import hamsters.OperatorType;
 import hamsters.TaskType;
 
-public class Choice {
+public class Enable {
 	
 	private HamstersAPI hamAPI;
 	
-	public Choice()
+	public Enable()
 	{
-		hamAPI = new HamstersAPI("Choice 1");
+		hamAPI = new HamstersAPI("Sequence 1");
 		HamstersOperator operator = new HamstersOperator();
-		operator.setType(OperatorType.CHOICE);
-		hamAPI.addHamstersNode(operator);
+		HamstersTask task = new HamstersTask();
+		task.setHelpText("tache abstraite");
+		hamAPI.addHamstersNode(task);
+		operator.setType(OperatorType.ENABLE);
+		task.addChild(operator);
 		
 		
 		HamstersTask task1 = new HamstersTask();
@@ -24,18 +27,8 @@ public class Choice {
 		HamstersTask task2 = new HamstersTask();
 		task2.setType(TaskType.USER);
 		task2.setDescription("Tache Feuille numero 2");
-		HamstersTask task3 = new HamstersTask();
-		task3.setType(TaskType.USER);
-		task3.setDescription("Tache Feuille numero 3");
-		HamstersTask task4 = new HamstersTask();
-		task4.setType(TaskType.USER);
-		task4.setDescription("Tache Feuille numero 4");
-		
 		operator.addChild(task1);
 		operator.addChild(task2);
-		operator.addChild(task3);
-		operator.addChild(task4);
-		
 	}
 	public HamstersAPI getAPI() {
 		return hamAPI;

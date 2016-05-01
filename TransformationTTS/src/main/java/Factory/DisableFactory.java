@@ -7,9 +7,9 @@ import org.yakindu.sct.model.sgraph.State;
 import org.yakindu.sct.model.sgraph.Transition;
 
 import TranslationSCT.WriteFile;
+import fr.projectM1.frozenhand.TransformationTTS.Disable;
 import hamsters.HamstersNode;
 import hamsters.HamstersOperator;
-import taskModelCreation.Disable;
 
 public class DisableFactory extends FactoryTransformation {
 	private static SGraphFactory sgraph = SGraphFactory.eINSTANCE;
@@ -51,7 +51,7 @@ public class DisableFactory extends FactoryTransformation {
 		return e;
 	}
 	public static void main(String[] args) {
-		taskModelCreation.Disable d = new Disable();
+		fr.projectM1.frozenhand.TransformationTTS.Disable d = new Disable();
 		try {
 			WriteFile.main(FactoryTransformation.Transform(d.getAPI()), "/Users/daviddang/Desktop/disableTest");
 		} catch (Exception e) {

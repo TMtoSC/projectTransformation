@@ -2,7 +2,7 @@
 package Factory;
 
 import TranslationSCT.WriteFile;
-import taskModelCreation.WXR;
+import fr.projectM1.frozenhand.TransformationTTS.WXR;
 
 /**
  * WXRFactory 
@@ -18,7 +18,7 @@ public class WXRFactory {
 	 * @param args les arguments
 	 */
 	public static void main(String[] args) {
-		taskModelCreation.WXR wxr = new WXR();
+		fr.projectM1.frozenhand.TransformationTTS.WXR wxr = new WXR();
 		try {
 			WriteFile.main(FactoryTransformation.Transform(wxr.getAPI()), ".\\wxr");
 		} catch (Exception e) {

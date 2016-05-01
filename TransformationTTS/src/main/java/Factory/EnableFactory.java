@@ -7,9 +7,9 @@ import org.yakindu.sct.model.sgraph.State;
 import org.yakindu.sct.model.sgraph.Transition;
 
 import TranslationSCT.WriteFile;
+import fr.projectM1.frozenhand.TransformationTTS.Enable2;
 import hamsters.HamstersNode;
 import hamsters.HamstersOperator;
-import taskModelCreation.Enable2;
 
 public class EnableFactory extends FactoryTransformation {
 
@@ -57,7 +57,7 @@ public class EnableFactory extends FactoryTransformation {
 	}
 	
 	public static void main(String[] args){
-		taskModelCreation.Enable2 e = new Enable2();
+		fr.projectM1.frozenhand.TransformationTTS.Enable2 e = new Enable2();
 		try {
 			WriteFile.main(FactoryTransformation.Transform(e.getAPI()), "/Users/daviddang/Desktop/testFile");
 		} catch (Exception e1) {

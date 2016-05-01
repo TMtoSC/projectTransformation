@@ -7,12 +7,12 @@ import org.yakindu.sct.model.sgraph.State;
 import org.yakindu.sct.model.sgraph.Transition;
 
 import TranslationSCT.WriteFile;
+import fr.projectM1.frozenhand.TransformationTTS.Concurrency;
+import fr.projectM1.frozenhand.TransformationTTS.ConcurrencyWithEnable;
+import fr.projectM1.frozenhand.TransformationTTS.Enable2;
 import hamsters.HamstersAPI;
 import hamsters.HamstersNode;
 import hamsters.HamstersOperator;
-import taskModelCreation.Concurrency;
-import taskModelCreation.ConcurrencyWithEnable;
-import taskModelCreation.Enable2;
 
 /**
  * * ConcurrencyFactory 
