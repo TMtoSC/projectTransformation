@@ -69,8 +69,6 @@ public class ChoiceFactory extends FactoryTransformation {
 				HamstersOperator ot = (HamstersOperator) hOP.getChildren().get(i);
 				temp = appel(ot);
 				r.getVertices().add(temp);
-
-
 			}
 
 			// création de toutes les transitions
