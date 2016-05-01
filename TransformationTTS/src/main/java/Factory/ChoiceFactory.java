@@ -81,19 +81,4 @@ public class ChoiceFactory extends FactoryTransformation {
 		return e;
 	}
 	
-	/**
-	 * Permet de simuler la création d'une tâche avec l'opérateur choice
-	 * @param args
-	 */
-	public static void main (String[] args){
-		fr.projectM1.frozenhand.TransformationTTS.Choice c = new fr.projectM1.frozenhand.TransformationTTS.Choice();
-		try {
-			WriteFile.main(FactoryTransformation.Transform(c.getAPI()),"/Users/daviddang/Desktop/choiceTest");
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		
-	}
 }
