@@ -56,8 +56,6 @@ public class EnableFactory extends FactoryTransformation {
 				HamstersNode ot = hOP.getChildren().get(i);
 				temp = appel(ot);
 				r.getVertices().add(temp);
-
-
 			}
 
 			// création de toutes les transitions
@@ -68,6 +66,5 @@ public class EnableFactory extends FactoryTransformation {
 		}
 		return e;
 	}
-
 
 }

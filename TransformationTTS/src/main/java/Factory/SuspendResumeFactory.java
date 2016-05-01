@@ -13,9 +13,25 @@ import fr.projectM1.frozenhand.TransformationTTS.SuspendResume;
 import hamsters.HamstersNode;
 import hamsters.HamstersOperator;
 
+/**
+ * SuspendResumeFactory 
+ * Classe servant à créer un état d'un stateChart avec l'opérateur Enable
+ * tout en lui attachant des tâches
+ * @author frozenhandgroup
+ */
 public class SuspendResumeFactory extends FactoryTransformation {
+	
+	/**
+	 * factory est une instance de SGaphFactory de la bibliotheque Yakindu
+	 */
 	private static SGraphFactory sgraph = SGraphFactory.eINSTANCE;
 
+	/**
+	 * permet de parcourir une structure hiérachique de type hamsterOperateur
+	 * et construit un état du stateChart
+	 * @param hOP un hamsterOperateur pour parcourir la structure arborescente 
+	 * @return un état 
+	 */
 	public static State suspendResumeToSc(HamstersOperator hOP) {
 		State e = sgraph.createState();
 		e.isComposite();
@@ -58,6 +74,11 @@ public class SuspendResumeFactory extends FactoryTransformation {
 		}
 		return e;
 	}
+	
+	/**
+	 * Permet de simuler la création d'une tâche avec l'opérateur suspendResume
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		fr.projectM1.frozenhand.TransformationTTS.SuspendResume sr = new SuspendResume();
 		try {
