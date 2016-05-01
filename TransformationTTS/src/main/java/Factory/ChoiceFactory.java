@@ -1,3 +1,8 @@
+/**
+ * Permet de créer un état d'un stateChart avec l'opérateur choice
+ * tout en lui attachant des tâches
+ * @author frozenhandgroup
+ */
 package Factory;
 
 import org.yakindu.sct.model.sgraph.Choice;
@@ -11,9 +16,17 @@ import TranslationSCT.WriteFile;
 import hamsters.HamstersOperator;
 
 public class ChoiceFactory extends FactoryTransformation {
-	
+	/**
+	 * factory est une instance de SGaphFactory de la bibliotheque Yakindu
+	 */
 	private static SGraphFactory sgraph = SGraphFactory.eINSTANCE;
 
+	/**
+	 * permet de parcourir une structure hiérachique de type hamsterOperateur
+	 * et construit un état du stateChart
+	 * @param hOP un hamsterOperateur pour parcourir la structure arborescente 
+	 * @return un état 
+	 */
 	public static State choiceToSc(HamstersOperator hOP) {
 		// création de l'état composite initial
 		State e = sgraph.createState();
@@ -69,6 +82,10 @@ public class ChoiceFactory extends FactoryTransformation {
 		return e;
 	}
 	
+	/**
+	 * Permet de simuler la création d'une tâche avec l'opérateur choice
+	 * @param args
+	 */
 	public static void main (String[] args){
 		taskModelCreation.Choice c = new taskModelCreation.Choice();
 		try {
