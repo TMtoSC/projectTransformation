@@ -11,6 +11,12 @@ import hamsters.HamstersTask;
 import hamsters.OperatorType;
 import hamsters.TaskType;
 
+/**
+ * SuspendResume
+ * Cette Classe Junit permet de faire un test unitaire de l'opérateur SuspendResume
+ * @author frozenhandgroup
+ *
+ */
 public class SuspendResume {
 
 		
@@ -32,10 +38,19 @@ public class SuspendResume {
 			operator.addChild(task1);
 			operator.addChild(task2);
 		}
+		
+		/**
+		 *  retourne un HamsterAPI
+		 * @return un HamstersAPI
+		 */
 		public HamstersAPI getAPI() {
 			return hamAPI;
 		}
 		
+		/**
+		 * Test de l'enregistrement du fichier
+		 * Après le test sur l'opérateur suspendResume
+		 */
 		@Test
 		public  void testSR (){
 			try {

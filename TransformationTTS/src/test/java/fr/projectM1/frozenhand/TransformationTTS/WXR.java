@@ -11,6 +11,14 @@ import hamsters.HamstersTask;
 import hamsters.OperatorType;
 import hamsters.TaskType;
 
+
+/**
+ * WXR
+ * Cette Classe Junit permet de faire un test unitaire de l'ensemble des opérateur
+ * Présents dans le fichier WXR
+ * @author frozenhandgroup
+ *
+ */
 public class WXR {
 	
 	private HamstersAPI hamAPI;
@@ -191,6 +199,10 @@ public class WXR {
 		
 	}
 	
+	/**
+	 * Test de l'enregistrement du fichier
+	 * Après le test sur le fichier WXR qui combine plusieurs opérateurs
+	 */
 	@Test
 	public  void testWXR (){
 		try {
@@ -200,6 +212,11 @@ public class WXR {
 			e.printStackTrace();
 		}
 	}
+	
+	/**
+	 *  retourne un HamsterAPI
+	 * @return un HamstersAPI
+	 */
 	public HamstersAPI getAPI() {
 		return hamAPI;
 	}
