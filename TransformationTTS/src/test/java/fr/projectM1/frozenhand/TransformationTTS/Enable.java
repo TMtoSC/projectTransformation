@@ -14,7 +14,7 @@ import hamsters.TaskType;
 
 /**
  * Enable
- * Cette Classe Junit permet de faire un test unitaire de l'opérateur choice
+ * Cette Classe Junit permet de faire un test unitaire de l'opérateur Enable
  * @author frozenhandgroup
  *
  */

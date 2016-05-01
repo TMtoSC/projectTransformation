@@ -11,6 +11,12 @@ import hamsters.HamstersTask;
 import hamsters.OperatorType;
 import hamsters.TaskType;
 
+/**
+ * Disable
+ * Cette Classe Junit permet de faire un test unitaire de l'opérateur Disable
+ * @author frozenhandgroup
+ *
+ */
 public class Disable {
 
 	private HamstersAPI hamAPI;
@@ -43,6 +49,11 @@ public class Disable {
 		
 		
 	}
+	
+	/**
+	 * Test de l'enregistrement du fichier
+	 * Après le test sur l'opérateur Disable
+	 */
 	@Test
 	public  void testDI (){
 		try {
@@ -52,6 +63,11 @@ public class Disable {
 			e.printStackTrace();
 		}
 	}
+	
+	/**
+	 *  retourne un HamsterAPI
+	 * @return un HamstersAPI
+	 */
 	public HamstersAPI getAPI() {
 		return hamAPI;
 	}

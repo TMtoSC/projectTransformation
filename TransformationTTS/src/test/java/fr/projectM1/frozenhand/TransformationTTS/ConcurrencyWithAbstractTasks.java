@@ -11,6 +11,12 @@ import hamsters.HamstersTask;
 import hamsters.OperatorType;
 import hamsters.TaskType;
 
+/**
+ * ConcurrencyWithAbstractTask
+ * cette classe sert à tester l'opérateur choice avec une tâche abstraite
+ * @author frozenhandgroup
+ *
+ */
 public class ConcurrencyWithAbstractTasks {
 	HamstersAPI hamAPI;
 	@Before
@@ -67,6 +73,10 @@ public class ConcurrencyWithAbstractTasks {
 	operator.addChild(opchoice);
 	}
 
+	/**
+	 * Test de l'enregistrement du fichier
+	 * Après le test sur l'opérateur concurrency
+	 */
 	@Test
 	public  void testCWE (){
 		try {
@@ -76,6 +86,11 @@ public class ConcurrencyWithAbstractTasks {
 			e.printStackTrace();
 		}
 	}
+	
+	/**
+	 *  retourne un HamsterAPI
+	 * @return un HamstersAPI
+	 */
 	public HamstersAPI getAPI() {
 		// TODO Auto-generated method stub
 		return hamAPI;

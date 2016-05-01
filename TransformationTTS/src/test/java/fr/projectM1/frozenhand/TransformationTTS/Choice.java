@@ -51,10 +51,9 @@ public class Choice {
 	}
 		
 
-		/**
-		 * Test de l'enregistrement du fichier
-		 * Après le test sur l'opérateur choice
-		 */
+	/**
+	 * Test de l'enregistrement du fichier Après le test sur l'opérateur choice
+	 */
 		@Test
 		public  void testCH (){
 			try {

@@ -11,6 +11,12 @@ import hamsters.HamstersTask;
 import hamsters.OperatorType;
 import hamsters.TaskType;
 
+/**
+ * Concurreny
+ * Cette Classe Junit permet de faire un test unitaire de l'opérateur concurrency
+ * @author frozenhandgroup
+ *
+ */
 public class Concurrency {
 	
 	private HamstersAPI hamAPI;
@@ -68,6 +74,10 @@ public class Concurrency {
 		operator.addChild(task6);
 	}
 	
+	/**
+	 * Test de l'enregistrement du fichier
+	 * Après le test sur l'opérateur choice
+	 */
 	@Test
 	public  void testCO (){
 		try {
