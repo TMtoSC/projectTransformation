@@ -1,5 +1,6 @@
 /**
- * Cette classe permet de faire une transformation en un stateChart selon l'opérateur lotos
+ * FactoryTransformation
+ * Classe servant à faire une transformation en un stateChart selon un opérateur lotos
  * @author frozenhand
  */
 package Factory;

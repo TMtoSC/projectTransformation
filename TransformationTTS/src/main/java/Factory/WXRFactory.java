@@ -1,5 +1,7 @@
 /**
- * La class WXRFactory permet d'enregistrer sur son pc un fichier xml après transformation
+ * WXRFactory 
+ * classe servant à enregistrer sur son pc un fichier xml 
+ * après transformation en stateChart
  * @author frozenhandgroup
  */
 package Factory;
