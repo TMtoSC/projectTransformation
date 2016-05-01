@@ -11,9 +11,25 @@ import fr.projectM1.frozenhand.TransformationTTS.Disable;
 import hamsters.HamstersNode;
 import hamsters.HamstersOperator;
 
+
+/**
+ * DisableFactory 
+ * Classe servant à créer un état d'un stateChart avec l'opérateur Disable
+ * tout en lui attachant des tâches
+ * @author frozenhandgroup
+ */
 public class DisableFactory extends FactoryTransformation {
+	/**
+	 * factory est une instance de SGaphFactory de la bibliotheque Yakindu
+	 */
 	private static SGraphFactory sgraph = SGraphFactory.eINSTANCE;
 
+	/**
+	 * permet de parcourir une structure hiérachique de type hamsterOperateur
+	 * et construit un état du stateChart
+	 * @param hOP un hamsterOperateur pour parcourir la structure arborescente 
+	 * @return un état 
+	 */
 	public static State disableToSc(HamstersOperator hOP) {
 		State e = sgraph.createState();
 		e.isComposite();
@@ -50,6 +66,10 @@ public class DisableFactory extends FactoryTransformation {
 		}
 		return e;
 	}
+	/**
+	 * Permet de simuler la création d'une tâche avec l'opérateur disable
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		fr.projectM1.frozenhand.TransformationTTS.Disable d = new Disable();
 		try {
