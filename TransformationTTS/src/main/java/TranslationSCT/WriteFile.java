@@ -25,8 +25,22 @@ import hamsters.HamstersOperator;
 
 import org.eclipse.emf.common.util.*;
 
+/**
+ * WriteFile
+ * Permet d'enregistrement d'un fichier
+ * StateChart sur son propre pc
+ * @author frozenhandgroup
+ *
+ */
 public class WriteFile {
 
+	/**
+	 * permet de faire une simulation d'enregistrement de stateChart
+	 * @param sc un stateChart
+	 * @param filePath une chaine représentant le nom du fichier
+	 * @throws Exception est une exception qui est levée 
+	 * 		   quand l'enregistrement ne se passe pas comme prévu
+	 */
 	public static void main(Statechart sc, String filePath) throws Exception
 	{
 
