@@ -30,20 +30,13 @@ public class OrderIndependent {
 			task3.setDescription("Tache noeud numero 3");
 			HamstersTask task4 = new HamstersTask();
 			task4.setType(TaskType.USER);
-			task4.setDescription("Tache noeud numero 3");
+			task4.setDescription("Tache noeud numero 4");
 			operator.addChild(task1);
 			operator.addChild(task2);
 			operator.addChild(task3);
 			operator.addChild(task4);
-			System.out.println(operator.getChildren().size());
-//			HamstersTask task3 = new HamstersTask();
-//			task3.setType(TaskType.USER);
-//			task3.setHelpText("Tache Feuille numero 1");
-//			HamstersTask task4 = new HamstersTask();
-//			task4.setType(TaskType.USER);
-//			task4.setHelpText("Tache Feuille numero 2");
-//			task1.addChild(task3);
-//			task2.addChild(task4);
+
+
 		}
 		public HamstersAPI getAPI() {
 			return hamAPI;
