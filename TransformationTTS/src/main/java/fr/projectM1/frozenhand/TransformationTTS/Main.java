@@ -1,10 +1,18 @@
 package fr.projectM1.frozenhand.TransformationTTS;
 
-
+/**
+ * Classe Main du programme.
+ * @author Jeff
+ * Cette classe va instancier et afficher la JFrame qui permet a tout le reste de se lancer.
+ */
 public class Main {
 
 	
-	
+	/**
+	 * Fonction de main.
+	 * @param args
+	 * @throws Exception
+	 */
     public static void main(String args[]) throws Exception {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
