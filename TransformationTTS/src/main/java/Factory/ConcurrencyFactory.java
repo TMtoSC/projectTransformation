@@ -14,8 +14,22 @@ import taskModelCreation.Concurrency;
 import taskModelCreation.ConcurrencyWithEnable;
 import taskModelCreation.Enable2;
 
+/**
+ * 
+ * @author Florent Cabric
+ * Classe créant l'opérateur concurrence en SC
+ */
 public class ConcurrencyFactory extends FactoryTransformation{
+	/**
+	 * mise en place de la factory
+	 */
 	private static SGraphFactory sgraph = SGraphFactory.eINSTANCE;
+	
+	/**
+	 * 
+	 * @param hOP prend un opérateur en paramètre
+	 * @return un Etat composé de sous états
+	 */
 	public static State concurrencyToSc(HamstersOperator hOP) {
 		/**
 		 * Création de l'orthogonal State.
@@ -23,7 +37,7 @@ public class ConcurrencyFactory extends FactoryTransformation{
 		State compositeFirst = sgraph.createState();
 		
 		compositeFirst.isOrthogonal();
-		compositeFirst.setName(hOP.getDescription());
+		compositeFirst.setName(hOP.getParent().getDescription());
 
 		/**
 		 * Ajout de la première région.
@@ -140,6 +154,7 @@ public class ConcurrencyFactory extends FactoryTransformation{
 				 * creation de la dernière région concurrente
 				 */
 				
+	
 				if(i == hOP.getChildren().size() -2) {
 					Region rtemp2 = sgraph.createRegion();
 					rtemp2.setName("Concurrency ||| n°" + (i+1) + " ");
