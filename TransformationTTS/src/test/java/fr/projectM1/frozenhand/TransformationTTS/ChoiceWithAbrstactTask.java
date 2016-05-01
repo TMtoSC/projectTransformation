@@ -11,6 +11,12 @@ import hamsters.HamstersTask;
 import hamsters.OperatorType;
 import hamsters.TaskType;
 
+/**
+ * ChoiceWithAbstractTask
+ * cette classe sert à tester l'opérateur choice avec une tâche abstraite
+ * @author frozenhandgroup
+ *
+ */
 public class ChoiceWithAbrstactTask {
 	
 	private HamstersAPI hamAPI;
@@ -65,6 +71,10 @@ public class ChoiceWithAbrstactTask {
 		operatorfils.addChild(task14);
 		}
 		
+		/**
+		 * Test de l'enregistrement du fichier
+		 * Après le test sur l'opérateur choice
+		 */
 		@Test
 		public  void testCHabstract (){
 			try {
@@ -75,6 +85,10 @@ public class ChoiceWithAbrstactTask {
 			}
 		
 	}
+	/**
+	 *  retourne un HamsterAPI
+	 * @return un HamstersAPI
+	 */
 	public HamstersAPI getAPI() {
 		return hamAPI;
 	}

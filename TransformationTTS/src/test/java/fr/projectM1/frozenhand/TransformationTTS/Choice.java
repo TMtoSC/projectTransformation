@@ -11,6 +11,12 @@ import hamsters.HamstersTask;
 import hamsters.OperatorType;
 import hamsters.TaskType;
 
+/**
+ * Choice
+ * Cette Classe Junit permet de faire un test unitaire de l'opérateur choice
+ * @author frozenhandgroup
+ *
+ */
 public class Choice {
 	
 	private HamstersAPI hamAPI;
@@ -45,6 +51,10 @@ public class Choice {
 	}
 		
 
+		/**
+		 * Test de l'enregistrement du fichier
+		 * Après le test sur l'opérateur choice
+		 */
 		@Test
 		public  void testCH (){
 			try {
@@ -56,6 +66,11 @@ public class Choice {
 			
 			
 		}
+		
+		/**
+		 *  retourne un HamsterAPI
+		 * @return un HamstersAPI
+		 */
 	public HamstersAPI getAPI() {
 		return hamAPI;
 	}

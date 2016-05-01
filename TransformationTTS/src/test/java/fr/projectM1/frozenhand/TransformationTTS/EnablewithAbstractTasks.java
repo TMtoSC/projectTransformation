@@ -11,6 +11,12 @@ import hamsters.HamstersTask;
 import hamsters.OperatorType;
 import hamsters.TaskType;
 
+/**
+ * EnableWithAbstractTask
+ * cette classe sert à tester l'opérateur choice avec une tâche abstraite
+ * @author frozenhandgroup
+ *
+ */
 public class EnablewithAbstractTasks {
 
 	private HamstersAPI hamAPI;
@@ -48,6 +54,11 @@ public class EnablewithAbstractTasks {
 		op.addChild(task11);
 		op.addChild(task12);
 	}
+	
+	/**
+	 * Test de l'enregistrement du fichier
+	 * Après le test sur l'opérateur enable
+	 */
 	@Test
 	public  void testENWAT (){
 		try {
@@ -57,6 +68,11 @@ public class EnablewithAbstractTasks {
 			e.printStackTrace();
 		}
 	}
+	
+	/**
+	 *  retourne un HamsterAPI
+	 * @return un HamstersAPI
+	 */
 	public HamstersAPI getAPI() {
 		return hamAPI;
 	}
