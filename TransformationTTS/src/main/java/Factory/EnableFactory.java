@@ -18,7 +18,7 @@ import hamsters.HamstersOperator;
 public class EnableFactory extends FactoryTransformation {
 
 	/**
-	 * factory est une instance de SGaphFactory de la bibliotheque Yakindu
+	 * sgraph est une instance de SGaphFactory de la bibliotheque Yakindu
 	 */
 	private static SGraphFactory sgraph = SGraphFactory.eINSTANCE;
 

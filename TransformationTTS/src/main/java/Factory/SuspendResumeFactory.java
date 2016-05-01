@@ -22,7 +22,7 @@ import hamsters.HamstersOperator;
 public class SuspendResumeFactory extends FactoryTransformation {
 	
 	/**
-	 * factory est une instance de SGaphFactory de la bibliotheque Yakindu
+	 * sgraph est une instance de SGaphFactory de la bibliothèque Yakindu
 	 */
 	private static SGraphFactory sgraph = SGraphFactory.eINSTANCE;
 

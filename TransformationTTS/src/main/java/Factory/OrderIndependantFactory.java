@@ -17,9 +17,25 @@ import hamsters.HamstersNode;
 import hamsters.HamstersOperator;
 import hamsters.HamstersTask;
 
+/**
+ * OrderIndependentFactory 
+ * Classe servant à créer un état d'un stateChart avec l'opérateur Enable
+ * tout en lui attachant des tâches
+ * @author frozenhandgroup
+ */
 public class OrderIndependantFactory extends FactoryTransformation{
+	
+	/**
+	 * sgraph est une instance de SGaphFactory de la bibliothèque Yakindu
+	 */
 	private static SGraphFactory sgraph = SGraphFactory.eINSTANCE;
 
+	/**
+	 * permet de parcourir une structure hiérachique de type hamsterOperateur
+	 * et construit un état du stateChart
+	 * @param hOP un hamsterOperateur pour parcourir la structure arborescente 
+	 * @return un état 
+	 */
 	public static State orderindependantToSC(HamstersOperator hOP) {
 		/**
 		 * Création du premier état composite.
@@ -87,6 +103,13 @@ public class OrderIndependantFactory extends FactoryTransformation{
 		return e;	
 	}
 	
+	/**
+	 * Permet d'imbriquer les hamsteNode
+	 * @param rem une liste de HamstersNode
+	 * @param hn une liste de HamstersNode
+	 * @param lg une liste de listes de HamstersNode
+	 * @return une liste de listes HamstersNode
+	 */
 	private static List<List<HamstersNode>> creationList(List<HamstersNode> rem, List<HamstersNode> hn , List<List<HamstersNode>> lg) {
 		List<HamstersNode> buff = new ArrayList<>(rem);
 		if(rem.size()==1) {
