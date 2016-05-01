@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sgraph:Statechart xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sgraph="http://www.yakindu.org/sct/sgraph/2.0.0" name="initial stateChart">
+  <regions name="initial region">
+    <vertices xsi:type="sgraph:State" name="[]">
+      <regions>
+        <vertices xsi:type="sgraph:Entry">
+          <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.1"/>
+        </vertices>
+        <vertices xsi:type="sgraph:Choice" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.0/@outgoingTransitions.0">
+          <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.2"/>
+          <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.3"/>
+          <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.4"/>
+          <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.5"/>
+        </vertices>
+        <vertices xsi:type="sgraph:State" name="Tache Feuille numero 1" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.1/@outgoingTransitions.0"/>
+        <vertices xsi:type="sgraph:State" name="Tache Feuille numero 2" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.1/@outgoingTransitions.1"/>
+        <vertices xsi:type="sgraph:State" name="Tache Feuille numero 3" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.1/@outgoingTransitions.2"/>
+        <vertices xsi:type="sgraph:State" name="Tache Feuille numero 4" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.1/@outgoingTransitions.3"/>
+        <vertices xsi:type="sgraph:FinalState"/>
+      </regions>
+    </vertices>
+  </regions>
+</sgraph:Statechart>

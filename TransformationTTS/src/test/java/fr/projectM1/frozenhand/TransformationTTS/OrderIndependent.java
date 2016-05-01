@@ -47,9 +47,8 @@ public class OrderIndependent {
 
 	@Test
 	public void TestOI() {
-		fr.projectM1.frozenhand.TransformationTTS.OrderIndependent o = new OrderIndependent();
 		try {
-			WriteFile.main(FactoryTransformation.Transform(hamAPI), ".\\tests\\OrderIndependant");
+			WriteFile.main(FactoryTransformation.Transform(hamAPI), ".\\tests\\OrderIndependent");
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();

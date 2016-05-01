@@ -1,16 +1,21 @@
 package fr.projectM1.frozenhand.TransformationTTS;
 
+import org.junit.Before;
+import org.junit.Test;
+
+import Factory.FactoryTransformation;
+import TranslationSCT.WriteFile;
 import hamsters.HamstersAPI;
 import hamsters.HamstersOperator;
 import hamsters.HamstersTask;
 import hamsters.OperatorType;
 import hamsters.TaskType;
 
-public class Enable2 {
+public class EnablewithAbstractTasks {
 
 	private HamstersAPI hamAPI;
-
-	public Enable2()
+	@Before
+	public void setUP()
 	{
 		hamAPI = new HamstersAPI("Sequence 2");
 		HamstersOperator operator = new HamstersOperator();
@@ -42,6 +47,15 @@ public class Enable2 {
 		operator.addChild(op);
 		op.addChild(task11);
 		op.addChild(task12);
+	}
+	@Test
+	public  void testENWAT (){
+		try {
+			WriteFile.main(FactoryTransformation.Transform(hamAPI),".\\tests\\EnableWithAbstractTask");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	public HamstersAPI getAPI() {
 		return hamAPI;

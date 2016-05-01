@@ -8,8 +8,8 @@ import org.yakindu.sct.model.sgraph.Transition;
 
 import TranslationSCT.WriteFile;
 import fr.projectM1.frozenhand.TransformationTTS.Concurrency;
-import fr.projectM1.frozenhand.TransformationTTS.ConcurrencyWithEnable;
-import fr.projectM1.frozenhand.TransformationTTS.Enable2;
+import fr.projectM1.frozenhand.TransformationTTS.ConcurrencyWithAbstractTasks;
+import fr.projectM1.frozenhand.TransformationTTS.EnablewithAbstractTasks;
 import hamsters.HamstersAPI;
 import hamsters.HamstersNode;
 import hamsters.HamstersOperator;
@@ -185,7 +185,7 @@ public class ConcurrencyFactory extends FactoryTransformation{
 		return compositeFirst;
 	}
 	public static void main(String[] args) throws Exception{
-		ConcurrencyWithEnable e = new ConcurrencyWithEnable();
+		ConcurrencyWithAbstractTasks e = new ConcurrencyWithAbstractTasks();
     	HamstersAPI hampi = e.getAPI();
     	WriteFile.main(FactoryTransformation.Transform(hampi),".\\lol");
 	}

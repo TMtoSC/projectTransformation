@@ -11,7 +11,7 @@ import org.yakindu.sct.model.sgraph.State;
 import org.yakindu.sct.model.sgraph.Transition;
 
 import TranslationSCT.WriteFile;
-import fr.projectM1.frozenhand.TransformationTTS.Enable2;
+import fr.projectM1.frozenhand.TransformationTTS.EnablewithAbstractTasks;
 import fr.projectM1.frozenhand.TransformationTTS.OrderIndependent;
 import hamsters.HamstersNode;
 import hamsters.HamstersOperator;

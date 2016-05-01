@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sgraph:Statechart xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sgraph="http://www.yakindu.org/sct/sgraph/2.0.0" name="initial stateChart">
+  <regions name="initial region">
+    <vertices xsi:type="sgraph:State" name="|>">
+      <regions>
+        <vertices xsi:type="sgraph:Entry" kind="DEEP_HISTORY">
+          <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.1"/>
+        </vertices>
+        <vertices xsi:type="sgraph:State" name="Tache d&#xe9;sactiv&#xe9;e et resume" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.0/@outgoingTransitions.0 //@regions.0/@vertices.0/@regions.0/@vertices.2/@outgoingTransitions.0">
+          <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.2"/>
+        </vertices>
+        <vertices xsi:type="sgraph:State" name="Tache d&#xe9;sactivante" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.1/@outgoingTransitions.0">
+          <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.1"/>
+        </vertices>
+        <vertices xsi:type="sgraph:FinalState"/>
+      </regions>
+    </vertices>
+  </regions>
+</sgraph:Statechart>

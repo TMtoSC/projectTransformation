@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sgraph:Statechart xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sgraph="http://www.yakindu.org/sct/sgraph/2.0.0" name="initial stateChart">
+  <regions name="initial region">
+    <vertices xsi:type="sgraph:State" name="|=|">
+      <regions>
+        <vertices xsi:type="sgraph:Entry"/>
+        <vertices xsi:type="sgraph:Choice">
+          <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.2"/>
+          <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.3"/>
+          <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.4"/>
+          <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.5"/>
+          <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.6"/>
+          <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.7"/>
+          <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.8"/>
+          <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.9"/>
+          <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.10"/>
+          <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.11"/>
+          <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.12"/>
+          <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.13"/>
+          <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.14"/>
+          <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.15"/>
+          <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.16"/>
+          <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.17"/>
+          <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.18"/>
+          <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.19"/>
+          <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.20"/>
+          <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.21"/>
+          <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.22"/>
+          <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.23"/>
+          <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.24"/>
+          <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.25"/>
+        </vertices>
+        <vertices xsi:type="sgraph:State" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.1/@outgoingTransitions.0">
+          <regions>
+            <vertices xsi:type="sgraph:Entry">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.2/@regions.0/@vertices.1"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 1" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.2/@regions.0/@vertices.0/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.2/@regions.0/@vertices.2"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 2" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.2/@regions.0/@vertices.1/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.2/@regions.0/@vertices.3"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 3" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.2/@regions.0/@vertices.2/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.2/@regions.0/@vertices.4"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 4" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.2/@regions.0/@vertices.3/@outgoingTransitions.0"/>
+          </regions>
+        </vertices>
+        <vertices xsi:type="sgraph:State" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.1/@outgoingTransitions.1">
+          <regions>
+            <vertices xsi:type="sgraph:Entry">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.3/@regions.0/@vertices.1"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 1" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.3/@regions.0/@vertices.0/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.3/@regions.0/@vertices.2"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 2" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.3/@regions.0/@vertices.1/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.3/@regions.0/@vertices.3"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 4" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.3/@regions.0/@vertices.2/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.3/@regions.0/@vertices.4"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 3" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.3/@regions.0/@vertices.3/@outgoingTransitions.0"/>
+          </regions>
+        </vertices>
+        <vertices xsi:type="sgraph:State" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.1/@outgoingTransitions.2">
+          <regions>
+            <vertices xsi:type="sgraph:Entry">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.4/@regions.0/@vertices.1"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 1" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.4/@regions.0/@vertices.0/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.4/@regions.0/@vertices.2"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 3" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.4/@regions.0/@vertices.1/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.4/@regions.0/@vertices.3"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 2" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.4/@regions.0/@vertices.2/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.4/@regions.0/@vertices.4"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 4" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.4/@regions.0/@vertices.3/@outgoingTransitions.0"/>
+          </regions>
+        </vertices>
+        <vertices xsi:type="sgraph:State" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.1/@outgoingTransitions.3">
+          <regions>
+            <vertices xsi:type="sgraph:Entry">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.5/@regions.0/@vertices.1"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 1" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.5/@regions.0/@vertices.0/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.5/@regions.0/@vertices.2"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 3" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.5/@regions.0/@vertices.1/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.5/@regions.0/@vertices.3"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 4" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.5/@regions.0/@vertices.2/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.5/@regions.0/@vertices.4"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 2" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.5/@regions.0/@vertices.3/@outgoingTransitions.0"/>
+          </regions>
+        </vertices>
+        <vertices xsi:type="sgraph:State" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.1/@outgoingTransitions.4">
+          <regions>
+            <vertices xsi:type="sgraph:Entry">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.6/@regions.0/@vertices.1"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 1" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.6/@regions.0/@vertices.0/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.6/@regions.0/@vertices.2"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 4" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.6/@regions.0/@vertices.1/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.6/@regions.0/@vertices.3"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 2" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.6/@regions.0/@vertices.2/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.6/@regions.0/@vertices.4"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 3" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.6/@regions.0/@vertices.3/@outgoingTransitions.0"/>
+          </regions>
+        </vertices>
+        <vertices xsi:type="sgraph:State" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.1/@outgoingTransitions.5">
+          <regions>
+            <vertices xsi:type="sgraph:Entry">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.7/@regions.0/@vertices.1"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 1" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.7/@regions.0/@vertices.0/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.7/@regions.0/@vertices.2"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 4" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.7/@regions.0/@vertices.1/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.7/@regions.0/@vertices.3"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 3" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.7/@regions.0/@vertices.2/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.7/@regions.0/@vertices.4"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 2" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.7/@regions.0/@vertices.3/@outgoingTransitions.0"/>
+          </regions>
+        </vertices>
+        <vertices xsi:type="sgraph:State" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.1/@outgoingTransitions.6">
+          <regions>
+            <vertices xsi:type="sgraph:Entry">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.8/@regions.0/@vertices.1"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 2" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.8/@regions.0/@vertices.0/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.8/@regions.0/@vertices.2"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 1" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.8/@regions.0/@vertices.1/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.8/@regions.0/@vertices.3"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 3" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.8/@regions.0/@vertices.2/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.8/@regions.0/@vertices.4"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 4" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.8/@regions.0/@vertices.3/@outgoingTransitions.0"/>
+          </regions>
+        </vertices>
+        <vertices xsi:type="sgraph:State" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.1/@outgoingTransitions.7">
+          <regions>
+            <vertices xsi:type="sgraph:Entry">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.9/@regions.0/@vertices.1"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 2" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.9/@regions.0/@vertices.0/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.9/@regions.0/@vertices.2"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 1" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.9/@regions.0/@vertices.1/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.9/@regions.0/@vertices.3"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 4" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.9/@regions.0/@vertices.2/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.9/@regions.0/@vertices.4"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 3" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.9/@regions.0/@vertices.3/@outgoingTransitions.0"/>
+          </regions>
+        </vertices>
+        <vertices xsi:type="sgraph:State" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.1/@outgoingTransitions.8">
+          <regions>
+            <vertices xsi:type="sgraph:Entry">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.10/@regions.0/@vertices.1"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 2" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.10/@regions.0/@vertices.0/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.10/@regions.0/@vertices.2"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 3" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.10/@regions.0/@vertices.1/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.10/@regions.0/@vertices.3"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 1" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.10/@regions.0/@vertices.2/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.10/@regions.0/@vertices.4"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 4" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.10/@regions.0/@vertices.3/@outgoingTransitions.0"/>
+          </regions>
+        </vertices>
+        <vertices xsi:type="sgraph:State" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.1/@outgoingTransitions.9">
+          <regions>
+            <vertices xsi:type="sgraph:Entry">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.11/@regions.0/@vertices.1"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 2" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.11/@regions.0/@vertices.0/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.11/@regions.0/@vertices.2"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 3" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.11/@regions.0/@vertices.1/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.11/@regions.0/@vertices.3"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 4" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.11/@regions.0/@vertices.2/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.11/@regions.0/@vertices.4"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 1" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.11/@regions.0/@vertices.3/@outgoingTransitions.0"/>
+          </regions>
+        </vertices>
+        <vertices xsi:type="sgraph:State" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.1/@outgoingTransitions.10">
+          <regions>
+            <vertices xsi:type="sgraph:Entry">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.12/@regions.0/@vertices.1"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 2" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.12/@regions.0/@vertices.0/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.12/@regions.0/@vertices.2"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 4" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.12/@regions.0/@vertices.1/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.12/@regions.0/@vertices.3"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 1" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.12/@regions.0/@vertices.2/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.12/@regions.0/@vertices.4"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 3" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.12/@regions.0/@vertices.3/@outgoingTransitions.0"/>
+          </regions>
+        </vertices>
+        <vertices xsi:type="sgraph:State" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.1/@outgoingTransitions.11">
+          <regions>
+            <vertices xsi:type="sgraph:Entry">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.13/@regions.0/@vertices.1"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 2" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.13/@regions.0/@vertices.0/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.13/@regions.0/@vertices.2"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 4" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.13/@regions.0/@vertices.1/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.13/@regions.0/@vertices.3"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 3" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.13/@regions.0/@vertices.2/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.13/@regions.0/@vertices.4"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 1" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.13/@regions.0/@vertices.3/@outgoingTransitions.0"/>
+          </regions>
+        </vertices>
+        <vertices xsi:type="sgraph:State" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.1/@outgoingTransitions.12">
+          <regions>
+            <vertices xsi:type="sgraph:Entry">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.14/@regions.0/@vertices.1"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 3" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.14/@regions.0/@vertices.0/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.14/@regions.0/@vertices.2"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 1" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.14/@regions.0/@vertices.1/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.14/@regions.0/@vertices.3"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 2" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.14/@regions.0/@vertices.2/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.14/@regions.0/@vertices.4"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 4" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.14/@regions.0/@vertices.3/@outgoingTransitions.0"/>
+          </regions>
+        </vertices>
+        <vertices xsi:type="sgraph:State" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.1/@outgoingTransitions.13">
+          <regions>
+            <vertices xsi:type="sgraph:Entry">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.15/@regions.0/@vertices.1"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 3" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.15/@regions.0/@vertices.0/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.15/@regions.0/@vertices.2"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 1" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.15/@regions.0/@vertices.1/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.15/@regions.0/@vertices.3"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 4" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.15/@regions.0/@vertices.2/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.15/@regions.0/@vertices.4"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 2" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.15/@regions.0/@vertices.3/@outgoingTransitions.0"/>
+          </regions>
+        </vertices>
+        <vertices xsi:type="sgraph:State" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.1/@outgoingTransitions.14">
+          <regions>
+            <vertices xsi:type="sgraph:Entry">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.16/@regions.0/@vertices.1"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 3" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.16/@regions.0/@vertices.0/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.16/@regions.0/@vertices.2"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 2" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.16/@regions.0/@vertices.1/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.16/@regions.0/@vertices.3"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 1" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.16/@regions.0/@vertices.2/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.16/@regions.0/@vertices.4"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 4" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.16/@regions.0/@vertices.3/@outgoingTransitions.0"/>
+          </regions>
+        </vertices>
+        <vertices xsi:type="sgraph:State" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.1/@outgoingTransitions.15">
+          <regions>
+            <vertices xsi:type="sgraph:Entry">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.17/@regions.0/@vertices.1"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 3" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.17/@regions.0/@vertices.0/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.17/@regions.0/@vertices.2"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 2" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.17/@regions.0/@vertices.1/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.17/@regions.0/@vertices.3"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 4" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.17/@regions.0/@vertices.2/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.17/@regions.0/@vertices.4"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 1" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.17/@regions.0/@vertices.3/@outgoingTransitions.0"/>
+          </regions>
+        </vertices>
+        <vertices xsi:type="sgraph:State" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.1/@outgoingTransitions.16">
+          <regions>
+            <vertices xsi:type="sgraph:Entry">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.18/@regions.0/@vertices.1"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 3" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.18/@regions.0/@vertices.0/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.18/@regions.0/@vertices.2"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 4" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.18/@regions.0/@vertices.1/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.18/@regions.0/@vertices.3"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 1" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.18/@regions.0/@vertices.2/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.18/@regions.0/@vertices.4"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 2" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.18/@regions.0/@vertices.3/@outgoingTransitions.0"/>
+          </regions>
+        </vertices>
+        <vertices xsi:type="sgraph:State" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.1/@outgoingTransitions.17">
+          <regions>
+            <vertices xsi:type="sgraph:Entry">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.19/@regions.0/@vertices.1"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 3" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.19/@regions.0/@vertices.0/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.19/@regions.0/@vertices.2"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 4" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.19/@regions.0/@vertices.1/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.19/@regions.0/@vertices.3"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 2" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.19/@regions.0/@vertices.2/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.19/@regions.0/@vertices.4"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 1" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.19/@regions.0/@vertices.3/@outgoingTransitions.0"/>
+          </regions>
+        </vertices>
+        <vertices xsi:type="sgraph:State" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.1/@outgoingTransitions.18">
+          <regions>
+            <vertices xsi:type="sgraph:Entry">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.20/@regions.0/@vertices.1"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 4" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.20/@regions.0/@vertices.0/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.20/@regions.0/@vertices.2"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 1" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.20/@regions.0/@vertices.1/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.20/@regions.0/@vertices.3"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 2" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.20/@regions.0/@vertices.2/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.20/@regions.0/@vertices.4"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 3" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.20/@regions.0/@vertices.3/@outgoingTransitions.0"/>
+          </regions>
+        </vertices>
+        <vertices xsi:type="sgraph:State" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.1/@outgoingTransitions.19">
+          <regions>
+            <vertices xsi:type="sgraph:Entry">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.21/@regions.0/@vertices.1"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 4" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.21/@regions.0/@vertices.0/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.21/@regions.0/@vertices.2"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 1" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.21/@regions.0/@vertices.1/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.21/@regions.0/@vertices.3"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 3" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.21/@regions.0/@vertices.2/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.21/@regions.0/@vertices.4"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 2" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.21/@regions.0/@vertices.3/@outgoingTransitions.0"/>
+          </regions>
+        </vertices>
+        <vertices xsi:type="sgraph:State" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.1/@outgoingTransitions.20">
+          <regions>
+            <vertices xsi:type="sgraph:Entry">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.22/@regions.0/@vertices.1"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 4" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.22/@regions.0/@vertices.0/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.22/@regions.0/@vertices.2"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 2" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.22/@regions.0/@vertices.1/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.22/@regions.0/@vertices.3"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 1" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.22/@regions.0/@vertices.2/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.22/@regions.0/@vertices.4"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 3" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.22/@regions.0/@vertices.3/@outgoingTransitions.0"/>
+          </regions>
+        </vertices>
+        <vertices xsi:type="sgraph:State" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.1/@outgoingTransitions.21">
+          <regions>
+            <vertices xsi:type="sgraph:Entry">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.23/@regions.0/@vertices.1"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 4" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.23/@regions.0/@vertices.0/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.23/@regions.0/@vertices.2"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 2" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.23/@regions.0/@vertices.1/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.23/@regions.0/@vertices.3"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 3" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.23/@regions.0/@vertices.2/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.23/@regions.0/@vertices.4"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 1" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.23/@regions.0/@vertices.3/@outgoingTransitions.0"/>
+          </regions>
+        </vertices>
+        <vertices xsi:type="sgraph:State" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.1/@outgoingTransitions.22">
+          <regions>
+            <vertices xsi:type="sgraph:Entry">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.24/@regions.0/@vertices.1"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 4" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.24/@regions.0/@vertices.0/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.24/@regions.0/@vertices.2"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 3" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.24/@regions.0/@vertices.1/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.24/@regions.0/@vertices.3"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 1" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.24/@regions.0/@vertices.2/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.24/@regions.0/@vertices.4"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 2" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.24/@regions.0/@vertices.3/@outgoingTransitions.0"/>
+          </regions>
+        </vertices>
+        <vertices xsi:type="sgraph:State" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.1/@outgoingTransitions.23">
+          <regions>
+            <vertices xsi:type="sgraph:Entry">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.25/@regions.0/@vertices.1"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 4" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.25/@regions.0/@vertices.0/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.25/@regions.0/@vertices.2"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 3" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.25/@regions.0/@vertices.1/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.25/@regions.0/@vertices.3"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 2" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.25/@regions.0/@vertices.2/@outgoingTransitions.0">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.25/@regions.0/@vertices.4"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="Tache noeud numero 1" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.25/@regions.0/@vertices.3/@outgoingTransitions.0"/>
+          </regions>
+        </vertices>
+        <vertices xsi:type="sgraph:FinalState"/>
+      </regions>
+    </vertices>
+  </regions>
+</sgraph:Statechart>

@@ -1,5 +1,10 @@
 package fr.projectM1.frozenhand.TransformationTTS;
 
+import org.junit.Before;
+import org.junit.Test;
+
+import Factory.FactoryTransformation;
+import TranslationSCT.WriteFile;
 import hamsters.HamstersAPI;
 import hamsters.HamstersOperator;
 import hamsters.HamstersTask;
@@ -9,9 +14,9 @@ import hamsters.TaskType;
 public class Concurrency {
 	
 	private HamstersAPI hamAPI;
-	
-	public Concurrency()
-	{	hamAPI = new HamstersAPI("Concurrency 1");
+	@Before
+	public void setUp() {
+		hamAPI = new HamstersAPI("Concurrency 1");
 		HamstersOperator operator = new HamstersOperator();
 		operator.setType(OperatorType.CONCURRENT);
 		hamAPI.addHamstersNode(operator);
@@ -61,6 +66,16 @@ public class Concurrency {
 		operator.addChild(task4);
 		operator.addChild(task5);
 		operator.addChild(task6);
+	}
+	
+	@Test
+	public  void testCO (){
+		try {
+			WriteFile.main(FactoryTransformation.Transform(hamAPI),".\\tests\\Concurrency");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	public HamstersAPI getAPI() {
 		return hamAPI;

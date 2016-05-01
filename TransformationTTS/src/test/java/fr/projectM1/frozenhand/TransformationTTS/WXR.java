@@ -1,5 +1,10 @@
 package fr.projectM1.frozenhand.TransformationTTS;
 
+import org.junit.Before;
+import org.junit.Test;
+
+import Factory.FactoryTransformation;
+import TranslationSCT.WriteFile;
 import hamsters.HamstersAPI;
 import hamsters.HamstersOperator;
 import hamsters.HamstersTask;
@@ -10,7 +15,8 @@ public class WXR {
 	
 	private HamstersAPI hamAPI;
 	
-	public WXR(){
+	@Before
+	public void setUP(){
 		
 		// profondeur 0 
 		hamAPI = new HamstersAPI("WXR");
@@ -183,6 +189,16 @@ public class WXR {
 		op9.addChild(editAngle);
 		op9.addChild(checkUpdateValue);
 		
+	}
+	
+	@Test
+	public  void testWXR (){
+		try {
+			WriteFile.main(FactoryTransformation.Transform(hamAPI),".\\tests\\WXR");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	public HamstersAPI getAPI() {
 		return hamAPI;

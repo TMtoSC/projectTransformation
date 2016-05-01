@@ -1,5 +1,10 @@
 package fr.projectM1.frozenhand.TransformationTTS;
 
+import org.junit.Before;
+import org.junit.Test;
+
+import Factory.FactoryTransformation;
+import TranslationSCT.WriteFile;
 import hamsters.HamstersAPI;
 import hamsters.HamstersOperator;
 import hamsters.HamstersTask;
@@ -10,9 +15,8 @@ public class SuspendResume {
 
 		
 		private HamstersAPI hamAPI;
-		
-		public SuspendResume()
-		{
+		@Before
+		public void setUP()	{
 			hamAPI = new HamstersAPI("SuspendResume 1");
 			HamstersOperator operator = new HamstersOperator();
 			operator.setType(OperatorType.SUSPEND_RESUME);
@@ -30,5 +34,15 @@ public class SuspendResume {
 		}
 		public HamstersAPI getAPI() {
 			return hamAPI;
+		}
+		
+		@Test
+		public  void testSR (){
+			try {
+				WriteFile.main(FactoryTransformation.Transform(hamAPI),".\\tests\\SuspendResume");
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 }

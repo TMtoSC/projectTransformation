@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sgraph:Statechart xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sgraph="http://www.yakindu.org/sct/sgraph/2.0.0" name="initial stateChart">
+  <regions name="initial region">
+    <vertices xsi:type="sgraph:State" name="|||">
+      <regions name="Reg 0">
+        <vertices xsi:type="sgraph:Entry">
+          <outgoingTransitions target="//@regions.0/@vertices.0/@regions.0/@vertices.1"/>
+        </vertices>
+        <vertices xsi:type="sgraph:State" name="" incomingTransitions="//@regions.0/@vertices.0/@regions.0/@vertices.0/@outgoingTransitions.0"/>
+      </regions>
+      <regions name="Concurrency ||| n&#xb0;1 ">
+        <vertices xsi:type="sgraph:Entry"/>
+        <vertices xsi:type="sgraph:State" name="Composite state n&#xb0; 1 ">
+          <regions name="R&#xe9;gion n&#xb0; 11">
+            <vertices xsi:type="sgraph:Entry">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.1/@vertices.1/@regions.0/@vertices.1"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="" incomingTransitions="//@regions.0/@vertices.0/@regions.1/@vertices.1/@regions.0/@vertices.0/@outgoingTransitions.0">
+              <regions>
+                <vertices xsi:type="sgraph:Entry">
+                  <outgoingTransitions target="//@regions.0/@vertices.0/@regions.1/@vertices.1/@regions.0/@vertices.1/@regions.0/@vertices.1"/>
+                </vertices>
+                <vertices xsi:type="sgraph:State" name="Enable 1" incomingTransitions="//@regions.0/@vertices.0/@regions.1/@vertices.1/@regions.0/@vertices.1/@regions.0/@vertices.0/@outgoingTransitions.0">
+                  <outgoingTransitions target="//@regions.0/@vertices.0/@regions.1/@vertices.1/@regions.0/@vertices.1/@regions.0/@vertices.2"/>
+                </vertices>
+                <vertices xsi:type="sgraph:State" name="Ena 2" incomingTransitions="//@regions.0/@vertices.0/@regions.1/@vertices.1/@regions.0/@vertices.1/@regions.0/@vertices.1/@outgoingTransitions.0"/>
+              </regions>
+            </vertices>
+          </regions>
+          <regions name="Concurrency ||| n&#xb0;2 ">
+            <vertices xsi:type="sgraph:Entry">
+              <outgoingTransitions target="//@regions.0/@vertices.0/@regions.1/@vertices.1/@regions.1/@vertices.1"/>
+            </vertices>
+            <vertices xsi:type="sgraph:State" name="[]" incomingTransitions="//@regions.0/@vertices.0/@regions.1/@vertices.1/@regions.1/@vertices.0/@outgoingTransitions.0">
+              <regions>
+                <vertices xsi:type="sgraph:Entry">
+                  <outgoingTransitions target="//@regions.0/@vertices.0/@regions.1/@vertices.1/@regions.1/@vertices.1/@regions.0/@vertices.1"/>
+                </vertices>
+                <vertices xsi:type="sgraph:Choice" incomingTransitions="//@regions.0/@vertices.0/@regions.1/@vertices.1/@regions.1/@vertices.1/@regions.0/@vertices.0/@outgoingTransitions.0">
+                  <outgoingTransitions target="//@regions.0/@vertices.0/@regions.1/@vertices.1/@regions.1/@vertices.1/@regions.0/@vertices.2"/>
+                  <outgoingTransitions target="//@regions.0/@vertices.0/@regions.1/@vertices.1/@regions.1/@vertices.1/@regions.0/@vertices.3"/>
+                </vertices>
+                <vertices xsi:type="sgraph:State" name="Choice 1" incomingTransitions="//@regions.0/@vertices.0/@regions.1/@vertices.1/@regions.1/@vertices.1/@regions.0/@vertices.1/@outgoingTransitions.0"/>
+                <vertices xsi:type="sgraph:State" name="Choice 2" incomingTransitions="//@regions.0/@vertices.0/@regions.1/@vertices.1/@regions.1/@vertices.1/@regions.0/@vertices.1/@outgoingTransitions.1"/>
+              </regions>
+            </vertices>
+          </regions>
+        </vertices>
+        <vertices xsi:type="sgraph:FinalState"/>
+      </regions>
+    </vertices>
+  </regions>
+</sgraph:Statechart>

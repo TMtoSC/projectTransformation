@@ -1,5 +1,10 @@
 package fr.projectM1.frozenhand.TransformationTTS;
 
+import org.junit.Before;
+import org.junit.Test;
+
+import Factory.FactoryTransformation;
+import TranslationSCT.WriteFile;
 import hamsters.HamstersAPI;
 import hamsters.HamstersOperator;
 import hamsters.HamstersTask;
@@ -10,7 +15,8 @@ public class Disable {
 
 	private HamstersAPI hamAPI;
 	
-	public Disable(){
+	@Before
+	public void serUP(){
 		hamAPI = new HamstersAPI("Disable 1");
 		HamstersOperator operator = new HamstersOperator();
 		operator.setType(OperatorType.DISABLE);
@@ -36,6 +42,15 @@ public class Disable {
 		opEn.addChild(task4);
 		
 		
+	}
+	@Test
+	public  void testDI (){
+		try {
+			WriteFile.main(FactoryTransformation.Transform(hamAPI),".\\tests\\Disable");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	public HamstersAPI getAPI() {
 		return hamAPI;
