@@ -52,23 +52,8 @@ public class ConcurrencyTranslation extends TaskModelTranslation{
 		 */
 		Entry entry = sgraph.createEntry();
 		r.getVertices().add(entry);
-		/**
-		 * création de la synchronisation
-		 */
-		Synchronization synch = sgraph.createSynchronization();
-		r.getVertices().add(synch);
-		/**
-		 * création de l'état permettant de regrouper la synchronisation
-		 */
-		State syncState = sgraph.createState();
-		syncState.setName("SyncState1");
-		r.getVertices().add(syncState);
-		/**
-		 * Création de la transition allant de l'état synchronisant à la synchronisation
-		 */
-		Transition syncTrans = sgraph.createTransition();
-		syncTrans.setSource(syncState);
-		syncTrans.setTarget(synch);
+
+
 		/**
 		 * création du premier état
 		 */
@@ -111,17 +96,7 @@ public class ConcurrencyTranslation extends TaskModelTranslation{
 				 */
 				Entry entry2 = sgraph.createEntry();
 				r2.getVertices().add(entry2);
-				/**
-				 * création de la synchronisation pour cette concurrence
-				 */
-				Synchronization syncTemp =  sgraph.createSynchronization();
-				r2.getVertices().add(syncTemp);
-				State syncStateTemp = sgraph.createState();
-				r2.getVertices().add(syncStateTemp);
-				syncStateTemp.setName("SyncState2");
-				Transition syncTransTemp = sgraph.createTransition();
-				syncTransTemp.setSource(syncStateTemp);
-				syncTransTemp.setTarget(syncTemp);
+
 				/**
 				 * création de l'état
 				 */
