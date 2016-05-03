@@ -4,7 +4,7 @@
  * tout en lui attachant des tâches
  * @author frozenhandgroup
  */
-package Factory;
+package translationTaskModelToStachart;
 
 import org.yakindu.sct.model.sgraph.Choice;
 import org.yakindu.sct.model.sgraph.Entry;
@@ -13,10 +13,10 @@ import org.yakindu.sct.model.sgraph.SGraphFactory;
 import org.yakindu.sct.model.sgraph.State;
 import org.yakindu.sct.model.sgraph.Transition;
 
-import TranslationSCT.WriteFile;
 import hamsters.HamstersOperator;
+import statechartsInXML.WriteFile;
 
-public class ChoiceFactory extends FactoryTransformation {
+public class ChoiceTranslation extends TaskModelTranslation {
 	/**
 	 * factory est une instance de SGaphFactory de la bibliotheque Yakindu
 	 */

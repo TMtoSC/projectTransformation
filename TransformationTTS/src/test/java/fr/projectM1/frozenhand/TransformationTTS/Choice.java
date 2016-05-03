@@ -3,13 +3,13 @@ package fr.projectM1.frozenhand.TransformationTTS;
 import org.junit.Before;
 import org.junit.Test;
 
-import Factory.FactoryTransformation;
-import TranslationSCT.WriteFile;
 import hamsters.HamstersAPI;
 import hamsters.HamstersOperator;
 import hamsters.HamstersTask;
 import hamsters.OperatorType;
 import hamsters.TaskType;
+import statechartsInXML.WriteFile;
+import translationTaskModelToStachart.TaskModelTranslation;
 
 /**
  * Choice
@@ -57,7 +57,7 @@ public class Choice {
 		@Test
 		public  void testCH (){
 			try {
-				WriteFile.main(FactoryTransformation.Transform(hamAPI),".\\tests\\Choice");
+				WriteFile.main(TaskModelTranslation.Transform(hamAPI),".\\tests\\Choice");
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

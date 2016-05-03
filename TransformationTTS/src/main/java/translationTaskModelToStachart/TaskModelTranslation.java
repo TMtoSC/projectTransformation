@@ -1,4 +1,4 @@
-package Factory;
+package translationTaskModelToStachart;
 
 import org.yakindu.sct.model.sgraph.CompositeElement;
 import org.yakindu.sct.model.sgraph.FinalState;
@@ -27,7 +27,7 @@ import hamsters.OperatorType;
  * Classe servant à faire une transformation en un stateChart selon un opérateur lotos
  * @author frozenhand
  */
-public class FactoryTransformation {
+public class TaskModelTranslation {
 	/**
 	 * factory est une instance de SGaphFactory de la bibliotheque Yakindu
 	 */
@@ -54,27 +54,27 @@ public class FactoryTransformation {
 		if (ha instanceof HamstersOperator) {
 			switch (ha.getDescription()) {
 				case ">>" :
-					s = EnableFactory.enabletoSc((HamstersOperator) ha);
+					s = EnableTranslation.enabletoSc((HamstersOperator) ha);
 					re.getVertices().add(s);
 					break;
 				case "[]" :
-					s = ChoiceFactory.choiceToSc((HamstersOperator) ha);
+					s = ChoiceTranslation.choiceToSc((HamstersOperator) ha);
 					re.getVertices().add(s);
 					break;
 				case "[>" :
-					s = DisableFactory.disableToSc((HamstersOperator) ha);
+					s = DisableTranslation.disableToSc((HamstersOperator) ha);
 					re.getVertices().add(s);
 					break;
 				case "|||" :
-					s = ConcurrencyFactory.concurrencyToSc((HamstersOperator) ha);
+					s = ConcurrencyTranslation.concurrencyToSc((HamstersOperator) ha);
 					re.getVertices().add(s);
 					break;
 				case "|>" :
-					s = SuspendResumeFactory.suspendResumeToSc((HamstersOperator) ha);
+					s = SuspendResumeTranslation.suspendResumeToSc((HamstersOperator) ha);
 					re.getVertices().add(s);
 					break;
 				case "|=|" :
-					s = OrderIndependantFactory.orderindependantToSC((HamstersOperator) ha);
+					s = OrderIndependentTranslation.orderindependantToSC((HamstersOperator) ha);
 					re.getVertices().add(s);
 					break;
 
@@ -85,8 +85,7 @@ public class FactoryTransformation {
 		s.getRegions().get(s.getRegions().size() - 1).getVertices().add(fs);
 		Transition lastTransition = factory.createTransition();
 		int last = s.getRegions().get(s.getRegions().size() - 1).getVertices().size() - 2;
-		// lastTransition.setSource(s.getRegions().get(s.getRegions().size()-1).getVertices().get(last));
-		// lastTransition.setTarget(fs);
+
 		return sc;
 	}
 
@@ -105,17 +104,17 @@ public class FactoryTransformation {
 		}
 		switch (ha.getDescription()) {
 			case ">>" :
-				return EnableFactory.enabletoSc(ha);
+				return EnableTranslation.enabletoSc(ha);
 			case "[]" :
-				return ChoiceFactory.choiceToSc(ha);
+				return ChoiceTranslation.choiceToSc(ha);
 			case "[>" :
-				return DisableFactory.disableToSc(ha);
+				return DisableTranslation.disableToSc(ha);
 			case "|||" :
-				return ConcurrencyFactory.concurrencyToSc(ha);
+				return ConcurrencyTranslation.concurrencyToSc(ha);
 			case "|>" :
-				return SuspendResumeFactory.suspendResumeToSc(ha);
+				return SuspendResumeTranslation.suspendResumeToSc(ha);
 			case "|=|" : 
-				return OrderIndependantFactory.orderindependantToSC(ha);
+				return OrderIndependentTranslation.orderindependantToSC(ha);
 		}
 		return null;
 	}

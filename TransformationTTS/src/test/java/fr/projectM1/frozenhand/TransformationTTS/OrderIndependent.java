@@ -1,8 +1,7 @@
 package fr.projectM1.frozenhand.TransformationTTS;
 
 import org.junit.Before;
-import Factory.FactoryTransformation;
-import TranslationSCT.WriteFile;
+
 import hamsters.HamstersAPI;
 import hamsters.HamstersOperator;
 import hamsters.HamstersTask;
@@ -11,6 +10,8 @@ import hamsters.TaskType;
 import org.junit.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
+import statechartsInXML.WriteFile;
+import translationTaskModelToStachart.TaskModelTranslation;
 
 /**
  * orderIndependent Cette Classe Junit permet de faire un test unitaire de
@@ -57,7 +58,7 @@ public class OrderIndependent {
 	@Test
 	public void TestOI() {
 		try {
-			WriteFile.main(FactoryTransformation.Transform(hamAPI), ".\\tests\\OrderIndependent");
+			WriteFile.main(TaskModelTranslation.Transform(hamAPI), ".\\tests\\OrderIndependent");
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();

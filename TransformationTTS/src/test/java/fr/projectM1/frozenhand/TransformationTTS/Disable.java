@@ -3,13 +3,13 @@ package fr.projectM1.frozenhand.TransformationTTS;
 import org.junit.Before;
 import org.junit.Test;
 
-import Factory.FactoryTransformation;
-import TranslationSCT.WriteFile;
 import hamsters.HamstersAPI;
 import hamsters.HamstersOperator;
 import hamsters.HamstersTask;
 import hamsters.OperatorType;
 import hamsters.TaskType;
+import statechartsInXML.WriteFile;
+import translationTaskModelToStachart.TaskModelTranslation;
 
 /**
  * Disable
@@ -57,7 +57,7 @@ public class Disable {
 	@Test
 	public  void testDI (){
 		try {
-			WriteFile.main(FactoryTransformation.Transform(hamAPI),".\\tests\\Disable");
+			WriteFile.main(TaskModelTranslation.Transform(hamAPI),".\\tests\\Disable");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

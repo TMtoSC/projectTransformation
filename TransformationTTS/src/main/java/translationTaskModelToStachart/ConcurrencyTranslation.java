@@ -1,4 +1,4 @@
-package Factory;
+package translationTaskModelToStachart;
 
 import org.yakindu.sct.model.sgraph.Entry;
 import org.yakindu.sct.model.sgraph.Region;
@@ -6,20 +6,20 @@ import org.yakindu.sct.model.sgraph.SGraphFactory;
 import org.yakindu.sct.model.sgraph.State;
 import org.yakindu.sct.model.sgraph.Transition;
 
-import TranslationSCT.WriteFile;
 import fr.projectM1.frozenhand.TransformationTTS.Concurrency;
 import fr.projectM1.frozenhand.TransformationTTS.ConcurrencyWithAbstractTasks;
 import fr.projectM1.frozenhand.TransformationTTS.EnablewithAbstractTasks;
 import hamsters.HamstersAPI;
 import hamsters.HamstersNode;
 import hamsters.HamstersOperator;
+import statechartsInXML.WriteFile;
 
 /**
  * * ConcurrencyFactory 
  * @author Florent Cabric
  * Classe créant l'opérateur concurrence en SC
  */
-public class ConcurrencyFactory extends FactoryTransformation{
+public class ConcurrencyTranslation extends TaskModelTranslation{
 	/**
 	 * mise en place de la factory
 	 */
@@ -183,10 +183,5 @@ public class ConcurrencyFactory extends FactoryTransformation{
 		}
 
 		return compositeFirst;
-	}
-	public static void main(String[] args) throws Exception{
-		ConcurrencyWithAbstractTasks e = new ConcurrencyWithAbstractTasks();
-    	HamstersAPI hampi = e.getAPI();
-    	WriteFile.main(FactoryTransformation.Transform(hampi),".\\lol");
 	}
 }

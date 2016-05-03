@@ -1,4 +1,4 @@
-package Factory;
+package translationTaskModelToStachart;
 
 import org.yakindu.sct.model.sgraph.Entry;
 import org.yakindu.sct.model.sgraph.EntryKind;
@@ -7,11 +7,11 @@ import org.yakindu.sct.model.sgraph.SGraphFactory;
 import org.yakindu.sct.model.sgraph.State;
 import org.yakindu.sct.model.sgraph.Transition;
 
-import TranslationSCT.WriteFile;
 import fr.projectM1.frozenhand.TransformationTTS.Disable;
 import fr.projectM1.frozenhand.TransformationTTS.SuspendResume;
 import hamsters.HamstersNode;
 import hamsters.HamstersOperator;
+import statechartsInXML.WriteFile;
 
 /**
  * SuspendResumeFactory 
@@ -19,7 +19,7 @@ import hamsters.HamstersOperator;
  * tout en lui attachant des tâches
  * @author frozenhandgroup
  */
-public class SuspendResumeFactory extends FactoryTransformation {
+public class SuspendResumeTranslation extends TaskModelTranslation {
 	
 	/**
 	 * sgraph est une instance de SGaphFactory de la bibliothèque Yakindu
@@ -50,9 +50,6 @@ public class SuspendResumeFactory extends FactoryTransformation {
 					temp.setName(hOP.getChildren().get(i).getDescription());
 					r.getVertices().add(temp);
 				} else {
-					/**
-					 * Faire attention possibilité de bug !
-					 */
 					HamstersNode ot = hOP.getChildren().get(i);
 					temp = appel(ot);
 					r.getVertices().add(temp);
@@ -75,18 +72,6 @@ public class SuspendResumeFactory extends FactoryTransformation {
 		return e;
 	}
 	
-	/**
-	 * Permet de simuler la création d'une tâche avec l'opérateur suspendResume
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		fr.projectM1.frozenhand.TransformationTTS.SuspendResume sr = new SuspendResume();
-		try {
-			WriteFile.main(FactoryTransformation.Transform(sr.getAPI()), "/Users/daviddang/Desktop/suspendResumeTest");
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+
 
 }

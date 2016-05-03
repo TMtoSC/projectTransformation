@@ -1,4 +1,4 @@
-package Factory;
+package translationTaskModelToStachart;
 
 import org.yakindu.sct.model.sgraph.Entry;
 import org.yakindu.sct.model.sgraph.Region;
@@ -15,7 +15,7 @@ import hamsters.HamstersOperator;
  * tout en lui attachant des tâches
  * @author frozenhandgroup
  */
-public class EnableFactory extends FactoryTransformation {
+public class EnableTranslation extends TaskModelTranslation {
 
 	/**
 	 * sgraph est une instance de SGaphFactory de la bibliotheque Yakindu

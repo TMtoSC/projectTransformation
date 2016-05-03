@@ -10,9 +10,9 @@ import javax.swing.JFileChooser;
 
 import org.yakindu.sct.model.sgraph.Statechart;
 
-import Factory.FactoryTransformation;
-import TranslationSCT.WriteFile;
 import hamsters.HamstersAPI;
+import statechartsInXML.WriteFile;
+import translationTaskModelToStachart.TaskModelTranslation;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -352,7 +352,7 @@ public class JFrame extends javax.swing.JFrame {
      */
     private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
     	try {
-			statechart = FactoryTransformation.Transform(hampi);
+			statechart = TaskModelTranslation.Transform(hampi);
 	    	jButton7.setBackground(Color.green);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

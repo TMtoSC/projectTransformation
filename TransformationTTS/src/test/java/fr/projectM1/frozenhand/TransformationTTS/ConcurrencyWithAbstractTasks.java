@@ -3,13 +3,13 @@ package fr.projectM1.frozenhand.TransformationTTS;
 import org.junit.Before;
 import org.junit.Test;
 
-import Factory.FactoryTransformation;
-import TranslationSCT.WriteFile;
 import hamsters.HamstersAPI;
 import hamsters.HamstersOperator;
 import hamsters.HamstersTask;
 import hamsters.OperatorType;
 import hamsters.TaskType;
+import statechartsInXML.WriteFile;
+import translationTaskModelToStachart.TaskModelTranslation;
 
 /**
  * ConcurrencyWithAbstractTask
@@ -80,7 +80,7 @@ public class ConcurrencyWithAbstractTasks {
 	@Test
 	public  void testCWE (){
 		try {
-			WriteFile.main(FactoryTransformation.Transform(hamAPI),".\\tests\\ConcurrencyWithAbstractTask");
+			WriteFile.main(TaskModelTranslation.Transform(hamAPI),".\\tests\\ConcurrencyWithAbstractTask");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

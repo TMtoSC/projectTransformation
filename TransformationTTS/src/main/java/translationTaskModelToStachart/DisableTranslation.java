@@ -1,4 +1,4 @@
-package Factory;
+package translationTaskModelToStachart;
 
 import org.yakindu.sct.model.sgraph.Entry;
 import org.yakindu.sct.model.sgraph.Region;
@@ -6,10 +6,10 @@ import org.yakindu.sct.model.sgraph.SGraphFactory;
 import org.yakindu.sct.model.sgraph.State;
 import org.yakindu.sct.model.sgraph.Transition;
 
-import TranslationSCT.WriteFile;
 import fr.projectM1.frozenhand.TransformationTTS.Disable;
 import hamsters.HamstersNode;
 import hamsters.HamstersOperator;
+import statechartsInXML.WriteFile;
 
 
 /**
@@ -18,7 +18,7 @@ import hamsters.HamstersOperator;
  * tout en lui attachant des tâches
  * @author frozenhandgroup
  */
-public class DisableFactory extends FactoryTransformation {
+public class DisableTranslation extends TaskModelTranslation {
 	/**
 	 * factory est une instance de SGaphFactory de la bibliotheque Yakindu
 	 */
@@ -47,9 +47,7 @@ public class DisableFactory extends FactoryTransformation {
 					temp.setName(hOP.getChildren().get(i).getDescription());
 					r.getVertices().add(temp);
 				} else {
-					/**
-					 * Faire attention possibilité de bug !
-					 */
+					
 					HamstersNode ot = hOP.getChildren().get(i);
 					temp = appel(ot);
 					r.getVertices().add(temp);
@@ -66,17 +64,5 @@ public class DisableFactory extends FactoryTransformation {
 		}
 		return e;
 	}
-	/**
-	 * Permet de simuler la création d'une tâche avec l'opérateur disable
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		fr.projectM1.frozenhand.TransformationTTS.Disable d = new Disable();
-		try {
-			WriteFile.main(FactoryTransformation.Transform(d.getAPI()), "/Users/daviddang/Desktop/disableTest");
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+
 }

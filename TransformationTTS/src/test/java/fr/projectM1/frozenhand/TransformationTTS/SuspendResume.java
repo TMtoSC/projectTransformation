@@ -3,13 +3,13 @@ package fr.projectM1.frozenhand.TransformationTTS;
 import org.junit.Before;
 import org.junit.Test;
 
-import Factory.FactoryTransformation;
-import TranslationSCT.WriteFile;
 import hamsters.HamstersAPI;
 import hamsters.HamstersOperator;
 import hamsters.HamstersTask;
 import hamsters.OperatorType;
 import hamsters.TaskType;
+import statechartsInXML.WriteFile;
+import translationTaskModelToStachart.TaskModelTranslation;
 
 /**
  * SuspendResume
@@ -54,7 +54,7 @@ public class SuspendResume {
 		@Test
 		public  void testSR (){
 			try {
-				WriteFile.main(FactoryTransformation.Transform(hamAPI),".\\tests\\SuspendResume");
+				WriteFile.main(TaskModelTranslation.Transform(hamAPI),".\\tests\\SuspendResume");
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

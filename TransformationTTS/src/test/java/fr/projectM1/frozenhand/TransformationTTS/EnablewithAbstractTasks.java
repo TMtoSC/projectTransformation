@@ -3,13 +3,13 @@ package fr.projectM1.frozenhand.TransformationTTS;
 import org.junit.Before;
 import org.junit.Test;
 
-import Factory.FactoryTransformation;
-import TranslationSCT.WriteFile;
 import hamsters.HamstersAPI;
 import hamsters.HamstersOperator;
 import hamsters.HamstersTask;
 import hamsters.OperatorType;
 import hamsters.TaskType;
+import statechartsInXML.WriteFile;
+import translationTaskModelToStachart.TaskModelTranslation;
 
 /**
  * EnableWithAbstractTask
@@ -62,7 +62,7 @@ public class EnablewithAbstractTasks {
 	@Test
 	public  void testENWAT (){
 		try {
-			WriteFile.main(FactoryTransformation.Transform(hamAPI),".\\tests\\EnableWithAbstractTask");
+			WriteFile.main(TaskModelTranslation.Transform(hamAPI),".\\tests\\EnableWithAbstractTask");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

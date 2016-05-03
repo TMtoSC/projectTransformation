@@ -1,4 +1,4 @@
-package TranslationSCT;
+package statechartsInXML;
 
 import java.util.Collections;
 import java.util.Map;
@@ -19,9 +19,9 @@ import org.yakindu.sct.ui.editor.DiagramActivator;
 import org.yakindu.sct.ui.editor.editor.StatechartDiagramEditor;
 import org.yakindu.sct.ui.editor.factories.FactoryUtils;
 
-import Factory.FactoryTransformation;
 import hamsters.HamstersAPI;
 import hamsters.HamstersOperator;
+import translationTaskModelToStachart.TaskModelTranslation;
 
 import org.eclipse.emf.common.util.*;
 

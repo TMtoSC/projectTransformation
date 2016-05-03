@@ -1,4 +1,4 @@
-package Factory;
+package translationTaskModelToStachart;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,20 +10,20 @@ import org.yakindu.sct.model.sgraph.SGraphFactory;
 import org.yakindu.sct.model.sgraph.State;
 import org.yakindu.sct.model.sgraph.Transition;
 
-import TranslationSCT.WriteFile;
 import fr.projectM1.frozenhand.TransformationTTS.EnablewithAbstractTasks;
 import fr.projectM1.frozenhand.TransformationTTS.OrderIndependent;
 import hamsters.HamstersNode;
 import hamsters.HamstersOperator;
 import hamsters.HamstersTask;
+import statechartsInXML.WriteFile;
 
 /**
  * OrderIndependentFactory 
- * Classe servant à créer un état d'un stateChart avec l'opérateur Enable
+ * Classe servant à créer un état d'un stateChart avec l'opérateur OrderIndependent
  * tout en lui attachant des tâches
  * @author frozenhandgroup
  */
-public class OrderIndependantFactory extends FactoryTransformation{
+public class OrderIndependentTranslation extends TaskModelTranslation{
 	
 	/**
 	 * sgraph est une instance de SGaphFactory de la bibliothèque Yakindu
@@ -104,25 +104,38 @@ public class OrderIndependantFactory extends FactoryTransformation{
 	}
 	
 	/**
-	 * Permet d'imbriquer les hamsteNode
-	 * @param rem une liste de HamstersNode
-	 * @param hn une liste de HamstersNode
-	 * @param lg une liste de listes de HamstersNode
+	 * L'algo de ForceBrute permettant de faire tous les ordonnancements possibles 
+	 * des hamsters node
+	 * @param noeudsRest une liste de HamstersNode cette liste est celle des noeudsrestants
+	 * @param hn une liste de HamstersNode est la liste crée avec un ordonnancement dedans
+	 * @param lg une liste de listes de HamstersNode la liste globale contenant tous les ordonnancements
 	 * @return une liste de listes HamstersNode
 	 */
-	private static List<List<HamstersNode>> creationList(List<HamstersNode> rem, List<HamstersNode> hn , List<List<HamstersNode>> lg) {
-		List<HamstersNode> buff = new ArrayList<>(rem);
-		if(rem.size()==1) {
-			hn.add(rem.get(0));
+	private static List<List<HamstersNode>> creationList(List<HamstersNode> noeudsRest, List<HamstersNode> hn , List<List<HamstersNode>> lg) {
+		List<HamstersNode> buff = new ArrayList<>(noeudsRest);
+		/**
+		 * s'il ne reste qu'un élément
+		 * ajout de cet élément puis ajout de la liste dans la liste globale. Fin de récursivité.
+		 */
+		if(noeudsRest.size()==1) {
+			hn.add(noeudsRest.get(0));
 			lg.add(new ArrayList<>(hn));
 			return lg;
 		}
 		List<HamstersNode> init = new ArrayList<>(hn);
-		for (int j = 0 ; j< rem.size(); j++){
-			hn.add(rem.get(j));
+		/**
+		 * boucle de récursivité.
+		 * Ajoute dans la liste courante le premier fils de la liste des noeuds restants.
+		 * Envoi des listes modifiées à la récursivité
+		 * Reinitialisation des listes une fois la récursivité terminée 
+		 * et n reboucle.
+		 * 
+		 */
+		for (int j = 0 ; j< noeudsRest.size(); j++){
+			hn.add(noeudsRest.get(j));
 			buff.remove(j);
 			creationList(buff,hn,lg);
-			buff.add(j,rem.get(j));
+			buff.add(j,noeudsRest.get(j));
 			hn.clear();
 			for( int k = 0 ; k < init.size() ; k++) {
 				hn.add(init.get(k));
