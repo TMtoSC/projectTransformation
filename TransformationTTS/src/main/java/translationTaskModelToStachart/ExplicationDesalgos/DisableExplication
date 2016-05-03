@@ -1,0 +1,18 @@
+Explication de l'algorithme transformant la désactivation.
+
+1.	(34-36) création de l'état Composite ce sera lui qui contiendra notre choix
+2.	(37-38) création de la région qui va contenir notre choix
+3.	(39-40) création de l'entrée de l'état, ce sera l'entrée initial. On l'ajoute ensuite dans la région
+4.	(43)	vérification que la désactivation n'a bien que 2 branches enfants
+			Si c'est le cas alors on effectue
+4.1	(44-64)	boucle parcourant tous les enfants de l'opérateur (ici ce doit être 2 grace au teste effectué
+				juste avant
+4.1.1	(45)	test si l'enfant est une feuille ou non si oui alors on fait
+4.1.1.1	(46-48)	creation de l'état enfant, modification de son nom, et ajout de ce noeud a la région
+					si le noeud n'est pas feuille alors on fait
+4.1.1.2	(51-53)	affectation de cet enfant dans un noeud hamsters puis appel de la fonction de transformation 
+					sur ce noeud puis ajout de ce noeud a la région
+4.1	(56-63)	création des transition entre l'entrée et la branche principale, et entr ela branche principale
+				et la branche désactivante
+4.2	___		si l'opérateur n'a pas 2 enfants exactements on ne fait rien
+5.	(65)	renvoi de l'état composite ainsi créé
