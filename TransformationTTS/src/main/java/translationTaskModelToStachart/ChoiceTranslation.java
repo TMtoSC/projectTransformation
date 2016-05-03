@@ -13,6 +13,7 @@ import org.yakindu.sct.model.sgraph.SGraphFactory;
 import org.yakindu.sct.model.sgraph.State;
 import org.yakindu.sct.model.sgraph.Transition;
 
+import hamsters.HamstersNode;
 import hamsters.HamstersOperator;
 import statechartsInXML.WriteFile;
 
@@ -56,19 +57,19 @@ public class ChoiceTranslation extends TaskModelTranslation {
 		
 		// création des fils et de ses transitions avec le parent 
 		for (int i = 0; i < hOP.getChildren().size(); i++) {
-			if(!(hOP.getChildren().get(i).getClass().equals(HamstersOperator.class)))
+			if(hOP.getChildren().get(i).isLeaf())
 			{
 				temp = sgraph.createState();
 				temp.setName(hOP.getChildren().get(i).getDescription());
 				r.getVertices().add(temp);
 			}
 			else {
-				HamstersOperator ot = (HamstersOperator) hOP.getChildren().get(i);
+				HamstersNode ot = (HamstersNode) hOP.getChildren().get(i);
 				temp = recursiveTranslation(ot);
 				r.getVertices().add(temp);
 			}
 
-			// création de toutes les transitions d'un fils que l'on vient de créer vers le choix.
+			// création de toutes les transitions d'un fils que l'on vient de créer vers lec ho
 			t = sgraph.createTransition();
 			t.setSource(initialChoiceState);
 			t.setTarget(temp);

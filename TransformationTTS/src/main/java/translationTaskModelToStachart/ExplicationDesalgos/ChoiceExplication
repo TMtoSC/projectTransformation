@@ -1,0 +1,14 @@
+Explication de l'algorithme transformant le choix.
+
+1.	(33-35) création de l'état Composite ce sera lui qui contiendra notre choix
+2.	(38-39) création de la région qui va contenir notre choix
+3.	(42-43) création de l'entrée de l'état, ce sera l'entrée initial. On l'ajoute ensuite dans la région
+4.	(46-47) création du choix et ajout de celui-ci dans la région
+5.	(50-52) création de la transition permettant de relier notre noeud initial, à notre premier choix
+6.	(54-55) déclaration de l'état et transition
+7.	(58-76) boucle de récursivité
+	7.1 (60-70) tests de l'état courant si feuille voir 7.1.1 sinon 7.1.2
+		7.1.1 (61-64) création d'un état simple avec ajout du nom du noeud. ajout de cet état dans la région
+		7.1.2 (67-58) création d'un Noeud Hamsters, appel de récursivité sur ce noeud là. Ajout de celui-ci dans la région
+	7.2 (72-76) création d'un transition. Ajout de la source qui est l'état de choix et comme cible l'état que l'on vient de créer
+8. renvoi de l'état composite Choix
