@@ -56,7 +56,16 @@ Ceci va vous importer le statechart créé que vous pourrez explorer de dans cet
 
 
 
-Notes sur les Statecharts :
+Notes sur les Statecharts :a
+L'algorithme ne permet pas certaines fonctionnalités nécessaires à la simulation du statecharts.
 
-Les transition sont crées de haut en bas mais nous n'avons pas reussi a les construire de bas en haut. C'est a dire que nous pouvons lors de l'imbrication de deux opérateurs passer a l'opérateur le plus bas, mais nous ne sommes pas parvenus a revenir sur l'opérateur principal.
+Voici les points qu'il faudra améliorer pour obtenir un algorithme valide et utilisable parfaitement. 
+
+La visualisation : Nous avons réussi à définir la structure du modèle de tâches mais nous n'avons pas pu faire la modélisation. Celle-ci d'apres ce qu'on a compris ce fais à l'aide de déclaration de balise Diagram à la suite de notre xml que l'on génère. On a pensé qu'elle se faisait avec la gmf d'eclipse mais nous n'avons pas réussi à l'utiliser mais cela à été notre meilleure piste pour l'instant
+
+Les états finaux : En effet certaines tâches doivent être considérer comme finale dans un modèle de tâches et récursivement cela devient compliquer à trouver celles qui le sont ou celles qui ne le sont pas. Pour ne pas trop s'attarder dessus nous avons décidé de mettre ceci de côté afin de créer la structure de données du statecharts
+
+Les synchronisations des multiples concurrences : Un peu comme les états finaux une concurrence doit se synchroniser avec ses autres aprties concurrentes afin que toutes soient fini avant de passer à la suite si suite il y a. Le problème revient au même que les états finaux, c'est à dire, savoir quel état fini une partie de la concurrence pour pouvoir faire pointer vers l'état synchronisant.
+
+Les transition sont crées de haut en bas mais nous n'avons pas reussi a les construire de bas en haut. C'est a dire que nous pouvons lors de l'imbrication de deux opérateurs passer a l'opérateur le plus bas, mais nous ne sommes pas parvenus à revenir sur l'opérateur principal.
 De plus ces statecharts ne possèdent pas d'état final bien placé. C'est a dire que toutes les tâches qui peuvent finir la simulation et donc n'offrent pas la possibiliter que ce soit par un opérateur plus haut ou plus bas de continuer le modèle, ne possèdent pas de transition vers Final State qui est donc l'état dans lequel le modèle est terminé.
