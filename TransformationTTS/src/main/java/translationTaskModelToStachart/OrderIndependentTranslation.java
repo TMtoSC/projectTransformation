@@ -81,7 +81,7 @@ public class OrderIndependentTranslation extends TaskModelTranslation{
 				State temp = sgraph.createState();
 				Transition sequency = sgraph.createTransition();
 				if(!(listglob.get(i).get(j).isLeaf())) {
-					temp = appel(listglob.get(i).get(j));
+					temp = recursiveTranslation(listglob.get(i).get(j));
 				}
 				temp.setName(listglob.get(i).get(j).getDescription());
 				newr.getVertices().add(temp);

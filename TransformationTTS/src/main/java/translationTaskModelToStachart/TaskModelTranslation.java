@@ -95,7 +95,7 @@ public class TaskModelTranslation {
 	 * @param hN un noeud hamsters
 	 * @return un  état
 	 */
-	public static State appel(HamstersNode hN) {
+	public static State recursiveTranslation(HamstersNode hN) {
 		HamstersOperator ha = null;
 		if (hN instanceof HamstersTask) {
 			ha = (HamstersOperator) hN.getChildren().get(0);

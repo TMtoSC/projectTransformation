@@ -54,7 +54,7 @@ public class EnableTranslation extends TaskModelTranslation {
 				 * possibilité de bug !
 				 */
 				HamstersNode ot = hOP.getChildren().get(i);
-				temp = appel(ot);
+				temp = recursiveTranslation(ot);
 				r.getVertices().add(temp);
 			}
 

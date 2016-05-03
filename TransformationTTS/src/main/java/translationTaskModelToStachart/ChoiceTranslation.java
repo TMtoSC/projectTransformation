@@ -63,16 +63,12 @@ public class ChoiceTranslation extends TaskModelTranslation {
 				r.getVertices().add(temp);
 			}
 			else {
-				/**
-				 * Faire attention
-				 * possibilité de bug !
-				 */
 				HamstersOperator ot = (HamstersOperator) hOP.getChildren().get(i);
-				temp = appel(ot);
+				temp = recursiveTranslation(ot);
 				r.getVertices().add(temp);
 			}
 
-			// création de toutes les transitions
+			// création de toutes les transitions d'un fils que l'on vient de créer vers le choix.
 			t = sgraph.createTransition();
 			t.setSource(initialChoiceState);
 			t.setTarget(temp);

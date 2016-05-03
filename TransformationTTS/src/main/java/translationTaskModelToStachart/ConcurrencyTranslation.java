@@ -35,30 +35,39 @@ public class ConcurrencyTranslation extends TaskModelTranslation{
 		 * Création de l'orthogonal State.
 		 */
 		State compositeFirst = sgraph.createState();
-		
 		compositeFirst.isOrthogonal();
 		compositeFirst.setName(hOP.getDescription());
 
 		/**
 		 * Ajout de la première région.
 		 */
-		Entry entry = sgraph.createEntry();
+		
 		Region r = sgraph.createRegion();
-		r.setName("Reg 0");
+		r.setName("Première région concurrence");
 		compositeFirst.getRegions().add(r);
 		
+		/**
+		 * Création de l'entrée du statecharts
+		 */
+		Entry entry = sgraph.createEntry();
+		r.getVertices().add(entry);
 		
-		r.getVertices().add(entry);		
+		/**
+		 * création du premier état
+		 */
 		State s = sgraph.createState();
 		
-		
+		/**
+		 * Si état feuille création d'un état simple
+		 * sinon appel de la récursivité
+		 */
 		if (hOP.getChildren().get(0).isLeaf()) {
 			s.setName(hOP.getChildren().get(0).getDescription());
 			r.getVertices().add(s);
 		}
 		else {
 			HamstersNode ha = hOP.getChildren().get(0);
-			s = appel(ha);
+			s = recursiveTranslation(ha);
 			r.getVertices().add(s);
 		}
 		/**
@@ -68,7 +77,7 @@ public class ConcurrencyTranslation extends TaskModelTranslation{
 		t.setSource(entry);
 		t.setTarget(s);
 		/**
-		 * création de la deuxieme concurrenc en cas de concurrence binaire
+		 * création de la deuxieme concurrence en cas de concurrence binaire
 		 */
 		
 		if( hOP.getChildren().size() <= 2){
@@ -79,9 +88,9 @@ public class ConcurrencyTranslation extends TaskModelTranslation{
 				r2.getVertices().add(entry2);
 				State s2 = sgraph.createState();
 				/**
-				 * Traitement différent si feuille ou si pas feuille
+				 * Si état feuille création d'un état simple
+				 * sinon appel de la récursivité
 				 */
-				
 				if (hOP.getChildren().get(1).isLeaf()) {
 					s2.setName(hOP.getChildren().get(1).getDescription());
 					r2.getVertices().add(s2);
@@ -89,7 +98,7 @@ public class ConcurrencyTranslation extends TaskModelTranslation{
 				else {
 					HamstersNode ha2 = hOP.getChildren().get(1);
 					
-					s2 = appel(ha2);
+					s2 = recursiveTranslation(ha2);
 					r2.getVertices().add(s2);
 				}
 				/**
@@ -143,7 +152,7 @@ public class ConcurrencyTranslation extends TaskModelTranslation{
 					news.setName(hOP.getChildren().get(i).getDescription());
 				}
 				else {
-					news = appel(hOP.getChildren().get(i));
+					news = recursiveTranslation(hOP.getChildren().get(i));
 					news.setName(hOP.getChildren().get(i).getDescription());
 				}
 				newr.getVertices().add(news);
@@ -167,7 +176,7 @@ public class ConcurrencyTranslation extends TaskModelTranslation{
 					}
 					else {
 				
-						lastState = appel(hOP.getChildren().get(i+1));
+						lastState = recursiveTranslation(hOP.getChildren().get(i+1));
 						lastState.setName(hOP.getChildren().get(i+1).getDescription());
 					}
 					rtemp2.getVertices().add(lastState);	

@@ -51,7 +51,7 @@ public class SuspendResumeTranslation extends TaskModelTranslation {
 					r.getVertices().add(temp);
 				} else {
 					HamstersNode ot = hOP.getChildren().get(i);
-					temp = appel(ot);
+					temp = recursiveTranslation(ot);
 					r.getVertices().add(temp);
 				}
 
