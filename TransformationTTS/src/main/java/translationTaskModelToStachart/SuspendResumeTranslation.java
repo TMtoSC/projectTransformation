@@ -40,35 +40,59 @@ public class SuspendResumeTranslation extends TaskModelTranslation {
 		e.getRegions().add(r);
 		Entry deepHistory = sgraph.createEntry();
 		deepHistory.setKind(EntryKind.DEEP_HISTORY);
-		r.getVertices().add(deepHistory);
 		State temp = null;
 		Transition t = null;
-		if (hOP.getChildren().size() == 2) {
-			for (int i = 0; i < hOP.getChildren().size(); i++) {
-				if (hOP.getChildren().get(i).isLeaf()) {
-					temp = sgraph.createState();
-					temp.setName(hOP.getChildren().get(i).getDescription());
-					r.getVertices().add(temp);
-				} else {
-					HamstersNode ot = hOP.getChildren().get(i);
-					temp = recursiveTranslation(ot);
-					r.getVertices().add(temp);
-				}
+		/**
+		 * création de l'état se faisant suspendre
+		 */
+		State suspend = sgraph.createState();
+		suspend.isComposite();
+		suspend.setName("suspend");
+		r.getVertices().add(suspend);
+		/**
+		 * création de l'état suspentant
+		 */
+		State resume = sgraph.createState();
+		resume.isComposite();
+		resume.setName("Resume");
+		r.getVertices().add(resume);
+		/**
+		 * création de la région qui se fait suspendre et ajout de celle-ci 
+		 */
+		Region rSusp = sgraph.createRegion();
+		suspend.getRegions().add(rSusp);
 
-			}
-			t = sgraph.createTransition();
-			t.setSource(deepHistory);
-			t.setTarget(r.getVertices().get(1));
-			t = null;
-			t = sgraph.createTransition();
-			t.setSource(r.getVertices().get(1));
-			t.setTarget(r.getVertices().get(2));
-			t = null;
-			t = sgraph.createTransition();
-			t.setSource(r.getVertices().get(2));
-			t.setTarget(r.getVertices().get(1));
-			t = null;
+		/**
+		 * création de la région suspentrice
+		 */
+		Region rResu = sgraph.createRegion();
+		resume.getRegions().add(rResu);
+
+		/**
+		 * transition permettant la suspension
+		 */
+		Transition suspentrice = sgraph.createTransition();
+		suspentrice.setSource(suspend);
+		suspentrice.setTarget(resume);
+		/**
+		 * Ajout du deepHistory dans la région
+		 */
+		rSusp.getVertices().add(deepHistory);
+		
+		State suspElement = sgraph.createState();
+		if(!(hOP.getChildren().get(0).isLeaf())) {
+			suspElement = recursiveTranslation(hOP.getChildren().get(0));
 		}
+		suspElement.setName(hOP.getChildren().get(0).getDescription());
+		rSusp.getVertices().add(suspElement);
+		
+		State resuElement = sgraph.createState();
+		if(!(hOP.getChildren().get(1).isLeaf())) {
+			resuElement = recursiveTranslation(hOP.getChildren().get(0));
+		}
+		resuElement.setName(hOP.getChildren().get(1).getDescription());
+		rResu.getVertices().add(resuElement);
+
 		return e;
 	}
 	
