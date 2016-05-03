@@ -4,6 +4,7 @@ import org.yakindu.sct.model.sgraph.Entry;
 import org.yakindu.sct.model.sgraph.Region;
 import org.yakindu.sct.model.sgraph.SGraphFactory;
 import org.yakindu.sct.model.sgraph.State;
+import org.yakindu.sct.model.sgraph.Synchronization;
 import org.yakindu.sct.model.sgraph.Transition;
 
 import fr.projectM1.frozenhand.TransformationTTS.Concurrency;
@@ -34,9 +35,9 @@ public class ConcurrencyTranslation extends TaskModelTranslation{
 		/**
 		 * Création de l'orthogonal State.
 		 */
-		State compositeFirst = sgraph.createState();
-		compositeFirst.isOrthogonal();
-		compositeFirst.setName(hOP.getDescription());
+		State ortogonalFirst = sgraph.createState();
+		ortogonalFirst.isOrthogonal();
+		ortogonalFirst.setName(hOP.getDescription());
 
 		/**
 		 * Ajout de la première région.
@@ -44,14 +45,30 @@ public class ConcurrencyTranslation extends TaskModelTranslation{
 		
 		Region r = sgraph.createRegion();
 		r.setName("Première région concurrence");
-		compositeFirst.getRegions().add(r);
+		ortogonalFirst.getRegions().add(r);
 		
 		/**
 		 * Création de l'entrée du statecharts
 		 */
 		Entry entry = sgraph.createEntry();
 		r.getVertices().add(entry);
-		
+		/**
+		 * création de la synchronisation
+		 */
+		Synchronization synch = sgraph.createSynchronization();
+		r.getVertices().add(synch);
+		/**
+		 * création de l'état permettant de regrouper la synchronisation
+		 */
+		State syncState = sgraph.createState();
+		syncState.setName("SyncState1");
+		r.getVertices().add(syncState);
+		/**
+		 * Création de la transition allant de l'état synchronisant à la synchronisation
+		 */
+		Transition syncTrans = sgraph.createTransition();
+		syncTrans.setSource(syncState);
+		syncTrans.setTarget(synch);
 		/**
 		 * création du premier état
 		 */
@@ -81,12 +98,35 @@ public class ConcurrencyTranslation extends TaskModelTranslation{
 		 */
 		
 		if( hOP.getChildren().size() <= 2){
-				Region r2 = sgraph.createRegion();
-				compositeFirst.getRegions().add(r2);
+			/** 
+			 * création de la région qui sera concurrente à la première
+			 * ajout de celle ci dans l'état orthogonal	
+			 */
+			Region r2 = sgraph.createRegion();
+				ortogonalFirst.getRegions().add(r2);
 				r2.setName("Deuxieme Region");
+				/**
+				 * création de l'entrée de la région 
+				 * et ajout de celle ci
+				 */
 				Entry entry2 = sgraph.createEntry();
 				r2.getVertices().add(entry2);
+				/**
+				 * création de la synchronisation pour cette concurrence
+				 */
+				Synchronization syncTemp =  sgraph.createSynchronization();
+				r2.getVertices().add(syncTemp);
+				State syncStateTemp = sgraph.createState();
+				r2.getVertices().add(syncStateTemp);
+				syncStateTemp.setName("SyncState2");
+				Transition syncTransTemp = sgraph.createTransition();
+				syncTransTemp.setSource(syncStateTemp);
+				syncTransTemp.setTarget(syncTemp);
+				/**
+				 * création de l'état
+				 */
 				State s2 = sgraph.createState();
+				
 				/**
 				 * Si état feuille création d'un état simple
 				 * sinon appel de la récursivité
@@ -97,7 +137,6 @@ public class ConcurrencyTranslation extends TaskModelTranslation{
 				}
 				else {
 					HamstersNode ha2 = hOP.getChildren().get(1);
-					
 					s2 = recursiveTranslation(ha2);
 					r2.getVertices().add(s2);
 				}
@@ -123,7 +162,7 @@ public class ConcurrencyTranslation extends TaskModelTranslation{
 				scomp.isComposite();
 				scomp.setName("Composite state n° " + i + " ");
 				if(i ==1) {
-					compositeFirst.getRegions().add(newreg);
+					ortogonalFirst.getRegions().add(newreg);
 				}
 				else {
 				
@@ -191,6 +230,6 @@ public class ConcurrencyTranslation extends TaskModelTranslation{
 		
 		}
 
-		return compositeFirst;
+		return ortogonalFirst;
 	}
 }

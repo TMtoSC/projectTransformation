@@ -1,5 +1,5 @@
 /**
- * ChoiceFactory 
+ * ChoiceTranslation
  * Classe servant à créer un état d'un stateChart avec l'opérateur choice
  * tout en lui attachant des tâches
  * @author frozenhandgroup
