@@ -37,6 +37,7 @@ public class EnableTranslation extends TaskModelTranslation {
 		Region r = sgraph.createRegion();
 		e.getRegions().add(r);
 
+		// création du point d'entrée de la région link au premier état qui ammorce la sequence
 		State temp = null;
 		Entry ent = sgraph.createEntry();
 		r.getVertices().add(ent);

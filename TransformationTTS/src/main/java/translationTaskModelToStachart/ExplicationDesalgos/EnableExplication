@@ -1,0 +1,15 @@
+Explication de l'algorithme transformant la séquence.
+
+1.	(33-35) création de l'état Composite ce sera lui qui contiendra notre choix
+2.	(37-38) création de la région qui va contenir notre choix
+3.	(41-42) création de l'entrée de l'état, ce sera l'entrée initial. On l'ajoute ensuite dans la région
+4.	(46)	parcour de toute la liste des enfants de l'opérateur de séquence
+5.	(47)	si le noeud est une feuille et donc n'a pas lui même d'enfants on fait 
+	5.1	(48-50) creation de l'état enfant, modification de son nom, et ajout de ce noeud a la région
+			si le noeud n'est pas feuille alors on fait
+	5.2	(57-59) affectation de cet enfant dans un noeud hamsters puis appel de la fonction de transformation 
+				sur ce noeud puis ajout de ce noeud a la région
+6	(63-66)	une fois ce noeud (feuille ou non) traduit, on crée une transition partant de l'état ajouté lors du
+			tour de boucle précédent (soit l'entrée pour le tour de boucle 0) et allant a l'état que nous
+			ajoutons présentement
+7.	(68)	renvoi de l'état composite ainsi créé
